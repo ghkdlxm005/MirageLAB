@@ -1412,7 +1412,7 @@ Write TEPS daily study content in the following format:
 
 For each of the 5 words above, write:
 
-**1. [word]** ([Korean pronunciation hint, e.g. 비질런트]) _{part of speech}_
+**1. [word]** ([Korean pronunciation hint, e.g. 비질런트]) _{{part of speech}}_
 - 뜻: [Korean meaning]
 - 예문: [English example sentence showing the word in context]
 - 해석: [Korean translation of the example sentence]
