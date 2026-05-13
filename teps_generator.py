@@ -1388,79 +1388,85 @@ TEPS_VOCABULARY = [
     ("chronicle", "연대기", "명사"),
 ]
 
-# ── 프롬프트 ───────────────────────────────────────────────────────────────────
-SYSTEM_PROMPT = """You are a TEPS (Test of English Proficiency by Seoul National University) expert instructor.
-Generate daily TEPS study content for a Korean learner.
+# ── 프롬프트 (3단계 분리) ────────────────────────────────────────────────────
 
-STRICT RULES — follow exactly:
-1. Use ONLY English alphabet and Korean Hangul characters. No Chinese characters, Hindi, Arabic, Japanese, IPA symbols, or any other scripts.
-2. No emojis of any kind.
-3. The reading passage MUST be written entirely in English. Never write the passage in Korean.
-4. All explanations and translations use Korean only.
-5. Follow the exact markdown format provided."""
+# ── Call 1: 단어 예문 + 퀴즈 ─────────────────────────────────────────────────
+SYSTEM_WORD_QUIZ = """You are a TEPS vocabulary instructor writing daily study cards for Korean learners.
 
-USER_PROMPT_TEMPLATE = """Date: {date}
+RULES (no exceptions):
+- Use ONLY English and Korean (Hangul). No Chinese characters, no other scripts.
+- No emojis.
+- Korean translations must use ONLY Korean words — never Chinese characters."""
 
-Today's 5 TEPS words (use EXACTLY these words — do not change them):
-{word_list}
+# word_block은 Python이 직접 채운 단어 헤더 (단어/뜻/품사는 LLM이 바꾸지 못함)
+WORD_QUIZ_TEMPLATE = """Below are today's 5 TEPS words. The word, meaning, and part of speech are already filled in.
+You must write ONLY:
+  (a) a Korean pronunciation hint
+  (b) one natural English example sentence
+  (c) Korean translation of that sentence
 
-Write TEPS daily study content in the following format:
+Then write a 3-question fill-in-the-blank quiz using ONLY these 5 words.
+
+{word_block}
 
 ---
 
+Output format (copy exactly, fill in the [...] parts only):
+
 ## 오늘의 TEPS 단어 (5개)
 
-For each of the 5 words above, write:
-
-**1. [word]** ([Korean pronunciation hint, e.g. 비질런트]) _{{part of speech}}_
-- 뜻: [Korean meaning]
-- 예문: [English example sentence showing the word in context]
-- 해석: [Korean translation of the example sentence]
-
-(Repeat for all 5 words)
+{word_entries_template}
 
 ---
 
 ## 단어 확인 퀴즈
 
-Write 3 fill-in-the-blank questions using the 5 words above. Each question is a natural English sentence with a blank.
-
-**Q1.** [English sentence with blank shown as ______]
+**Q1.** [English sentence with ______]
 (A) [option]  (B) [option]  (C) [option]  (D) [option]
 
-**Q2.** [English sentence with blank shown as ______]
+**Q2.** [English sentence with ______]
 (A) [option]  (B) [option]  (C) [option]  (D) [option]
 
-**Q3.** [English sentence with blank shown as ______]
+**Q3.** [English sentence with ______]
 (A) [option]  (B) [option]  (C) [option]  (D) [option]
 
 <details>
 <summary>퀴즈 정답 보기</summary>
 
-Q1 정답: [(letter)] — [Korean explanation of why]
+Q1 정답: [(letter)] — [Korean explanation]
 
-Q2 정답: [(letter)] — [Korean explanation of why]
+Q2 정답: [(letter)] — [Korean explanation]
 
-Q3 정답: [(letter)] — [Korean explanation of why]
+Q3 정답: [(letter)] — [Korean explanation]
 
 </details>
 
----
+---"""
+
+# ── Call 2: 독해 ──────────────────────────────────────────────────────────────
+SYSTEM_READING = """You are a TEPS reading comprehension question writer.
+
+CRITICAL RULE: The passage (지문) MUST be written ENTIRELY in English.
+Do NOT write the passage in Korean under any circumstances.
+Korean is used ONLY in the answer key explanations and the Korean translation at the end."""
+
+READING_TEMPLATE = """Write a TEPS-level reading comprehension exercise.
+Topic: related to any of these words: {word_names}
+
+Output format (copy exactly):
 
 ## 오늘의 독해
 
-Write a 100-150 word English passage on a topic related to today's words (economics, society, science, or environment). TEPS reading difficulty level.
-
 **지문:**
-[English passage here — must be written entirely in English]
+[Write 100-150 words here in ENGLISH ONLY. This must be English prose.]
 
-**문제 1.** [Question about the passage in English]
+**문제 1.** [English question about the passage]
 (A) [English option]
 (B) [English option]
 (C) [English option]
 (D) [English option]
 
-**문제 2.** [Question about the passage in English]
+**문제 2.** [English question about the passage]
 (A) [English option]
 (B) [English option]
 (C) [English option]
@@ -1474,17 +1480,26 @@ Write a 100-150 word English passage on a topic related to today's words (econom
 **문제 2 정답:** [(letter)] — [Korean explanation]
 
 **지문 해석:**
-[Full Korean translation of the English passage. Use only Korean and English words here.]
+[Full Korean translation — use only Korean and English words, absolutely no Chinese characters]
 
 </details>
 
----
+---"""
+
+# ── Call 3: 문법 포인트 ───────────────────────────────────────────────────────
+SYSTEM_GRAMMAR = """You are a TEPS grammar instructor for Korean learners.
+Explain one grammar point in Korean. Use only Korean and English — no other scripts, no emojis."""
+
+GRAMMAR_TEMPLATE = """Write a short grammar tip for TEPS learners.
+Choose a grammar pattern relevant to one of these words: {word_names}
+
+Output format (copy exactly):
 
 ## 오늘의 문법 포인트
 
 **주제:** [Grammar topic in Korean]
 
-[2-3 sentence Korean explanation of the grammar point]
+[2-3 sentences explaining the grammar in Korean]
 
 **올바른 예문:**
 - [Correct English sentence] — [Korean translation]
@@ -1507,28 +1522,63 @@ def pick_daily_words(date: datetime) -> list:
     return rng.sample(TEPS_VOCABULARY, 5)
 
 
-def format_word_list(words: list) -> str:
-    lines = []
-    for i, (word, meaning, pos) in enumerate(words, 1):
-        lines.append(f"{i}. {word} ({pos}) - {meaning}")
-    return "\n".join(lines)
-
-
-def generate_content(client: Groq, date_str: str, words: list) -> str:
-    word_list = format_word_list(words)
-    prompt = USER_PROMPT_TEMPLATE.format(date=date_str, word_list=word_list)
-
+def _call(client: Groq, system: str, user: str, max_tokens: int = 1500) -> str:
+    """공통 Groq 호출 헬퍼."""
     completion = client.chat.completions.create(
         model=MODEL,
         messages=[
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": prompt},
+            {"role": "system", "content": system},
+            {"role": "user", "content": user},
         ],
         temperature=0.7,
-        max_tokens=2500,
+        max_tokens=max_tokens,
     )
+    return completion.choices[0].message.content.strip()
 
-    return completion.choices[0].message.content
+
+def _build_word_block(words: list) -> tuple[str, str]:
+    """
+    Python이 단어/뜻/품사를 직접 채운 블록 2개를 반환:
+      word_block          — LLM에게 '이 단어들이야' 알리는 참조용 목록
+      word_entries_template — LLM이 발음·예문·해석만 채울 항목 뼈대
+    """
+    ref_lines = []
+    entry_lines = []
+    for i, (word, meaning, pos) in enumerate(words, 1):
+        ref_lines.append(f"{i}. {word} ({pos}) — {meaning}")
+        entry_lines.append(
+            f"**{i}. {word}** ([Korean pronunciation]) _{pos}_\n"
+            f"- 뜻: {meaning}\n"
+            f"- 예문: [English example sentence]\n"
+            f"- 해석: [Korean translation]\n"
+        )
+    return "\n".join(ref_lines), "\n".join(entry_lines)
+
+
+def generate_content(client: Groq, date_str: str, words: list) -> str:
+    """3단계 분리 호출로 포스트 본문 생성."""
+    word_names = ", ".join(w[0] for w in words)
+    word_block, word_entries_template = _build_word_block(words)
+
+    # ── Step 1: 단어 섹션 + 퀴즈 ─────────────────────────────────────────────
+    print("  [1/3] 단어 + 퀴즈 생성 중...")
+    user1 = WORD_QUIZ_TEMPLATE.format(
+        word_block=word_block,
+        word_entries_template=word_entries_template,
+    )
+    part1 = _call(client, SYSTEM_WORD_QUIZ, user1, max_tokens=1500)
+
+    # ── Step 2: 독해 ──────────────────────────────────────────────────────────
+    print("  [2/3] 독해 생성 중...")
+    user2 = READING_TEMPLATE.format(word_names=word_names)
+    part2 = _call(client, SYSTEM_READING, user2, max_tokens=900)
+
+    # ── Step 3: 문법 포인트 ───────────────────────────────────────────────────
+    print("  [3/3] 문법 포인트 생성 중...")
+    user3 = GRAMMAR_TEMPLATE.format(word_names=word_names)
+    part3 = _call(client, SYSTEM_GRAMMAR, user3, max_tokens=400)
+
+    return "\n\n".join([part1, part2, part3])
 
 
 def build_front_matter(date: datetime, words: list) -> str:
