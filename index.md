@@ -3,6 +3,7 @@ layout: home
 title: MirageLAB
 ---
 
+
 ## 공부 기록 블로그에 오신 걸 환영합니다 👋
 
 이 블로그는 두 가지 파트로 운영됩니다.

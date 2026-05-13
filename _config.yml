@@ -9,7 +9,6 @@ author:
 lang: ko
 
 # Build settings
-theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
@@ -45,11 +44,3 @@ defaults:
     values:
       layout: page
 
-# Minima theme settings
-minima:
-  skin: auto  # auto | classic | dark | solarized | solarized-dark
-
-# Navigation
-header_pages:
-  - index.md
-  - notes/index.md

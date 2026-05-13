@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<div class="hero">
+  <div class="date-label">{{ site.time | date: '%Y년 %m월 %d일' }}</div>
+  <h1>오늘의 공부 기록</h1>
+  <p>매일 TEPS 단어 · 독해 · 문법 + 직접 쓰는 학습 노트</p>
+</div>
+
+<p class="section-title">최근 포스트</p>
+
+<ul class="post-list">
+  {% for post in site.posts %}
+  <li>
+    <a class="post-card" href="{{ post.url | relative_url }}">
+      <div class="post-card-meta">
+        <span class="date-badge">{{ post.date | date: '%Y.%m.%d' }}</span>
+        {% for cat in post.categories %}
+        <span class="category-tag">{{ cat }}</span>
+        {% endfor %}
+      </div>
+      <div class="post-card-title">{{ post.title }}</div>
+      {% if post.excerpt %}
+      <div class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 80 }}</div>
+      {% endif %}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+
+{{ content }}
