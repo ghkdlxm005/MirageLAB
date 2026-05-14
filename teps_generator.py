@@ -1415,7 +1415,7 @@ Reference list:
 
 Output format (copy the structure exactly):
 
-## 오늘의 TEPS 단어 (5개)
+## 오늘의 TEPS 단어 (10개)
 
 {word_entries_template}
 
@@ -1432,6 +1432,12 @@ Output format (copy the structure exactly):
 **Q3.** [English sentence with ______]
 (A) [option]  (B) [option]  (C) [option]  (D) [option]
 
+**Q4.** [English sentence with ______]
+(A) [option]  (B) [option]  (C) [option]  (D) [option]
+
+**Q5.** [English sentence with ______]
+(A) [option]  (B) [option]  (C) [option]  (D) [option]
+
 <details>
 <summary>퀴즈 정답 보기</summary>
 
@@ -1440,6 +1446,10 @@ Q1 정답: [(letter)] — [Korean explanation]
 Q2 정답: [(letter)] — [Korean explanation]
 
 Q3 정답: [(letter)] — [Korean explanation]
+
+Q4 정답: [(letter)] — [Korean explanation]
+
+Q5 정답: [(letter)] — [Korean explanation]
 
 </details>
 
@@ -1517,19 +1527,22 @@ def get_kst_date() -> datetime:
     return datetime.now(KST)
 
 
+DAILY_WORD_COUNT = 10  # 하루 학습 단어 수
+
+
 def pick_daily_words(date: datetime) -> list:
-    """날짜를 시드로 사용해 매일 다른 5개 단어를 선택 (같은 날은 항상 동일)."""
+    """날짜를 시드로 사용해 매일 다른 단어를 선택 (같은 날은 항상 동일)."""
     seed = int(date.strftime("%Y%m%d"))
     rng = random.Random(seed)
-    return rng.sample(TEPS_VOCABULARY, 5)
+    return rng.sample(TEPS_VOCABULARY, DAILY_WORD_COUNT)
 
 
 def pick_review_words(date: datetime, days_ago: int = 7) -> list:
-    """N일 전 날짜 시드로 복습 단어 선택 (오늘 단어와 겹치지 않도록)."""
+    """N일 전 날짜 시드로 복습 단어 선택."""
     review_date = date - timedelta(days=days_ago)
     seed = int(review_date.strftime("%Y%m%d"))
     rng = random.Random(seed)
-    return rng.sample(TEPS_VOCABULARY, 5)
+    return rng.sample(TEPS_VOCABULARY, DAILY_WORD_COUNT)
 
 
 def build_review_section(review_words: list, days_ago: int = 7) -> str:
@@ -1586,7 +1599,7 @@ def generate_content(client: Groq, date_str: str, words: list) -> str:
         word_block=word_block,
         word_entries_template=word_entries_template,
     )
-    part1 = _call(client, SYSTEM_WORD_QUIZ, user1, max_tokens=1500)
+    part1 = _call(client, SYSTEM_WORD_QUIZ, user1, max_tokens=3500)
 
     # ── Step 2: 독해 ──────────────────────────────────────────────────────────
     print("  [2/3] 독해 생성 중...")

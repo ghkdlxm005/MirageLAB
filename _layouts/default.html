@@ -25,8 +25,11 @@
   </header>
 
   <main>
-    <div class="container">
-      {{ content }}
+    <div class="main-layout">
+      {% include sidebar.html %}
+      <div class="content-area">
+        {{ content }}
+      </div>
     </div>
   </main>
 

@@ -31,6 +31,129 @@ body {
   padding: 0 20px;
 }
 
+/* ── Main layout (사이드바 + 컨텐츠) ─────────────── */
+.main-layout {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.content-area {
+  min-width: 0;
+}
+
+/* ── Sidebar ─────────────────────────────────────── */
+.sidebar {
+  position: sticky;
+  top: 76px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 0;
+  box-shadow: var(--shadow);
+  font-size: 0.85rem;
+}
+
+.sb-section {
+  padding: 0 16px 16px;
+  border-bottom: 1px solid var(--ivory-dark);
+  margin-bottom: 4px;
+}
+.sb-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+.sb-title {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  padding: 12px 0 8px;
+}
+
+/* 카테고리 트리 */
+.cat-tree { list-style: none; }
+.cat-parent { margin-bottom: 4px; }
+
+.cat-toggle {
+  background: none; border: none; cursor: pointer;
+  font-size: 0.85rem; font-weight: 700; color: var(--text);
+  padding: 5px 4px; width: 100%; text-align: left;
+  font-family: inherit; display: flex; align-items: center; gap: 6px;
+  border-radius: 6px; transition: background 0.15s;
+}
+.cat-toggle:hover { background: var(--ivory-dark); }
+.cat-arrow { font-size: 0.65rem; color: var(--text-muted); transition: 0.2s; }
+
+.cat-children { list-style: none; margin-left: 16px; }
+
+.cat-link {
+  display: flex; align-items: center; gap: 6px;
+  padding: 5px 8px; border-radius: 6px;
+  text-decoration: none; color: var(--text-muted);
+  font-weight: 500; transition: all 0.15s;
+}
+.cat-link:hover, .cat-link.active { color: var(--blue); background: var(--blue-light); }
+.cat-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--border); flex-shrink: 0;
+}
+.cat-link.active .cat-dot { background: var(--blue); }
+.cat-count {
+  margin-left: auto; background: var(--ivory-dark);
+  color: var(--text-muted); font-size: 0.68rem; font-weight: 700;
+  padding: 1px 7px; border-radius: 20px; flex-shrink: 0;
+}
+.cat-link.active .cat-count { background: var(--blue-light); color: var(--blue); }
+
+/* 월별 목록 */
+.month-list { list-style: none; margin-left: 12px; margin-top: 3px; }
+.month-link {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 3px 8px; border-radius: 5px;
+  text-decoration: none; color: var(--text-muted);
+  font-size: 0.78rem; transition: all 0.15s;
+}
+.month-link:hover, .month-link.active { color: var(--blue); background: var(--blue-light); }
+
+/* 바로가기 */
+.sb-links { list-style: none; }
+.sb-link {
+  display: flex; align-items: center; gap: 7px;
+  padding: 6px 8px; border-radius: 6px;
+  text-decoration: none; color: var(--text-muted);
+  font-weight: 500; transition: all 0.15s;
+}
+.sb-link:hover, .sb-link.active { color: var(--blue); background: var(--blue-light); }
+.sb-icon { font-size: 0.9rem; }
+
+/* 최근 포스트 */
+.recent-list { list-style: none; }
+.recent-link {
+  display: flex; align-items: baseline; gap: 7px;
+  padding: 5px 8px; border-radius: 6px;
+  text-decoration: none; color: var(--text-muted);
+  font-size: 0.8rem; transition: all 0.15s; line-height: 1.4;
+}
+.recent-link:hover, .recent-link.active { color: var(--blue); background: var(--blue-light); }
+.recent-date {
+  font-size: 0.7rem; font-weight: 700; color: var(--blue);
+  flex-shrink: 0; background: var(--blue-light);
+  padding: 1px 6px; border-radius: 4px;
+}
+
+/* ── Responsive ──────────────────────────────────── */
+@media (max-width: 900px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+    padding: 24px 16px 60px;
+  }
+  .sidebar { display: none; }
+}
+
 /* ── Header ──────────────────────────────────────── */
 header {
   background: var(--white);
@@ -75,7 +198,7 @@ nav a {
 nav a:hover { color: var(--blue); }
 
 /* ── Main ────────────────────────────────────────── */
-main { padding: 40px 0 80px; }
+main { }
 
 /* ── Hero ────────────────────────────────────────── */
 .hero {

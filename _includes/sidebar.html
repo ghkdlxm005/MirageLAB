@@ -1,0 +1,96 @@
+<aside class="sidebar">
+
+  <!-- 카테고리 트리 -->
+  <div class="sb-section">
+    <div class="sb-title">카테고리</div>
+    <ul class="cat-tree">
+
+      <li class="cat-parent">
+        <button class="cat-toggle" onclick="toggleCat(this)" aria-expanded="true">
+          <span class="cat-arrow">▾</span> 영어
+        </button>
+        <ul class="cat-children">
+          <li>
+            <a href="{{ '/' | relative_url }}"
+               class="cat-link {% if page.categories contains 'teps' or page.url == '/' %}active{% endif %}">
+              <span class="cat-dot"></span>
+              TEPS
+              <span class="cat-count">{{ site.categories.teps | size }}</span>
+            </a>
+
+            <!-- 월별 아코디언 -->
+            {% if site.categories.teps.size > 0 %}
+            <ul class="month-list">
+              {% assign teps_by_month = site.categories.teps | group_by_exp: "p", "p.date | date: '%Y년 %m월'" %}
+              {% for month in teps_by_month %}
+              <li>
+                <a href="{{ '/' | relative_url }}?m={{ month.name | uri_escape }}"
+                   class="month-link {% if page.date | date: '%Y년 %m월' == month.name %}active{% endif %}">
+                  {{ month.name }}
+                  <span class="cat-count">{{ month.items | size }}</span>
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+
+      {% if site.collections.notes %}
+      <li class="cat-parent">
+        <button class="cat-toggle" onclick="toggleCat(this)" aria-expanded="true">
+          <span class="cat-arrow">▾</span> 학습 노트
+        </button>
+        <ul class="cat-children">
+          <li>
+            <a href="{{ '/notes/' | relative_url }}"
+               class="cat-link {% if page.url contains '/notes/' %}active{% endif %}">
+              <span class="cat-dot"></span>
+              전체 노트
+              <span class="cat-count">{{ site.notes | size }}</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      {% endif %}
+
+    </ul>
+  </div>
+
+  <!-- 바로가기 -->
+  <div class="sb-section">
+    <div class="sb-title">바로가기</div>
+    <ul class="sb-links">
+      <li><a href="{{ '/quiz/' | relative_url }}" class="sb-link {% if page.url contains '/quiz/' %}active{% endif %}">
+        <span class="sb-icon">🎯</span> 단어 퀴즈
+      </a></li>
+    </ul>
+  </div>
+
+  <!-- 최근 포스트 -->
+  <div class="sb-section">
+    <div class="sb-title">최근 포스트</div>
+    <ul class="recent-list">
+      {% for post in site.posts limit:5 %}
+      <li>
+        <a href="{{ post.url | relative_url }}" class="recent-link {% if page.url == post.url %}active{% endif %}">
+          <span class="recent-date">{{ post.date | date: "%m.%d" }}</span>
+          {{ post.title | remove: "TEPS 일일 학습 — " }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+</aside>
+
+<script>
+function toggleCat(btn) {
+  const expanded = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', !expanded);
+  btn.querySelector('.cat-arrow').textContent = expanded ? '▸' : '▾';
+  const ul = btn.nextElementSibling;
+  ul.style.display = expanded ? 'none' : 'block';
+}
+</script>
