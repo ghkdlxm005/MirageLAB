@@ -1,0 +1,37 @@
+name: Generate Etymology Data
+
+on:
+  workflow_dispatch:  # Actions 탭에서 수동으로만 실행
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install groq
+
+      - name: Generate etymology data
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: python generate_etymology.py
+
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add _data/vocab_etymology.json
+          git diff --cached --quiet || git commit -m "chore: generate etymology data for $(python -c 'import ast,re; f=open(\"teps_generator.py\"); c=f.read(); v=ast.literal_eval(re.search(r\"TEPS_VOCABULARY\s*=\s*(\[.*?\])\", c, re.DOTALL).group(1)); print(len(v))')+  words"
+          git push
