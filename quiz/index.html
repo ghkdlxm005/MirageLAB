@@ -94,6 +94,13 @@ title: TEPS 단어 퀴즈
 .feedback.correct { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; }
 .feedback.wrong   { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
 
+.etymology-box {
+  margin-top: 10px; padding: 10px 15px; border-radius: 8px;
+  background: var(--blue-light); border: 1px solid var(--border);
+  font-size: 0.82rem; color: var(--blue-dark); display: none;
+}
+.etymology-box strong { font-size: 0.72rem; letter-spacing: 0.5px; text-transform: uppercase; }
+
 .btn-next {
   width: 100%; background: var(--blue); color: white; border: none;
   border-radius: 10px; padding: 13px; font-size: 0.93rem; font-weight: 700;
@@ -147,7 +154,7 @@ title: TEPS 단어 퀴즈
   <div id="screen-start">
     <div class="quiz-hero">
       <h1>TEPS 단어 퀴즈</h1>
-      <p>컨설텝스 1차~58차 빈출 어휘 {{ site.data.vocab | size }}개</p>
+      <p>뉴텝스 빈출 어휘 {{ site.data.vocab | size }}개</p>
     </div>
 
     <div class="mode-cards">
@@ -186,6 +193,9 @@ title: TEPS 단어 퀴즈
 
     <div class="choices" id="choices"></div>
     <div class="feedback" id="feedback"></div>
+    <div class="etymology-box" id="etymology-box">
+      <strong>어원</strong> — <span id="etymology-text"></span>
+    </div>
     <button class="btn-next" id="btn-next" onclick="nextQuestion()">다음 →</button>
   </div>
 
@@ -208,11 +218,18 @@ title: TEPS 단어 퀴즈
 </div>
 
 <script>
-// ── 어휘 데이터 (Jekyll이 _data/vocab.json 에서 빌드타임에 삽입) ──────────────
+// ── 어휘 데이터 ───────────────────────────────────────────────────────────────
 const VOCAB = [
   {% for item in site.data.vocab %}{"word":{{ item.word | jsonify }},"meaning":{{ item.meaning | jsonify }},"pos":{{ item.pos | jsonify }}},
   {% endfor %}
 ];
+
+// ── 어원 데이터 (generate_etymology.py 실행 후 생성) ───────────────────────────
+{% if site.data.vocab_etymology %}
+const ETYMOLOGY = {{ site.data.vocab_etymology | jsonify }};
+{% else %}
+const ETYMOLOGY = {};
+{% endif %}
 
 // ── 문장 템플릿 (품사별) ─────────────────────────────────────────────────────
 const TMPL = {
@@ -267,7 +284,7 @@ function buildQ(vocab, mode) {
   if (mode === 'word2meaning') {
     const choices = shuffle([vocab.meaning, ...others.map(v => v.meaning)]);
     return {
-      type: '단어 → 뜻',
+      type: '단어 → 뜻', targetWord: vocab.word,
       body: `<div class="question-text">${vocab.word}</div><div class="question-sub">${vocab.pos}</div>`,
       choices, answer: vocab.meaning
     };
@@ -275,7 +292,7 @@ function buildQ(vocab, mode) {
   if (mode === 'meaning2word') {
     const choices = shuffle([vocab.word, ...others.map(v => v.word)]);
     return {
-      type: '뜻 → 단어',
+      type: '뜻 → 단어', targetWord: vocab.word,
       body: `<div class="question-text">${vocab.meaning}</div><div class="question-sub">${vocab.pos}</div>`,
       choices, answer: vocab.word
     };
@@ -283,7 +300,7 @@ function buildQ(vocab, mode) {
   // sentence
   const choices = shuffle([vocab.meaning, ...others.map(v => v.meaning)]);
   return {
-    type: '문장 속 단어',
+    type: '문장 속 단어', targetWord: vocab.word,
     body: `<div class="sentence-box">${makeSentence(vocab.word, vocab.pos)}</div>`,
     choices, answer: vocab.meaning
   };
@@ -352,6 +369,7 @@ function showQuestion() {
 
   const fb = document.getElementById('feedback');
   fb.style.display = 'none'; fb.className = 'feedback';
+  document.getElementById('etymology-box').style.display = 'none';
   document.getElementById('btn-next').style.display = 'none';
 }
 
@@ -359,6 +377,7 @@ function selectAnswer(btn, chosen, correct) {
   if (answered) return;
   answered = true;
 
+  const q = questions[currentQ];
   document.querySelectorAll('.choice-btn').forEach(b => b.disabled = true);
 
   const fb = document.getElementById('feedback');
@@ -376,6 +395,17 @@ function selectAnswer(btn, chosen, correct) {
     });
   }
   fb.style.display = 'block';
+
+  // 어원 표시
+  const etym = ETYMOLOGY[q.targetWord];
+  const etymBox = document.getElementById('etymology-box');
+  if (etym) {
+    document.getElementById('etymology-text').textContent = etym;
+    etymBox.style.display = 'block';
+  } else {
+    etymBox.style.display = 'none';
+  }
+
   document.getElementById('btn-next').style.display = 'block';
 }
 

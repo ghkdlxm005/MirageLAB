@@ -4,7 +4,7 @@ teps_generator.py
 Groq API (llama-3.1-8b-instant)를 사용해 매일 TEPS 포스트를 생성하고
 _posts/ 폴더에 Jekyll 마크다운 파일로 저장합니다.
 
-단어 소스: 컨설텝스 뉴텝스 빈출 어휘 1차~58차 (총 1400+ 단어)
+단어 소스: 뉴텝스 빈출 어휘 1차~58차 (총 1400+ 단어)
 실행: python teps_generator.py
 환경변수: GROQ_API_KEY
 """
@@ -20,7 +20,7 @@ KST = timezone(timedelta(hours=9))
 MODEL = "llama-3.1-8b-instant"
 POSTS_DIR = "_posts"
 
-# ── TEPS 빈출 어휘 (컨설텝스 뉴텝스 1차~40차) ────────────────────────────────
+# ── TEPS 빈출 어휘 (뉴텝스 1차~58차) ────────────────────────────────────────
 # 형식: (영어 단어, 한국어 의미, 품사)
 TEPS_VOCABULARY = [
     # 1차
@@ -1396,7 +1396,8 @@ SYSTEM_WORD_QUIZ = """You are a TEPS vocabulary instructor writing daily study c
 RULES (no exceptions):
 - Use ONLY English and Korean (Hangul). No Chinese characters, no other scripts.
 - No emojis.
-- Korean translations must use ONLY Korean words — never Chinese characters."""
+- Korean translations must use ONLY Korean words — never Chinese characters.
+- For 어원 (etymology): write 1 short Korean sentence about the Latin/Greek/Old English root. Example: "라틴어 virulentus(독이 있는)에서 유래, virus(독)가 어근." Keep it under 30 Korean characters."""
 
 # word_block은 Python이 직접 채운 단어 헤더 (단어/뜻/품사는 LLM이 바꾸지 못함)
 WORD_QUIZ_TEMPLATE = """Below are today's 5 TEPS words. The word, meaning, and part of speech are already filled in.
@@ -1549,6 +1550,7 @@ def _build_word_block(words: list) -> tuple[str, str]:
         entry_lines.append(
             f"**{i}. {word}** ([Korean pronunciation]) _{pos}_\n"
             f"- 뜻: {meaning}\n"
+            f"- 어원: [brief etymology in Korean, e.g. 라틴어/그리스어 어근 설명 1문장]\n"
             f"- 예문: [English example sentence]\n"
             f"- 해석: [Korean translation]\n"
         )
