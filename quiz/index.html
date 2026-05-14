@@ -1,0 +1,404 @@
+---
+layout: default
+title: TEPS 단어 퀴즈
+---
+
+<style>
+.quiz-wrap { max-width: 600px; margin: 0 auto; }
+
+/* ── Start ── */
+.quiz-hero {
+  background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+  color: white; padding: 36px 32px; border-radius: 16px;
+  text-align: center; margin-bottom: 24px;
+}
+.quiz-hero h1 { font-size: 1.7rem; font-weight: 700; margin-bottom: 6px; }
+.quiz-hero p  { font-size: 0.88rem; opacity: 0.82; }
+
+.mode-cards { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+.mode-card {
+  background: var(--white); border: 2px solid var(--border);
+  border-radius: 12px; padding: 15px 20px; cursor: pointer;
+  transition: all 0.15s; text-align: left;
+}
+.mode-card:hover, .mode-card.selected {
+  border-color: var(--blue); background: var(--blue-light);
+}
+.mode-card h3 { font-size: 0.93rem; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+.mode-card p  { font-size: 0.8rem; color: var(--text-muted); }
+
+.btn-primary {
+  width: 100%; background: var(--blue); color: white; border: none;
+  border-radius: 12px; padding: 15px; font-size: 1rem; font-weight: 700;
+  cursor: pointer; transition: background 0.15s; font-family: inherit;
+}
+.btn-primary:hover { background: var(--blue-dark); }
+
+/* ── Progress ── */
+.progress-text {
+  text-align: right; font-size: 0.78rem; color: var(--text-muted);
+  font-weight: 600; margin-bottom: 6px;
+}
+.progress-bar {
+  background: var(--ivory-dark); border-radius: 99px; height: 6px;
+  margin-bottom: 22px; overflow: hidden;
+}
+.progress-fill {
+  background: var(--blue); height: 100%; border-radius: 99px;
+  transition: width 0.3s ease;
+}
+
+/* ── Question ── */
+.question-card {
+  background: var(--white); border-radius: 14px; padding: 26px 28px;
+  border: 1px solid var(--border); box-shadow: var(--shadow); margin-bottom: 16px;
+}
+.q-type-badge {
+  display: inline-block; background: var(--blue-light); color: var(--blue);
+  font-size: 0.68rem; font-weight: 700; padding: 3px 10px;
+  border-radius: 20px; letter-spacing: 0.5px; margin-bottom: 14px;
+}
+.question-text { font-size: 1.25rem; font-weight: 700; color: var(--text); line-height: 1.45; }
+.question-sub  { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
+.sentence-box {
+  font-size: 0.97rem; color: var(--text); line-height: 1.75;
+  background: var(--ivory); padding: 14px 18px; border-radius: 8px;
+  border-left: 3px solid var(--blue);
+}
+.target-word { color: var(--blue); font-weight: 700; text-decoration: underline; text-decoration-style: dotted; }
+
+/* ── Choices ── */
+.choices { display: flex; flex-direction: column; gap: 9px; }
+.choice-btn {
+  background: var(--white); border: 2px solid var(--border);
+  border-radius: 10px; padding: 13px 16px; text-align: left; cursor: pointer;
+  transition: all 0.13s; font-size: 0.9rem; color: var(--text);
+  font-family: inherit; font-weight: 500; display: flex; align-items: center; gap: 12px;
+}
+.choice-btn:hover:not(:disabled) { border-color: var(--blue); background: var(--blue-light); }
+.choice-btn.correct { border-color: #16a34a; background: #f0fdf4; color: #15803d; }
+.choice-btn.wrong   { border-color: #dc2626; background: #fef2f2; color: #dc2626; }
+.choice-btn:disabled { cursor: default; }
+.choice-label {
+  background: var(--blue-light); color: var(--blue); font-size: 0.72rem; font-weight: 700;
+  min-width: 24px; height: 24px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.choice-btn.correct .choice-label { background: #dcfce7; color: #16a34a; }
+.choice-btn.wrong   .choice-label { background: #fee2e2; color: #dc2626; }
+
+.feedback {
+  padding: 11px 16px; border-radius: 9px; font-size: 0.86rem; font-weight: 600;
+  margin-top: 12px; display: none;
+}
+.feedback.correct { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; }
+.feedback.wrong   { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+
+.btn-next {
+  width: 100%; background: var(--blue); color: white; border: none;
+  border-radius: 10px; padding: 13px; font-size: 0.93rem; font-weight: 700;
+  cursor: pointer; margin-top: 12px; display: none; font-family: inherit;
+  transition: background 0.15s;
+}
+.btn-next:hover { background: var(--blue-dark); }
+
+/* ── Result ── */
+.result-card {
+  background: var(--white); border-radius: 14px; padding: 40px 28px;
+  text-align: center; border: 1px solid var(--border); box-shadow: var(--shadow);
+}
+.score-ring {
+  width: 110px; height: 110px;
+  background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+  border-radius: 50%; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  margin: 0 auto 22px; color: white;
+}
+.score-ring .score-num { font-size: 2.1rem; font-weight: 700; line-height: 1; }
+.score-ring .score-den { font-size: 0.82rem; opacity: 0.8; }
+.result-msg { font-size: 1.25rem; font-weight: 700; margin-bottom: 6px; }
+.result-sub { font-size: 0.86rem; color: var(--text-muted); margin-bottom: 26px; }
+.result-btns { display: flex; gap: 10px; }
+.btn-retry {
+  flex: 1; background: var(--blue); color: white; border: none;
+  border-radius: 10px; padding: 13px; font-size: 0.9rem; font-weight: 700;
+  cursor: pointer; font-family: inherit; transition: background 0.15s;
+}
+.btn-retry:hover { background: var(--blue-dark); }
+.btn-other {
+  flex: 1; background: var(--ivory); color: var(--text);
+  border: 2px solid var(--border); border-radius: 10px; padding: 13px;
+  font-size: 0.9rem; font-weight: 700; cursor: pointer;
+  font-family: inherit; transition: all 0.15s;
+}
+.btn-other:hover { border-color: var(--blue); color: var(--blue); }
+
+@media (max-width: 640px) {
+  .quiz-hero { padding: 26px 20px; }
+  .quiz-hero h1 { font-size: 1.45rem; }
+  .question-card { padding: 20px; }
+  .question-text { font-size: 1.1rem; }
+}
+</style>
+
+<div class="quiz-wrap">
+
+  <!-- ── START ── -->
+  <div id="screen-start">
+    <div class="quiz-hero">
+      <h1>TEPS 단어 퀴즈</h1>
+      <p>컨설텝스 1차~58차 빈출 어휘 {{ site.data.vocab | size }}개</p>
+    </div>
+
+    <div class="mode-cards">
+      <div class="mode-card selected" data-mode="mix" onclick="selectMode(this)">
+        <h3>🔀 혼합 모드</h3>
+        <p>단어→뜻 · 뜻→단어 · 문장 속 단어 무작위 출제</p>
+      </div>
+      <div class="mode-card" data-mode="word2meaning" onclick="selectMode(this)">
+        <h3>🔤 단어 → 뜻</h3>
+        <p>영단어를 보고 한국어 뜻 고르기</p>
+      </div>
+      <div class="mode-card" data-mode="meaning2word" onclick="selectMode(this)">
+        <h3>🇰🇷 뜻 → 단어</h3>
+        <p>한국어 뜻을 보고 영단어 고르기</p>
+      </div>
+      <div class="mode-card" data-mode="sentence" onclick="selectMode(this)">
+        <h3>📖 문장 속 단어</h3>
+        <p>문장 안에서 단어의 뜻 파악하기</p>
+      </div>
+    </div>
+
+    <button class="btn-primary" onclick="startQuiz()">시작하기 →</button>
+  </div>
+
+  <!-- ── QUESTION ── -->
+  <div id="screen-question" style="display:none">
+    <div class="progress-text" id="progress-text">1 / 10</div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+    </div>
+
+    <div class="question-card">
+      <span class="q-type-badge" id="q-type"></span>
+      <div id="q-body"></div>
+    </div>
+
+    <div class="choices" id="choices"></div>
+    <div class="feedback" id="feedback"></div>
+    <button class="btn-next" id="btn-next" onclick="nextQuestion()">다음 →</button>
+  </div>
+
+  <!-- ── RESULT ── -->
+  <div id="screen-result" style="display:none">
+    <div class="result-card">
+      <div class="score-ring">
+        <span class="score-num" id="score-num">0</span>
+        <span class="score-den">/ 10</span>
+      </div>
+      <div class="result-msg" id="result-msg"></div>
+      <div class="result-sub" id="result-sub"></div>
+      <div class="result-btns">
+        <button class="btn-retry" onclick="retryQuiz()">다시 풀기</button>
+        <button class="btn-other" onclick="showStart()">모드 변경</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ── 어휘 데이터 (Jekyll이 _data/vocab.json 에서 빌드타임에 삽입) ──────────────
+const VOCAB = [
+  {% for item in site.data.vocab %}{"word":{{ item.word | jsonify }},"meaning":{{ item.meaning | jsonify }},"pos":{{ item.pos | jsonify }}},
+  {% endfor %}
+];
+
+// ── 문장 템플릿 (품사별) ─────────────────────────────────────────────────────
+const TMPL = {
+  '동사': [
+    "The government decided to <span class='target-word'>★</span> the controversial policy.",
+    "Experts urged the committee to <span class='target-word'>★</span> the outdated guidelines.",
+    "The organization had to <span class='target-word'>★</span> its position on the matter.",
+    "Authorities moved quickly to <span class='target-word'>★</span> the growing crisis.",
+  ],
+  '명사': [
+    "The <span class='target-word'>★</span> of natural resources became a pressing concern.",
+    "The professor explained the concept of <span class='target-word'>★</span> in her lecture.",
+    "There was widespread debate about the role of <span class='target-word'>★</span> in modern society.",
+    "The report highlighted the dangers of unchecked <span class='target-word'>★</span>.",
+  ],
+  '형용사': [
+    "Critics described the new policy as <span class='target-word'>★</span> and counterproductive.",
+    "The situation was deemed too <span class='target-word'>★</span> to ignore.",
+    "Officials gave a <span class='target-word'>★</span> response to the journalists.",
+    "The results were considered surprisingly <span class='target-word'>★</span> by researchers.",
+  ],
+  '부사': [
+    "She handled the difficult negotiation <span class='target-word'>★</span>.",
+    "The team <span class='target-word'>★</span> revised its strategy after the setback.",
+  ],
+};
+const TMPL_DEFAULT = [
+  "The concept of <span class='target-word'>★</span> is central to this discussion.",
+  "Understanding <span class='target-word'>★</span> is essential for TEPS success.",
+];
+
+// ── 상태 ────────────────────────────────────────────────────────────────────
+let currentMode = 'mix';
+let questions = [];
+let currentQ = 0;
+let score = 0;
+let answered = false;
+
+// ── 유틸 ────────────────────────────────────────────────────────────────────
+function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5); }
+function getRandom(arr, n) { return shuffle(arr).slice(0, n); }
+
+function makeSentence(word, pos) {
+  const pool = TMPL[pos] || TMPL_DEFAULT;
+  return pool[Math.floor(Math.random() * pool.length)].replace('★', word);
+}
+
+// ── 문제 생성 ────────────────────────────────────────────────────────────────
+function buildQ(vocab, mode) {
+  const others = getRandom(VOCAB.filter(v => v !== vocab), 3);
+
+  if (mode === 'word2meaning') {
+    const choices = shuffle([vocab.meaning, ...others.map(v => v.meaning)]);
+    return {
+      type: '단어 → 뜻',
+      body: `<div class="question-text">${vocab.word}</div><div class="question-sub">${vocab.pos}</div>`,
+      choices, answer: vocab.meaning
+    };
+  }
+  if (mode === 'meaning2word') {
+    const choices = shuffle([vocab.word, ...others.map(v => v.word)]);
+    return {
+      type: '뜻 → 단어',
+      body: `<div class="question-text">${vocab.meaning}</div><div class="question-sub">${vocab.pos}</div>`,
+      choices, answer: vocab.word
+    };
+  }
+  // sentence
+  const choices = shuffle([vocab.meaning, ...others.map(v => v.meaning)]);
+  return {
+    type: '문장 속 단어',
+    body: `<div class="sentence-box">${makeSentence(vocab.word, vocab.pos)}</div>`,
+    choices, answer: vocab.meaning
+  };
+}
+
+function generateQuestions(mode, n = 10) {
+  const pool = getRandom(VOCAB, n);
+  const modes = mode === 'mix'
+    ? shuffle(['word2meaning', 'meaning2word', 'sentence', 'word2meaning', 'meaning2word',
+               'sentence', 'word2meaning', 'meaning2word', 'sentence', 'word2meaning'])
+    : Array(n).fill(mode);
+  return pool.map((v, i) => buildQ(v, modes[i]));
+}
+
+// ── 화면 전환 ────────────────────────────────────────────────────────────────
+function show(id) {
+  ['screen-start','screen-question','screen-result'].forEach(s =>
+    document.getElementById(s).style.display = s === id ? 'block' : 'none'
+  );
+}
+
+function selectMode(el) {
+  document.querySelectorAll('.mode-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  currentMode = el.dataset.mode;
+}
+
+function startQuiz() {
+  questions = generateQuestions(currentMode);
+  currentQ = 0; score = 0;
+  show('screen-question');
+  showQuestion();
+}
+
+function retryQuiz() {
+  questions = generateQuestions(currentMode);
+  currentQ = 0; score = 0;
+  show('screen-question');
+  showQuestion();
+}
+
+function showStart() { show('screen-start'); }
+
+// ── 문제 표시 ────────────────────────────────────────────────────────────────
+function showQuestion() {
+  answered = false;
+  const q = questions[currentQ];
+  const total = questions.length;
+
+  document.getElementById('progress-text').textContent = `${currentQ + 1} / ${total}`;
+  document.getElementById('progress-fill').style.width = `${(currentQ / total) * 100}%`;
+  document.getElementById('q-type').textContent = q.type;
+  document.getElementById('q-body').innerHTML = q.body;
+
+  const labels = ['A','B','C','D'];
+  const choicesEl = document.getElementById('choices');
+  choicesEl.innerHTML = '';
+  q.choices.forEach((c, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'choice-btn';
+    btn.dataset.choice = c;
+    btn.innerHTML = `<span class="choice-label">${labels[i]}</span>${c}`;
+    btn.onclick = () => selectAnswer(btn, c, q.answer);
+    choicesEl.appendChild(btn);
+  });
+
+  const fb = document.getElementById('feedback');
+  fb.style.display = 'none'; fb.className = 'feedback';
+  document.getElementById('btn-next').style.display = 'none';
+}
+
+function selectAnswer(btn, chosen, correct) {
+  if (answered) return;
+  answered = true;
+
+  document.querySelectorAll('.choice-btn').forEach(b => b.disabled = true);
+
+  const fb = document.getElementById('feedback');
+  if (chosen === correct) {
+    btn.classList.add('correct');
+    fb.className = 'feedback correct';
+    fb.textContent = '✓ 정답!';
+    score++;
+  } else {
+    btn.classList.add('wrong');
+    fb.className = 'feedback wrong';
+    fb.textContent = `✗ 오답 — 정답: ${correct}`;
+    document.querySelectorAll('.choice-btn').forEach(b => {
+      if (b.dataset.choice === correct) b.classList.add('correct');
+    });
+  }
+  fb.style.display = 'block';
+  document.getElementById('btn-next').style.display = 'block';
+}
+
+function nextQuestion() {
+  currentQ++;
+  if (currentQ >= questions.length) showResult();
+  else showQuestion();
+}
+
+// ── 결과 ─────────────────────────────────────────────────────────────────────
+function showResult() {
+  show('screen-result');
+  document.getElementById('progress-fill').style.width = '100%';
+  document.getElementById('score-num').textContent = score;
+
+  const pct = (score / questions.length) * 100;
+  const [msg, sub] =
+    pct === 100 ? ['완벽해요! 🎉', '모든 문제를 맞혔습니다.'] :
+    pct >= 80   ? ['잘했어요! 👍', `${questions.length - score}개 틀렸습니다. 조금만 더!`] :
+    pct >= 60   ? ['나쁘지 않아요 😊', '복습하고 다시 도전해보세요.'] :
+                  ['더 열심히 해봐요 💪', '단어 포스트를 다시 읽어보세요.'];
+
+  document.getElementById('result-msg').textContent = msg;
+  document.getElementById('result-sub').textContent = sub;
+}
+</script>

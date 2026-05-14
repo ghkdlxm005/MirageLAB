@@ -1,0 +1,6437 @@
+[
+  {
+    "word": "public",
+    "meaning": "대중의, 대중",
+    "pos": "형용사"
+  },
+  {
+    "word": "likely",
+    "meaning": "~할 것 같은",
+    "pos": "형용사"
+  },
+  {
+    "word": "unlikely",
+    "meaning": "~할 것 같지 않은",
+    "pos": "형용사"
+  },
+  {
+    "word": "available",
+    "meaning": "이용할 수 있는",
+    "pos": "형용사"
+  },
+  {
+    "word": "species",
+    "meaning": "종",
+    "pos": "명사"
+  },
+  {
+    "word": "offer",
+    "meaning": "제안하다",
+    "pos": "동사"
+  },
+  {
+    "word": "local",
+    "meaning": "지역의",
+    "pos": "형용사"
+  },
+  {
+    "word": "ancient",
+    "meaning": "고대의",
+    "pos": "형용사"
+  },
+  {
+    "word": "major",
+    "meaning": "주요한",
+    "pos": "형용사"
+  },
+  {
+    "word": "majority",
+    "meaning": "다수",
+    "pos": "명사"
+  },
+  {
+    "word": "common",
+    "meaning": "일반적인, 공통의",
+    "pos": "형용사"
+  },
+  {
+    "word": "announcement",
+    "meaning": "발표",
+    "pos": "명사"
+  },
+  {
+    "word": "market",
+    "meaning": "시장",
+    "pos": "명사"
+  },
+  {
+    "word": "rate",
+    "meaning": "속도, 비율",
+    "pos": "명사"
+  },
+  {
+    "word": "current",
+    "meaning": "현재의, 흐름",
+    "pos": "형용사"
+  },
+  {
+    "word": "provide",
+    "meaning": "제공하다",
+    "pos": "동사"
+  },
+  {
+    "word": "policy",
+    "meaning": "정책",
+    "pos": "명사"
+  },
+  {
+    "word": "decision",
+    "meaning": "결정",
+    "pos": "명사"
+  },
+  {
+    "word": "receive",
+    "meaning": "받다",
+    "pos": "동사"
+  },
+  {
+    "word": "novel",
+    "meaning": "새로운, 소설",
+    "pos": "형용사"
+  },
+  {
+    "word": "means",
+    "meaning": "수단, 방법",
+    "pos": "명사"
+  },
+  {
+    "word": "effective",
+    "meaning": "효과적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "performance",
+    "meaning": "공연, 성과",
+    "pos": "명사"
+  },
+  {
+    "word": "benefits",
+    "meaning": "이익",
+    "pos": "명사"
+  },
+  {
+    "word": "comprehension",
+    "meaning": "이해",
+    "pos": "명사"
+  },
+  {
+    "word": "comprehensive",
+    "meaning": "포괄적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "avoid",
+    "meaning": "회피하다",
+    "pos": "동사"
+  },
+  {
+    "word": "theory",
+    "meaning": "이론",
+    "pos": "명사"
+  },
+  {
+    "word": "disease",
+    "meaning": "질병",
+    "pos": "명사"
+  },
+  {
+    "word": "income",
+    "meaning": "수입",
+    "pos": "명사"
+  },
+  {
+    "word": "staff",
+    "meaning": "직원",
+    "pos": "명사"
+  },
+  {
+    "word": "original",
+    "meaning": "원래의, 독창적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "origin",
+    "meaning": "기원",
+    "pos": "명사"
+  },
+  {
+    "word": "control",
+    "meaning": "지배, 지배하다",
+    "pos": "명사"
+  },
+  {
+    "word": "choose",
+    "meaning": "선택하다",
+    "pos": "동사"
+  },
+  {
+    "word": "matter",
+    "meaning": "문제, 중요하다",
+    "pos": "명사"
+  },
+  {
+    "word": "contact",
+    "meaning": "연락, 연락하다",
+    "pos": "명사"
+  },
+  {
+    "word": "decide",
+    "meaning": "결정하다",
+    "pos": "동사"
+  },
+  {
+    "word": "industry",
+    "meaning": "산업",
+    "pos": "명사"
+  },
+  {
+    "word": "growth",
+    "meaning": "성장",
+    "pos": "명사"
+  },
+  {
+    "word": "practice",
+    "meaning": "연습, 관행",
+    "pos": "명사"
+  },
+  {
+    "word": "value",
+    "meaning": "가치",
+    "pos": "명사"
+  },
+  {
+    "word": "valuable",
+    "meaning": "소중한, 값비싼",
+    "pos": "형용사"
+  },
+  {
+    "word": "environment",
+    "meaning": "환경",
+    "pos": "명사"
+  },
+  {
+    "word": "environmental",
+    "meaning": "환경의",
+    "pos": "형용사"
+  },
+  {
+    "word": "individual",
+    "meaning": "개인의",
+    "pos": "형용사"
+  },
+  {
+    "word": "produce",
+    "meaning": "생산하다",
+    "pos": "동사"
+  },
+  {
+    "word": "lack",
+    "meaning": "부족, 부족하다",
+    "pos": "명사"
+  },
+  {
+    "word": "media",
+    "meaning": "매체",
+    "pos": "명사"
+  },
+  {
+    "word": "impact",
+    "meaning": "충격, 영향",
+    "pos": "명사"
+  },
+  {
+    "word": "criticism",
+    "meaning": "비판, 비평",
+    "pos": "명사"
+  },
+  {
+    "word": "risk",
+    "meaning": "위험",
+    "pos": "명사"
+  },
+  {
+    "word": "behavior",
+    "meaning": "행동",
+    "pos": "명사"
+  },
+  {
+    "word": "improve",
+    "meaning": "개선하다",
+    "pos": "동사"
+  },
+  {
+    "word": "resources",
+    "meaning": "자원",
+    "pos": "명사"
+  },
+  {
+    "word": "eventually",
+    "meaning": "결국, 마침내",
+    "pos": "부사"
+  },
+  {
+    "word": "construction",
+    "meaning": "건설, 공사",
+    "pos": "명사"
+  },
+  {
+    "word": "influence",
+    "meaning": "영향",
+    "pos": "명사"
+  },
+  {
+    "word": "toward",
+    "meaning": "~을 향하여",
+    "pos": "전치사"
+  },
+  {
+    "word": "previous",
+    "meaning": "이전의",
+    "pos": "형용사"
+  },
+  {
+    "word": "potential",
+    "meaning": "가능성이 있는",
+    "pos": "형용사"
+  },
+  {
+    "word": "damage",
+    "meaning": "피해, 손상을 주다",
+    "pos": "명사"
+  },
+  {
+    "word": "charge",
+    "meaning": "요금, 청구하다",
+    "pos": "명사"
+  },
+  {
+    "word": "reduce",
+    "meaning": "줄이다",
+    "pos": "동사"
+  },
+  {
+    "word": "responsible",
+    "meaning": "책임이 있는",
+    "pos": "형용사"
+  },
+  {
+    "word": "responsibility",
+    "meaning": "책임",
+    "pos": "명사"
+  },
+  {
+    "word": "particular",
+    "meaning": "특정한",
+    "pos": "형용사"
+  },
+  {
+    "word": "particularly",
+    "meaning": "특히",
+    "pos": "부사"
+  },
+  {
+    "word": "global",
+    "meaning": "세계적인, 전반적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "management",
+    "meaning": "경영",
+    "pos": "명사"
+  },
+  {
+    "word": "amount",
+    "meaning": "양",
+    "pos": "명사"
+  },
+  {
+    "word": "general",
+    "meaning": "일반적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "create",
+    "meaning": "창조하다",
+    "pos": "동사"
+  },
+  {
+    "word": "allow",
+    "meaning": "허락하다",
+    "pos": "동사"
+  },
+  {
+    "word": "request",
+    "meaning": "요청, 요청하다",
+    "pos": "명사"
+  },
+  {
+    "word": "prevent",
+    "meaning": "예방하다",
+    "pos": "동사"
+  },
+  {
+    "word": "security",
+    "meaning": "보안, 경비",
+    "pos": "명사"
+  },
+  {
+    "word": "secure",
+    "meaning": "안심하는, 확보하다",
+    "pos": "형용사"
+  },
+  {
+    "word": "fiction",
+    "meaning": "소설, 허구",
+    "pos": "명사"
+  },
+  {
+    "word": "apply",
+    "meaning": "지원하다, 적용하다",
+    "pos": "동사"
+  },
+  {
+    "word": "application",
+    "meaning": "지원서, 신청",
+    "pos": "명사"
+  },
+  {
+    "word": "evidence",
+    "meaning": "증거",
+    "pos": "명사"
+  },
+  {
+    "word": "purchase",
+    "meaning": "구입하다, 구매",
+    "pos": "동사"
+  },
+  {
+    "word": "status",
+    "meaning": "신분, 지위",
+    "pos": "명사"
+  },
+  {
+    "word": "budget",
+    "meaning": "예산",
+    "pos": "명사"
+  },
+  {
+    "word": "annual",
+    "meaning": "연례의",
+    "pos": "형용사"
+  },
+  {
+    "word": "complex",
+    "meaning": "복잡한",
+    "pos": "형용사"
+  },
+  {
+    "word": "physical",
+    "meaning": "육체의",
+    "pos": "형용사"
+  },
+  {
+    "word": "spread",
+    "meaning": "번식하다, 퍼지다",
+    "pos": "동사"
+  },
+  {
+    "word": "officials",
+    "meaning": "공무원들",
+    "pos": "명사"
+  },
+  {
+    "word": "proposal",
+    "meaning": "제안",
+    "pos": "명사"
+  },
+  {
+    "word": "addition",
+    "meaning": "추가, 덧셈",
+    "pos": "명사"
+  },
+  {
+    "word": "competition",
+    "meaning": "경쟁, 대회",
+    "pos": "명사"
+  },
+  {
+    "word": "compete",
+    "meaning": "경쟁하다",
+    "pos": "동사"
+  },
+  {
+    "word": "highly",
+    "meaning": "대단히, 매우",
+    "pos": "부사"
+  },
+  {
+    "word": "depression",
+    "meaning": "우울증",
+    "pos": "명사"
+  },
+  {
+    "word": "advice",
+    "meaning": "조언",
+    "pos": "명사"
+  },
+  {
+    "word": "average",
+    "meaning": "평균의, 일반적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "material",
+    "meaning": "재료",
+    "pos": "명사"
+  },
+  {
+    "word": "notice",
+    "meaning": "인식하다, 공고문",
+    "pos": "동사"
+  },
+  {
+    "word": "weight",
+    "meaning": "체중",
+    "pos": "명사"
+  },
+  {
+    "word": "labor",
+    "meaning": "노동, 근로",
+    "pos": "명사"
+  },
+  {
+    "word": "property",
+    "meaning": "재산",
+    "pos": "명사"
+  },
+  {
+    "word": "contract",
+    "meaning": "계약서, 수축하다",
+    "pos": "명사"
+  },
+  {
+    "word": "deal",
+    "meaning": "거래, 다루다",
+    "pos": "명사"
+  },
+  {
+    "word": "access",
+    "meaning": "접근, 접근하다",
+    "pos": "명사"
+  },
+  {
+    "word": "nearly",
+    "meaning": "거의",
+    "pos": "부사"
+  },
+  {
+    "word": "focus",
+    "meaning": "집중시키다, 주목",
+    "pos": "동사"
+  },
+  {
+    "word": "exercise",
+    "meaning": "운동",
+    "pos": "명사"
+  },
+  {
+    "word": "mental",
+    "meaning": "정신의",
+    "pos": "형용사"
+  },
+  {
+    "word": "regular",
+    "meaning": "규칙적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "claim",
+    "meaning": "주장하다, 요구하다",
+    "pos": "동사"
+  },
+  {
+    "word": "private",
+    "meaning": "사적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "privacy",
+    "meaning": "사생활",
+    "pos": "명사"
+  },
+  {
+    "word": "insurance",
+    "meaning": "보험",
+    "pos": "명사"
+  },
+  {
+    "word": "methods",
+    "meaning": "방법",
+    "pos": "명사"
+  },
+  {
+    "word": "condition",
+    "meaning": "상태",
+    "pos": "명사"
+  },
+  {
+    "word": "suggest",
+    "meaning": "제안하다",
+    "pos": "동사"
+  },
+  {
+    "word": "rights",
+    "meaning": "권리",
+    "pos": "명사"
+  },
+  {
+    "word": "prior",
+    "meaning": "사전의, 우선적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "priority",
+    "meaning": "우선 사항",
+    "pos": "명사"
+  },
+  {
+    "word": "bill",
+    "meaning": "계산서, 요금",
+    "pos": "명사"
+  },
+  {
+    "word": "fee",
+    "meaning": "수수료",
+    "pos": "명사"
+  },
+  {
+    "word": "consumers",
+    "meaning": "소비자들",
+    "pos": "명사"
+  },
+  {
+    "word": "attempt",
+    "meaning": "시도",
+    "pos": "명사"
+  },
+  {
+    "word": "atmosphere",
+    "meaning": "대기, 분위기",
+    "pos": "명사"
+  },
+  {
+    "word": "additional",
+    "meaning": "추가적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "especially",
+    "meaning": "특히",
+    "pos": "부사"
+  },
+  {
+    "word": "specific",
+    "meaning": "구체적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "review",
+    "meaning": "검토, 비평",
+    "pos": "명사"
+  },
+  {
+    "word": "remain",
+    "meaning": "남다, 남아 있다",
+    "pos": "동사"
+  },
+  {
+    "word": "attend",
+    "meaning": "참석하다",
+    "pos": "동사"
+  },
+  {
+    "word": "region",
+    "meaning": "지방",
+    "pos": "명사"
+  },
+  {
+    "word": "climate",
+    "meaning": "기후, 분위기",
+    "pos": "명사"
+  },
+  {
+    "word": "native",
+    "meaning": "태어난 곳의",
+    "pos": "형용사"
+  },
+  {
+    "word": "election",
+    "meaning": "선거",
+    "pos": "명사"
+  },
+  {
+    "word": "location",
+    "meaning": "장소",
+    "pos": "명사"
+  },
+  {
+    "word": "organic",
+    "meaning": "유기농의",
+    "pos": "형용사"
+  },
+  {
+    "word": "pressure",
+    "meaning": "압박, 압력",
+    "pos": "명사"
+  },
+  {
+    "word": "significant",
+    "meaning": "중요한",
+    "pos": "형용사"
+  },
+  {
+    "word": "necessary",
+    "meaning": "필요한",
+    "pos": "형용사"
+  },
+  {
+    "word": "surface",
+    "meaning": "표면",
+    "pos": "명사"
+  },
+  {
+    "word": "source",
+    "meaning": "원천",
+    "pos": "명사"
+  },
+  {
+    "word": "range",
+    "meaning": "범위",
+    "pos": "명사"
+  },
+  {
+    "word": "treatment",
+    "meaning": "치료, 대우",
+    "pos": "명사"
+  },
+  {
+    "word": "demand",
+    "meaning": "요구, 요구하다",
+    "pos": "명사"
+  },
+  {
+    "word": "relationship",
+    "meaning": "관계",
+    "pos": "명사"
+  },
+  {
+    "word": "essential",
+    "meaning": "필수적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "approach",
+    "meaning": "다가가다, 접근법",
+    "pos": "동사"
+  },
+  {
+    "word": "accept",
+    "meaning": "받아들이다",
+    "pos": "동사"
+  },
+  {
+    "word": "population",
+    "meaning": "인구",
+    "pos": "명사"
+  },
+  {
+    "word": "tend",
+    "meaning": "경향이 있다",
+    "pos": "동사"
+  },
+  {
+    "word": "tendency",
+    "meaning": "경향",
+    "pos": "명사"
+  },
+  {
+    "word": "maintain",
+    "meaning": "유지하다",
+    "pos": "동사"
+  },
+  {
+    "word": "ensure",
+    "meaning": "보장하다",
+    "pos": "동사"
+  },
+  {
+    "word": "participants",
+    "meaning": "참가자들",
+    "pos": "명사"
+  },
+  {
+    "word": "participation",
+    "meaning": "참가",
+    "pos": "명사"
+  },
+  {
+    "word": "experts",
+    "meaning": "전문가들",
+    "pos": "명사"
+  },
+  {
+    "word": "definitely",
+    "meaning": "분명히",
+    "pos": "부사"
+  },
+  {
+    "word": "encourage",
+    "meaning": "권장하다, 장려하다",
+    "pos": "동사"
+  },
+  {
+    "word": "affordable",
+    "meaning": "감당할 수 있는",
+    "pos": "형용사"
+  },
+  {
+    "word": "character",
+    "meaning": "성격, 특징",
+    "pos": "명사"
+  },
+  {
+    "word": "characteristics",
+    "meaning": "특성들",
+    "pos": "명사"
+  },
+  {
+    "word": "court",
+    "meaning": "법정",
+    "pos": "명사"
+  },
+  {
+    "word": "submit",
+    "meaning": "제출하다, 항복하다",
+    "pos": "동사"
+  },
+  {
+    "word": "civil",
+    "meaning": "시민의",
+    "pos": "형용사"
+  },
+  {
+    "word": "supply",
+    "meaning": "공급, 공급하다",
+    "pos": "명사"
+  },
+  {
+    "word": "assistance",
+    "meaning": "도움, 원조",
+    "pos": "명사"
+  },
+  {
+    "word": "familiar",
+    "meaning": "친숙한",
+    "pos": "형용사"
+  },
+  {
+    "word": "recommend",
+    "meaning": "추천하다",
+    "pos": "동사"
+  },
+  {
+    "word": "race",
+    "meaning": "경주, 경쟁",
+    "pos": "명사"
+  },
+  {
+    "word": "advanced",
+    "meaning": "상급의",
+    "pos": "형용사"
+  },
+  {
+    "word": "stock",
+    "meaning": "주식",
+    "pos": "명사"
+  },
+  {
+    "word": "legal",
+    "meaning": "법적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "variety",
+    "meaning": "여러 가지, 다양성",
+    "pos": "명사"
+  },
+  {
+    "word": "fuel",
+    "meaning": "연료",
+    "pos": "명사"
+  },
+  {
+    "word": "directly",
+    "meaning": "곧장, 똑바로",
+    "pos": "부사"
+  },
+  {
+    "word": "seek",
+    "meaning": "찾다, 추구하다",
+    "pos": "동사"
+  },
+  {
+    "word": "identify",
+    "meaning": "확인하다",
+    "pos": "동사"
+  },
+  {
+    "word": "identity",
+    "meaning": "신원, 정체성",
+    "pos": "명사"
+  },
+  {
+    "word": "response",
+    "meaning": "대답, 반응",
+    "pos": "명사"
+  },
+  {
+    "word": "reputation",
+    "meaning": "명성, 평판",
+    "pos": "명사"
+  },
+  {
+    "word": "appreciate",
+    "meaning": "인정하다, 고마워하다",
+    "pos": "동사"
+  },
+  {
+    "word": "promote",
+    "meaning": "촉진하다, 승진시키다",
+    "pos": "동사"
+  },
+  {
+    "word": "describe",
+    "meaning": "묘사하다",
+    "pos": "동사"
+  },
+  {
+    "word": "chemical",
+    "meaning": "화학적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "raise",
+    "meaning": "들어올리다, 일으키다",
+    "pos": "동사"
+  },
+  {
+    "word": "objective",
+    "meaning": "목표, 객관적인",
+    "pos": "명사"
+  },
+  {
+    "word": "basis",
+    "meaning": "근거, 이유",
+    "pos": "명사"
+  },
+  {
+    "word": "facilities",
+    "meaning": "시설들",
+    "pos": "명사"
+  },
+  {
+    "word": "realize",
+    "meaning": "깨닫다",
+    "pos": "동사"
+  },
+  {
+    "word": "central",
+    "meaning": "가장 중요한, 중앙의",
+    "pos": "형용사"
+  },
+  {
+    "word": "former",
+    "meaning": "이전의",
+    "pos": "형용사"
+  },
+  {
+    "word": "latter",
+    "meaning": "후자의",
+    "pos": "형용사"
+  },
+  {
+    "word": "recall",
+    "meaning": "기억해 내다",
+    "pos": "동사"
+  },
+  {
+    "word": "appointment",
+    "meaning": "약속, 임명",
+    "pos": "명사"
+  },
+  {
+    "word": "electronics",
+    "meaning": "전자 공학",
+    "pos": "명사"
+  },
+  {
+    "word": "affect",
+    "meaning": "영향을 미치다",
+    "pos": "동사"
+  },
+  {
+    "word": "share",
+    "meaning": "공유하다, 몫",
+    "pos": "동사"
+  },
+  {
+    "word": "analysis",
+    "meaning": "분석",
+    "pos": "명사"
+  },
+  {
+    "word": "title",
+    "meaning": "제목",
+    "pos": "명사"
+  },
+  {
+    "word": "board",
+    "meaning": "위원회, 탑승하다",
+    "pos": "명사"
+  },
+  {
+    "word": "nevertheless",
+    "meaning": "그럼에도 불구하고",
+    "pos": "부사"
+  },
+  {
+    "word": "campaign",
+    "meaning": "캠페인",
+    "pos": "명사"
+  },
+  {
+    "word": "organization",
+    "meaning": "조직",
+    "pos": "명사"
+  },
+  {
+    "word": "inform",
+    "meaning": "알리다",
+    "pos": "동사"
+  },
+  {
+    "word": "immediately",
+    "meaning": "즉시",
+    "pos": "부사"
+  },
+  {
+    "word": "abroad",
+    "meaning": "해외로",
+    "pos": "부사"
+  },
+  {
+    "word": "structure",
+    "meaning": "구조, 조직하다",
+    "pos": "명사"
+  },
+  {
+    "word": "genetic",
+    "meaning": "유전의",
+    "pos": "형용사"
+  },
+  {
+    "word": "ultimately",
+    "meaning": "궁극적으로, 결국",
+    "pos": "부사"
+  },
+  {
+    "word": "audience",
+    "meaning": "청중",
+    "pos": "명사"
+  },
+  {
+    "word": "regarding",
+    "meaning": "~에 관하여",
+    "pos": "전치사"
+  },
+  {
+    "word": "grand",
+    "meaning": "웅장한",
+    "pos": "형용사"
+  },
+  {
+    "word": "beneficial",
+    "meaning": "유익한",
+    "pos": "형용사"
+  },
+  {
+    "word": "debate",
+    "meaning": "토론, 논쟁",
+    "pos": "명사"
+  },
+  {
+    "word": "equipment",
+    "meaning": "장비, 용품",
+    "pos": "명사"
+  },
+  {
+    "word": "contain",
+    "meaning": "~이 들어 있다, 억누르다",
+    "pos": "동사"
+  },
+  {
+    "word": "typically",
+    "meaning": "전형적으로",
+    "pos": "부사"
+  },
+  {
+    "word": "primary",
+    "meaning": "주요한, 최초의",
+    "pos": "형용사"
+  },
+  {
+    "word": "discovery",
+    "meaning": "발견",
+    "pos": "명사"
+  },
+  {
+    "word": "degree",
+    "meaning": "도, 정도",
+    "pos": "명사"
+  },
+  {
+    "word": "reach",
+    "meaning": "~에 이르다",
+    "pos": "동사"
+  },
+  {
+    "word": "measures",
+    "meaning": "방안, 방법",
+    "pos": "명사"
+  },
+  {
+    "word": "aware",
+    "meaning": "알고 있는",
+    "pos": "형용사"
+  },
+  {
+    "word": "furthermore",
+    "meaning": "뿐만 아니라, 더욱이",
+    "pos": "부사"
+  },
+  {
+    "word": "warning",
+    "meaning": "경고",
+    "pos": "명사"
+  },
+  {
+    "word": "decline",
+    "meaning": "감소하다",
+    "pos": "동사"
+  },
+  {
+    "word": "funding",
+    "meaning": "자금 조달",
+    "pos": "명사"
+  },
+  {
+    "word": "formal",
+    "meaning": "격식을 차린, 공식적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "gain",
+    "meaning": "얻다, 이득",
+    "pos": "동사"
+  },
+  {
+    "word": "corporate",
+    "meaning": "기업의",
+    "pos": "형용사"
+  },
+  {
+    "word": "grade",
+    "meaning": "품질, 등급",
+    "pos": "명사"
+  },
+  {
+    "word": "semester",
+    "meaning": "학기",
+    "pos": "명사"
+  },
+  {
+    "word": "perform",
+    "meaning": "수행하다, 공연하다",
+    "pos": "동사"
+  },
+  {
+    "word": "wonder",
+    "meaning": "궁금하다",
+    "pos": "동사"
+  },
+  {
+    "word": "wander",
+    "meaning": "돌아다니다",
+    "pos": "동사"
+  },
+  {
+    "word": "release",
+    "meaning": "풀어 주다",
+    "pos": "동사"
+  },
+  {
+    "word": "minor",
+    "meaning": "작은",
+    "pos": "형용사"
+  },
+  {
+    "word": "minority",
+    "meaning": "소수",
+    "pos": "명사"
+  },
+  {
+    "word": "overall",
+    "meaning": "종합적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "planet",
+    "meaning": "행성",
+    "pos": "명사"
+  },
+  {
+    "word": "contemporary",
+    "meaning": "동시대의, 현대의",
+    "pos": "형용사"
+  },
+  {
+    "word": "remind",
+    "meaning": "상기시키다",
+    "pos": "동사"
+  },
+  {
+    "word": "graduate",
+    "meaning": "졸업자, 졸업하다",
+    "pos": "명사"
+  },
+  {
+    "word": "investment",
+    "meaning": "투자",
+    "pos": "명사"
+  },
+  {
+    "word": "function",
+    "meaning": "기능",
+    "pos": "명사"
+  },
+  {
+    "word": "otherwise",
+    "meaning": "그렇지 않으면",
+    "pos": "부사"
+  },
+  {
+    "word": "separate",
+    "meaning": "분리된, 별개의",
+    "pos": "형용사"
+  },
+  {
+    "word": "suffering",
+    "meaning": "고통",
+    "pos": "명사"
+  },
+  {
+    "word": "contrast",
+    "meaning": "대조, 대비",
+    "pos": "명사"
+  },
+  {
+    "word": "concept",
+    "meaning": "개념",
+    "pos": "명사"
+  },
+  {
+    "word": "domestic",
+    "meaning": "국내의, 가정의",
+    "pos": "형용사"
+  },
+  {
+    "word": "academic",
+    "meaning": "학업의",
+    "pos": "형용사"
+  },
+  {
+    "word": "standard",
+    "meaning": "기준, 일반적인",
+    "pos": "명사"
+  },
+  {
+    "word": "illness",
+    "meaning": "병",
+    "pos": "명사"
+  },
+  {
+    "word": "desire",
+    "meaning": "욕구, 바라다",
+    "pos": "명사"
+  },
+  {
+    "word": "exchange",
+    "meaning": "교환, 교환하다",
+    "pos": "명사"
+  },
+  {
+    "word": "replace",
+    "meaning": "대신하다, 교체하다",
+    "pos": "동사"
+  },
+  {
+    "word": "technical",
+    "meaning": "기술적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "consumption",
+    "meaning": "소비",
+    "pos": "명사"
+  },
+  {
+    "word": "figure",
+    "meaning": "수치, 인물",
+    "pos": "명사"
+  },
+  {
+    "word": "commercial",
+    "meaning": "상업의",
+    "pos": "형용사"
+  },
+  {
+    "word": "employment",
+    "meaning": "고용",
+    "pos": "명사"
+  },
+  {
+    "word": "alternative",
+    "meaning": "대안, 대체 가능한",
+    "pos": "명사"
+  },
+  {
+    "word": "capacity",
+    "meaning": "수용력, 능력",
+    "pos": "명사"
+  },
+  {
+    "word": "capable",
+    "meaning": "~을 할 수 있는, 유능한",
+    "pos": "형용사"
+  },
+  {
+    "word": "firm",
+    "meaning": "회사, 딱딱한",
+    "pos": "명사"
+  },
+  {
+    "word": "poverty",
+    "meaning": "가난, 부족",
+    "pos": "명사"
+  },
+  {
+    "word": "furniture",
+    "meaning": "가구",
+    "pos": "명사"
+  },
+  {
+    "word": "determine",
+    "meaning": "알아내다, 결정하다",
+    "pos": "동사"
+  },
+  {
+    "word": "favorable",
+    "meaning": "유리한, 순조로운",
+    "pos": "형용사"
+  },
+  {
+    "word": "estate",
+    "meaning": "사유지",
+    "pos": "명사"
+  },
+  {
+    "word": "vehicle",
+    "meaning": "탈 것, 수단",
+    "pos": "명사"
+  },
+  {
+    "word": "regulations",
+    "meaning": "규제",
+    "pos": "명사"
+  },
+  {
+    "word": "advantage",
+    "meaning": "유리한 점, 장점",
+    "pos": "명사"
+  },
+  {
+    "word": "obesity",
+    "meaning": "비만",
+    "pos": "명사"
+  },
+  {
+    "word": "medicine",
+    "meaning": "의학, 의료",
+    "pos": "명사"
+  },
+  {
+    "word": "severe",
+    "meaning": "극심한, 엄격한",
+    "pos": "형용사"
+  },
+  {
+    "word": "operation",
+    "meaning": "수술, 작전",
+    "pos": "명사"
+  },
+  {
+    "word": "agricultural",
+    "meaning": "농업의",
+    "pos": "형용사"
+  },
+  {
+    "word": "license",
+    "meaning": "면허증",
+    "pos": "명사"
+  },
+  {
+    "word": "intention",
+    "meaning": "의도, 목적",
+    "pos": "명사"
+  },
+  {
+    "word": "distance",
+    "meaning": "거리",
+    "pos": "명사"
+  },
+  {
+    "word": "distant",
+    "meaning": "먼",
+    "pos": "형용사"
+  },
+  {
+    "word": "vision",
+    "meaning": "시야, 미래 비전",
+    "pos": "명사"
+  },
+  {
+    "word": "exposure",
+    "meaning": "노출",
+    "pos": "명사"
+  },
+  {
+    "word": "rare",
+    "meaning": "드문, 진귀한",
+    "pos": "형용사"
+  },
+  {
+    "word": "genre",
+    "meaning": "장르",
+    "pos": "명사"
+  },
+  {
+    "word": "parliament",
+    "meaning": "의회",
+    "pos": "명사"
+  },
+  {
+    "word": "moral",
+    "meaning": "도의적인, 도덕상의",
+    "pos": "형용사"
+  },
+  {
+    "word": "colleagues",
+    "meaning": "동료들",
+    "pos": "명사"
+  },
+  {
+    "word": "transportation",
+    "meaning": "운송",
+    "pos": "명사"
+  },
+  {
+    "word": "selection",
+    "meaning": "선발, 선정",
+    "pos": "명사"
+  },
+  {
+    "word": "generation",
+    "meaning": "세대",
+    "pos": "명사"
+  },
+  {
+    "word": "earn",
+    "meaning": "벌다, 얻다",
+    "pos": "동사"
+  },
+  {
+    "word": "storage",
+    "meaning": "저장",
+    "pos": "명사"
+  },
+  {
+    "word": "significance",
+    "meaning": "중요성, 의미",
+    "pos": "명사"
+  },
+  {
+    "word": "entire",
+    "meaning": "전체의",
+    "pos": "형용사"
+  },
+  {
+    "word": "accurate",
+    "meaning": "정밀한",
+    "pos": "형용사"
+  },
+  {
+    "word": "efficient",
+    "meaning": "능률적인, 효율적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "moreover",
+    "meaning": "게다가",
+    "pos": "부사"
+  },
+  {
+    "word": "profits",
+    "meaning": "수익, 이익",
+    "pos": "명사"
+  },
+  {
+    "word": "trend",
+    "meaning": "동향, 추세",
+    "pos": "명사"
+  },
+  {
+    "word": "bias",
+    "meaning": "편견",
+    "pos": "명사"
+  },
+  {
+    "word": "conservative",
+    "meaning": "보수적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "donation",
+    "meaning": "기부",
+    "pos": "명사"
+  },
+  {
+    "word": "independence",
+    "meaning": "자립, 독립",
+    "pos": "명사"
+  },
+  {
+    "word": "strategies",
+    "meaning": "전략들",
+    "pos": "명사"
+  },
+  {
+    "word": "target",
+    "meaning": "겨냥하다, 대상",
+    "pos": "동사"
+  },
+  {
+    "word": "clearly",
+    "meaning": "분명히",
+    "pos": "부사"
+  },
+  {
+    "word": "electric",
+    "meaning": "전기의",
+    "pos": "형용사"
+  },
+  {
+    "word": "crisis",
+    "meaning": "위기",
+    "pos": "명사"
+  },
+  {
+    "word": "diversity",
+    "meaning": "다양성",
+    "pos": "명사"
+  },
+  {
+    "word": "diverse",
+    "meaning": "다양한",
+    "pos": "형용사"
+  },
+  {
+    "word": "reservation",
+    "meaning": "예약, 의구심",
+    "pos": "명사"
+  },
+  {
+    "word": "injuries",
+    "meaning": "부상",
+    "pos": "명사"
+  },
+  {
+    "word": "innovative",
+    "meaning": "혁신적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "numerous",
+    "meaning": "수많은",
+    "pos": "형용사"
+  },
+  {
+    "word": "confidence",
+    "meaning": "자신감, 신뢰",
+    "pos": "명사"
+  },
+  {
+    "word": "achieve",
+    "meaning": "달성하다",
+    "pos": "동사"
+  },
+  {
+    "word": "trial",
+    "meaning": "재판",
+    "pos": "명사"
+  },
+  {
+    "word": "fear",
+    "meaning": "공포, 두려워하다",
+    "pos": "명사"
+  },
+  {
+    "word": "factor",
+    "meaning": "요인",
+    "pos": "명사"
+  },
+  {
+    "word": "tough",
+    "meaning": "힘든, 거친",
+    "pos": "형용사"
+  },
+  {
+    "word": "household",
+    "meaning": "가정, 집안",
+    "pos": "명사"
+  },
+  {
+    "word": "initial",
+    "meaning": "초기의, 처음의",
+    "pos": "형용사"
+  },
+  {
+    "word": "district",
+    "meaning": "구역, 지역",
+    "pos": "명사"
+  },
+  {
+    "word": "argue",
+    "meaning": "언쟁을 하다, 입증하다",
+    "pos": "동사"
+  },
+  {
+    "word": "controversial",
+    "meaning": "논란이 많은",
+    "pos": "형용사"
+  },
+  {
+    "word": "controversy",
+    "meaning": "논란",
+    "pos": "명사"
+  },
+  {
+    "word": "representative",
+    "meaning": "대리인",
+    "pos": "명사"
+  },
+  {
+    "word": "represent",
+    "meaning": "대변하다, 나타내다",
+    "pos": "동사"
+  },
+  {
+    "word": "superior",
+    "meaning": "우수한, 상급자",
+    "pos": "형용사"
+  },
+  {
+    "word": "ideal",
+    "meaning": "이상적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "procedure",
+    "meaning": "절차",
+    "pos": "명사"
+  },
+  {
+    "word": "manufacturing",
+    "meaning": "제조업, 생산",
+    "pos": "명사"
+  },
+  {
+    "word": "gender",
+    "meaning": "성별",
+    "pos": "명사"
+  },
+  {
+    "word": "instructions",
+    "meaning": "지시",
+    "pos": "명사"
+  },
+  {
+    "word": "housing",
+    "meaning": "주거시설",
+    "pos": "명사"
+  },
+  {
+    "word": "display",
+    "meaning": "전시하다, 전시",
+    "pos": "동사"
+  },
+  {
+    "word": "register",
+    "meaning": "등록하다",
+    "pos": "동사"
+  },
+  {
+    "word": "pollution",
+    "meaning": "오염",
+    "pos": "명사"
+  },
+  {
+    "word": "strict",
+    "meaning": "엄격한",
+    "pos": "형용사"
+  },
+  {
+    "word": "violence",
+    "meaning": "폭력",
+    "pos": "명사"
+  },
+  {
+    "word": "guidelines",
+    "meaning": "지침",
+    "pos": "명사"
+  },
+  {
+    "word": "rely",
+    "meaning": "신뢰하다, 의지하다",
+    "pos": "동사"
+  },
+  {
+    "word": "reliable",
+    "meaning": "믿을 수 있는",
+    "pos": "형용사"
+  },
+  {
+    "word": "council",
+    "meaning": "의회, 위원회",
+    "pos": "명사"
+  },
+  {
+    "word": "forecast",
+    "meaning": "예측",
+    "pos": "명사"
+  },
+  {
+    "word": "scale",
+    "meaning": "규모",
+    "pos": "명사"
+  },
+  {
+    "word": "permission",
+    "meaning": "승인, 허락",
+    "pos": "명사"
+  },
+  {
+    "word": "exhibit",
+    "meaning": "전시회, 발휘하다",
+    "pos": "명사"
+  },
+  {
+    "word": "editor",
+    "meaning": "편집자",
+    "pos": "명사"
+  },
+  {
+    "word": "payment",
+    "meaning": "지불",
+    "pos": "명사"
+  },
+  {
+    "word": "agency",
+    "meaning": "대리점",
+    "pos": "명사"
+  },
+  {
+    "word": "mention",
+    "meaning": "언급하다, 언급",
+    "pos": "동사"
+  },
+  {
+    "word": "obtain",
+    "meaning": "얻다",
+    "pos": "동사"
+  },
+  {
+    "word": "productivity",
+    "meaning": "생산성",
+    "pos": "명사"
+  },
+  {
+    "word": "theme",
+    "meaning": "주제",
+    "pos": "명사"
+  },
+  {
+    "word": "dedicated",
+    "meaning": "전념하는",
+    "pos": "형용사"
+  },
+  {
+    "word": "transfer",
+    "meaning": "이송하다, 옮기다",
+    "pos": "동사"
+  },
+  {
+    "word": "committee",
+    "meaning": "위원회",
+    "pos": "명사"
+  },
+  {
+    "word": "recognize",
+    "meaning": "알아보다, 승인하다",
+    "pos": "동사"
+  },
+  {
+    "word": "retirement",
+    "meaning": "은퇴",
+    "pos": "명사"
+  },
+  {
+    "word": "incident",
+    "meaning": "일, 사건",
+    "pos": "명사"
+  },
+  {
+    "word": "radiation",
+    "meaning": "방사선",
+    "pos": "명사"
+  },
+  {
+    "word": "faith",
+    "meaning": "믿음, 종교",
+    "pos": "명사"
+  },
+  {
+    "word": "hardly",
+    "meaning": "거의~아니다",
+    "pos": "부사"
+  },
+  {
+    "word": "doubt",
+    "meaning": "의심",
+    "pos": "명사"
+  },
+  {
+    "word": "candidate",
+    "meaning": "후보",
+    "pos": "명사"
+  },
+  {
+    "word": "recession",
+    "meaning": "경기침체, 후퇴",
+    "pos": "명사"
+  },
+  {
+    "word": "lend",
+    "meaning": "빌려주다",
+    "pos": "동사"
+  },
+  {
+    "word": "extremely",
+    "meaning": "극도로, 극히",
+    "pos": "부사"
+  },
+  {
+    "word": "mobile",
+    "meaning": "이동하는, 기동성이 있는",
+    "pos": "형용사"
+  },
+  {
+    "word": "critical",
+    "meaning": "비판적인, 중대한",
+    "pos": "형용사"
+  },
+  {
+    "word": "threat",
+    "meaning": "협박",
+    "pos": "명사"
+  },
+  {
+    "word": "aid",
+    "meaning": "지원, 도움, 돕다",
+    "pos": "명사"
+  },
+  {
+    "word": "frequently",
+    "meaning": "자주, 흔히",
+    "pos": "부사"
+  },
+  {
+    "word": "recipient",
+    "meaning": "받는 사람, 수취인",
+    "pos": "명사"
+  },
+  {
+    "word": "emissions",
+    "meaning": "배출, 배기가스",
+    "pos": "명사"
+  },
+  {
+    "word": "manner",
+    "meaning": "방식, 태도",
+    "pos": "명사"
+  },
+  {
+    "word": "psychological",
+    "meaning": "정신적인, 심리적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "contest",
+    "meaning": "경쟁, 대회",
+    "pos": "명사"
+  },
+  {
+    "word": "artificial",
+    "meaning": "인공적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "meanwhile",
+    "meaning": "그 동안에, 한편",
+    "pos": "부사"
+  },
+  {
+    "word": "urban",
+    "meaning": "도시의",
+    "pos": "형용사"
+  },
+  {
+    "word": "rarely",
+    "meaning": "드물게",
+    "pos": "부사"
+  },
+  {
+    "word": "statistics",
+    "meaning": "통계, 통계학",
+    "pos": "명사"
+  },
+  {
+    "word": "scene",
+    "meaning": "현장, 장면",
+    "pos": "명사"
+  },
+  {
+    "word": "quit",
+    "meaning": "그만두다",
+    "pos": "동사"
+  },
+  {
+    "word": "draft",
+    "meaning": "원고, 초안",
+    "pos": "명사"
+  },
+  {
+    "word": "surgery",
+    "meaning": "수술",
+    "pos": "명사"
+  },
+  {
+    "word": "appeal",
+    "meaning": "호소, 매력",
+    "pos": "명사"
+  },
+  {
+    "word": "progress",
+    "meaning": "진전, 진전을 보이다",
+    "pos": "명사"
+  },
+  {
+    "word": "crucial",
+    "meaning": "중대한, 결정적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "belong",
+    "meaning": "속하다",
+    "pos": "동사"
+  },
+  {
+    "word": "wealth",
+    "meaning": "부유함, 풍부한 양",
+    "pos": "명사"
+  },
+  {
+    "word": "ingredients",
+    "meaning": "재료들",
+    "pos": "명사"
+  },
+  {
+    "word": "salary",
+    "meaning": "급여, 봉급",
+    "pos": "명사"
+  },
+  {
+    "word": "practical",
+    "meaning": "실질적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "intellectual",
+    "meaning": "지적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "goods",
+    "meaning": "상품, 재산",
+    "pos": "명사"
+  },
+  {
+    "word": "feedback",
+    "meaning": "피드백",
+    "pos": "명사"
+  },
+  {
+    "word": "survey",
+    "meaning": "조사, 점검하다",
+    "pos": "명사"
+  },
+  {
+    "word": "meditation",
+    "meaning": "명상",
+    "pos": "명사"
+  },
+  {
+    "word": "symptoms",
+    "meaning": "증상들",
+    "pos": "명사"
+  },
+  {
+    "word": "proof",
+    "meaning": "증명",
+    "pos": "명사"
+  },
+  {
+    "word": "distinct",
+    "meaning": "뚜렷한, 확실한",
+    "pos": "형용사"
+  },
+  {
+    "word": "apologize",
+    "meaning": "사과하다",
+    "pos": "동사"
+  },
+  {
+    "word": "coverage",
+    "meaning": "범위",
+    "pos": "명사"
+  },
+  {
+    "word": "surrounding",
+    "meaning": "인근의, 둘러싼",
+    "pos": "형용사"
+  },
+  {
+    "word": "rent",
+    "meaning": "집세, 임대하다",
+    "pos": "명사"
+  },
+  {
+    "word": "destroyed",
+    "meaning": "파괴된",
+    "pos": "형용사"
+  },
+  {
+    "word": "restrictions",
+    "meaning": "제한들",
+    "pos": "명사"
+  },
+  {
+    "word": "vital",
+    "meaning": "필수적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "eligible",
+    "meaning": "자격이 되는",
+    "pos": "형용사"
+  },
+  {
+    "word": "loan",
+    "meaning": "대출",
+    "pos": "명사"
+  },
+  {
+    "word": "immigrants",
+    "meaning": "이민자들",
+    "pos": "명사"
+  },
+  {
+    "word": "executives",
+    "meaning": "경영진들",
+    "pos": "명사"
+  },
+  {
+    "word": "resort",
+    "meaning": "의존하다, 휴양지",
+    "pos": "동사"
+  },
+  {
+    "word": "cognitive",
+    "meaning": "인지의",
+    "pos": "형용사"
+  },
+  {
+    "word": "prey",
+    "meaning": "먹이, 피해자",
+    "pos": "명사"
+  },
+  {
+    "word": "universe",
+    "meaning": "우주",
+    "pos": "명사"
+  },
+  {
+    "word": "evolution",
+    "meaning": "진화, 발전",
+    "pos": "명사"
+  },
+  {
+    "word": "correlation",
+    "meaning": "상관관계",
+    "pos": "명사"
+  },
+  {
+    "word": "capital",
+    "meaning": "수도, 자본금",
+    "pos": "명사"
+  },
+  {
+    "word": "strike",
+    "meaning": "때리다, 파업",
+    "pos": "동사"
+  },
+  {
+    "word": "proper",
+    "meaning": "제대로 된",
+    "pos": "형용사"
+  },
+  {
+    "word": "extensive",
+    "meaning": "대규모의, 대대적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "assume",
+    "meaning": "추정하다",
+    "pos": "동사"
+  },
+  {
+    "word": "convince",
+    "meaning": "납득시키다, 설득하다",
+    "pos": "동사"
+  },
+  {
+    "word": "recover",
+    "meaning": "회복되다",
+    "pos": "동사"
+  },
+  {
+    "word": "convenient",
+    "meaning": "편리한",
+    "pos": "형용사"
+  },
+  {
+    "word": "era",
+    "meaning": "시대",
+    "pos": "명사"
+  },
+  {
+    "word": "protest",
+    "meaning": "항의",
+    "pos": "명사"
+  },
+  {
+    "word": "maximum",
+    "meaning": "최고의",
+    "pos": "형용사"
+  },
+  {
+    "word": "confirmation",
+    "meaning": "확인",
+    "pos": "명사"
+  },
+  {
+    "word": "inflation",
+    "meaning": "인플레이션",
+    "pos": "명사"
+  },
+  {
+    "word": "solely",
+    "meaning": "오로지, 단독으로",
+    "pos": "부사"
+  },
+  {
+    "word": "reluctant",
+    "meaning": "꺼리는, 주저하는",
+    "pos": "형용사"
+  },
+  {
+    "word": "blame",
+    "meaning": "탓하다, 책임",
+    "pos": "동사"
+  },
+  {
+    "word": "luggage",
+    "meaning": "짐",
+    "pos": "명사"
+  },
+  {
+    "word": "conflict",
+    "meaning": "갈등",
+    "pos": "명사"
+  },
+  {
+    "word": "habitat",
+    "meaning": "서식지",
+    "pos": "명사"
+  },
+  {
+    "word": "renovations",
+    "meaning": "수리, 개조",
+    "pos": "명사"
+  },
+  {
+    "word": "relevant",
+    "meaning": "관련된",
+    "pos": "형용사"
+  },
+  {
+    "word": "gradually",
+    "meaning": "서서히",
+    "pos": "부사"
+  },
+  {
+    "word": "disorders",
+    "meaning": "장애",
+    "pos": "명사"
+  },
+  {
+    "word": "expenses",
+    "meaning": "비용",
+    "pos": "명사"
+  },
+  {
+    "word": "phenomenon",
+    "meaning": "현상",
+    "pos": "명사"
+  },
+  {
+    "word": "ethnic",
+    "meaning": "민족의",
+    "pos": "형용사"
+  },
+  {
+    "word": "detect",
+    "meaning": "감지하다",
+    "pos": "동사"
+  },
+  {
+    "word": "prepare",
+    "meaning": "준비하다",
+    "pos": "동사"
+  },
+  {
+    "word": "compensation",
+    "meaning": "보상",
+    "pos": "명사"
+  },
+  {
+    "word": "cancel",
+    "meaning": "취소하다",
+    "pos": "동사"
+  },
+  {
+    "word": "relief",
+    "meaning": "안심",
+    "pos": "명사"
+  },
+  {
+    "word": "award",
+    "meaning": "상, 수여하다",
+    "pos": "명사"
+  },
+  {
+    "word": "renowned",
+    "meaning": "유명한, 명성 있는",
+    "pos": "형용사"
+  },
+  {
+    "word": "satisfaction",
+    "meaning": "만족, 충족",
+    "pos": "명사"
+  },
+  {
+    "word": "deposit",
+    "meaning": "보증금",
+    "pos": "명사"
+  },
+  {
+    "word": "civilization",
+    "meaning": "문명",
+    "pos": "명사"
+  },
+  {
+    "word": "administration",
+    "meaning": "관리",
+    "pos": "명사"
+  },
+  {
+    "word": "pharmaceutical",
+    "meaning": "제약의",
+    "pos": "형용사"
+  },
+  {
+    "word": "harvest",
+    "meaning": "수확하다",
+    "pos": "동사"
+  },
+  {
+    "word": "distribution",
+    "meaning": "분배",
+    "pos": "명사"
+  },
+  {
+    "word": "artifacts",
+    "meaning": "공예품들",
+    "pos": "명사"
+  },
+  {
+    "word": "sector",
+    "meaning": "분야",
+    "pos": "명사"
+  },
+  {
+    "word": "layer",
+    "meaning": "층",
+    "pos": "명사"
+  },
+  {
+    "word": "layoffs",
+    "meaning": "해고",
+    "pos": "명사"
+  },
+  {
+    "word": "republic",
+    "meaning": "공화국",
+    "pos": "명사"
+  },
+  {
+    "word": "estimate",
+    "meaning": "추정",
+    "pos": "명사"
+  },
+  {
+    "word": "subsequent",
+    "meaning": "차후의",
+    "pos": "형용사"
+  },
+  {
+    "word": "conventional",
+    "meaning": "전통적인, 관습적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "tropical",
+    "meaning": "열대 지방의",
+    "pos": "형용사"
+  },
+  {
+    "word": "absolutely",
+    "meaning": "틀림없이",
+    "pos": "부사"
+  },
+  {
+    "word": "rapidly",
+    "meaning": "빨리, 신속히",
+    "pos": "부사"
+  },
+  {
+    "word": "reflect",
+    "meaning": "반영하다",
+    "pos": "동사"
+  },
+  {
+    "word": "vaccine",
+    "meaning": "백신",
+    "pos": "명사"
+  },
+  {
+    "word": "urge",
+    "meaning": "촉구하다, 충동",
+    "pos": "동사"
+  },
+  {
+    "word": "architecture",
+    "meaning": "건축 양식",
+    "pos": "명사"
+  },
+  {
+    "word": "consequently",
+    "meaning": "그 결과, 따라서",
+    "pos": "부사"
+  },
+  {
+    "word": "warranty",
+    "meaning": "품질 보증서",
+    "pos": "명사"
+  },
+  {
+    "word": "anxiety",
+    "meaning": "염려, 불안",
+    "pos": "명사"
+  },
+  {
+    "word": "infection",
+    "meaning": "감염",
+    "pos": "명사"
+  },
+  {
+    "word": "outbreak",
+    "meaning": "발생",
+    "pos": "명사"
+  },
+  {
+    "word": "pursue",
+    "meaning": "추구하다",
+    "pos": "동사"
+  },
+  {
+    "word": "excessive",
+    "meaning": "과도한, 지나친",
+    "pos": "형용사"
+  },
+  {
+    "word": "sensitive",
+    "meaning": "세심한, 감성 있는",
+    "pos": "형용사"
+  },
+  {
+    "word": "authorities",
+    "meaning": "정부당국",
+    "pos": "명사"
+  },
+  {
+    "word": "journey",
+    "meaning": "여정",
+    "pos": "명사"
+  },
+  {
+    "word": "massive",
+    "meaning": "거대한",
+    "pos": "형용사"
+  },
+  {
+    "word": "rural",
+    "meaning": "시골의, 지방의",
+    "pos": "형용사"
+  },
+  {
+    "word": "craft",
+    "meaning": "공예, 기술",
+    "pos": "명사"
+  },
+  {
+    "word": "empire",
+    "meaning": "제국, 거대 기업",
+    "pos": "명사"
+  },
+  {
+    "word": "slightly",
+    "meaning": "약간",
+    "pos": "부사"
+  },
+  {
+    "word": "principal",
+    "meaning": "주요한",
+    "pos": "형용사"
+  },
+  {
+    "word": "fault",
+    "meaning": "잘못, 결함",
+    "pos": "명사"
+  },
+  {
+    "word": "temporary",
+    "meaning": "일시적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "measure",
+    "meaning": "조치, 측정하다",
+    "pos": "명사"
+  },
+  {
+    "word": "fossil",
+    "meaning": "화석",
+    "pos": "명사"
+  },
+  {
+    "word": "merely",
+    "meaning": "그저, 단지",
+    "pos": "부사"
+  },
+  {
+    "word": "sufficient",
+    "meaning": "충분한",
+    "pos": "형용사"
+  },
+  {
+    "word": "federal",
+    "meaning": "연방제의",
+    "pos": "형용사"
+  },
+  {
+    "word": "attract",
+    "meaning": "끌어들이다",
+    "pos": "동사"
+  },
+  {
+    "word": "perception",
+    "meaning": "자각, 감지",
+    "pos": "명사"
+  },
+  {
+    "word": "tuition",
+    "meaning": "수업료",
+    "pos": "명사"
+  },
+  {
+    "word": "passion",
+    "meaning": "열정",
+    "pos": "명사"
+  },
+  {
+    "word": "ethical",
+    "meaning": "윤리적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "constant",
+    "meaning": "끊임없는",
+    "pos": "형용사"
+  },
+  {
+    "word": "insights",
+    "meaning": "통찰력",
+    "pos": "명사"
+  },
+  {
+    "word": "reference",
+    "meaning": "언급, 참고",
+    "pos": "명사"
+  },
+  {
+    "word": "institute",
+    "meaning": "기관",
+    "pos": "명사"
+  },
+  {
+    "word": "institutions",
+    "meaning": "기관들",
+    "pos": "명사"
+  },
+  {
+    "word": "immune",
+    "meaning": "면역성이 있는",
+    "pos": "형용사"
+  },
+  {
+    "word": "subscription",
+    "meaning": "구독",
+    "pos": "명사"
+  },
+  {
+    "word": "internal",
+    "meaning": "내부의",
+    "pos": "형용사"
+  },
+  {
+    "word": "external",
+    "meaning": "외부의",
+    "pos": "형용사"
+  },
+  {
+    "word": "virtually",
+    "meaning": "사실상, 거의",
+    "pos": "부사"
+  },
+  {
+    "word": "inspection",
+    "meaning": "점검",
+    "pos": "명사"
+  },
+  {
+    "word": "permanent",
+    "meaning": "영구적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "peak",
+    "meaning": "절정",
+    "pos": "명사"
+  },
+  {
+    "word": "soil",
+    "meaning": "국토",
+    "pos": "명사"
+  },
+  {
+    "word": "treaty",
+    "meaning": "조약",
+    "pos": "명사"
+  },
+  {
+    "word": "infrastructure",
+    "meaning": "공공 기반 시설",
+    "pos": "명사"
+  },
+  {
+    "word": "interpretation",
+    "meaning": "해석, 설명",
+    "pos": "명사"
+  },
+  {
+    "word": "medieval",
+    "meaning": "중세의",
+    "pos": "형용사"
+  },
+  {
+    "word": "qualified",
+    "meaning": "자격을 갖춘",
+    "pos": "형용사"
+  },
+  {
+    "word": "overcome",
+    "meaning": "극복하다",
+    "pos": "동사"
+  },
+  {
+    "word": "portion",
+    "meaning": "일부분",
+    "pos": "명사"
+  },
+  {
+    "word": "hazardous",
+    "meaning": "위험한",
+    "pos": "형용사"
+  },
+  {
+    "word": "globe",
+    "meaning": "세계",
+    "pos": "명사"
+  },
+  {
+    "word": "curb",
+    "meaning": "억제하다",
+    "pos": "동사"
+  },
+  {
+    "word": "predators",
+    "meaning": "포식자들",
+    "pos": "명사"
+  },
+  {
+    "word": "approximately",
+    "meaning": "거의, 가까이",
+    "pos": "부사"
+  },
+  {
+    "word": "caution",
+    "meaning": "경고",
+    "pos": "명사"
+  },
+  {
+    "word": "exclusive",
+    "meaning": "독점적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "praise",
+    "meaning": "칭찬하다, 칭찬",
+    "pos": "동사"
+  },
+  {
+    "word": "principles",
+    "meaning": "원칙들",
+    "pos": "명사"
+  },
+  {
+    "word": "harsh",
+    "meaning": "가혹한",
+    "pos": "형용사"
+  },
+  {
+    "word": "stable",
+    "meaning": "안정적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "attitude",
+    "meaning": "태도",
+    "pos": "명사"
+  },
+  {
+    "word": "exception",
+    "meaning": "예외",
+    "pos": "명사"
+  },
+  {
+    "word": "exceptional",
+    "meaning": "이례적인, 특출난",
+    "pos": "형용사"
+  },
+  {
+    "word": "universal",
+    "meaning": "일반적인, 보편적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "revenue",
+    "meaning": "수익, 수입",
+    "pos": "명사"
+  },
+  {
+    "word": "endangered",
+    "meaning": "멸종 위기에 처한",
+    "pos": "형용사"
+  },
+  {
+    "word": "liberal",
+    "meaning": "진보적인, 자유로운",
+    "pos": "형용사"
+  },
+  {
+    "word": "resistance",
+    "meaning": "저항",
+    "pos": "명사"
+  },
+  {
+    "word": "perspective",
+    "meaning": "관점",
+    "pos": "명사"
+  },
+  {
+    "word": "expedition",
+    "meaning": "탐험",
+    "pos": "명사"
+  },
+  {
+    "word": "hypothesis",
+    "meaning": "가설",
+    "pos": "명사"
+  },
+  {
+    "word": "disposal",
+    "meaning": "처분",
+    "pos": "명사"
+  },
+  {
+    "word": "prescription",
+    "meaning": "처방전",
+    "pos": "명사"
+  },
+  {
+    "word": "valid",
+    "meaning": "유효한, 타당한",
+    "pos": "형용사"
+  },
+  {
+    "word": "justice",
+    "meaning": "공정성",
+    "pos": "명사"
+  },
+  {
+    "word": "supreme",
+    "meaning": "최고의",
+    "pos": "형용사"
+  },
+  {
+    "word": "reproduction",
+    "meaning": "번식, 복제",
+    "pos": "명사"
+  },
+  {
+    "word": "consistent",
+    "meaning": "일관된, 한결같은",
+    "pos": "형용사"
+  },
+  {
+    "word": "ancestors",
+    "meaning": "선조들",
+    "pos": "명사"
+  },
+  {
+    "word": "welfare",
+    "meaning": "복지",
+    "pos": "명사"
+  },
+  {
+    "word": "exotic",
+    "meaning": "이국적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "nutrients",
+    "meaning": "영양소",
+    "pos": "명사"
+  },
+  {
+    "word": "launch",
+    "meaning": "시작하다, 출시하다",
+    "pos": "동사"
+  },
+  {
+    "word": "legitimate",
+    "meaning": "타당한, 합법적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "peers",
+    "meaning": "동료들",
+    "pos": "명사"
+  },
+  {
+    "word": "strength",
+    "meaning": "힘, 강인함",
+    "pos": "명사"
+  },
+  {
+    "word": "cuisine",
+    "meaning": "요리법",
+    "pos": "명사"
+  },
+  {
+    "word": "collaboration",
+    "meaning": "공동 작업, 협력",
+    "pos": "명사"
+  },
+  {
+    "word": "chronic",
+    "meaning": "만성적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "aspect",
+    "meaning": "측면",
+    "pos": "명사"
+  },
+  {
+    "word": "impulse",
+    "meaning": "충동, 자극",
+    "pos": "명사"
+  },
+  {
+    "word": "democracy",
+    "meaning": "민주주의",
+    "pos": "명사"
+  },
+  {
+    "word": "possess",
+    "meaning": "소유하다",
+    "pos": "동사"
+  },
+  {
+    "word": "compromise",
+    "meaning": "타협",
+    "pos": "명사"
+  },
+  {
+    "word": "intense",
+    "meaning": "열정적인, 강렬한",
+    "pos": "형용사"
+  },
+  {
+    "word": "dairy",
+    "meaning": "유제품의",
+    "pos": "형용사"
+  },
+  {
+    "word": "biological",
+    "meaning": "생물학의",
+    "pos": "형용사"
+  },
+  {
+    "word": "impressive",
+    "meaning": "인상적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "narrative",
+    "meaning": "서술",
+    "pos": "명사"
+  },
+  {
+    "word": "hybrid",
+    "meaning": "잡종, 혼합물",
+    "pos": "명사"
+  },
+  {
+    "word": "lucrative",
+    "meaning": "수익성이 좋은",
+    "pos": "형용사"
+  },
+  {
+    "word": "dietary",
+    "meaning": "식이요법의",
+    "pos": "형용사"
+  },
+  {
+    "word": "wages",
+    "meaning": "임금",
+    "pos": "명사"
+  },
+  {
+    "word": "emerging",
+    "meaning": "최근에 생겨난",
+    "pos": "형용사"
+  },
+  {
+    "word": "routine",
+    "meaning": "일상, 틀",
+    "pos": "명사"
+  },
+  {
+    "word": "commission",
+    "meaning": "위원회, 수당",
+    "pos": "명사"
+  },
+  {
+    "word": "prominent",
+    "meaning": "중요한, 눈에 잘 띄는",
+    "pos": "형용사"
+  },
+  {
+    "word": "alert",
+    "meaning": "기민한",
+    "pos": "형용사"
+  },
+  {
+    "word": "context",
+    "meaning": "맥락",
+    "pos": "명사"
+  },
+  {
+    "word": "dominant",
+    "meaning": "우세한",
+    "pos": "형용사"
+  },
+  {
+    "word": "sacrifice",
+    "meaning": "희생",
+    "pos": "명사"
+  },
+  {
+    "word": "circumstances",
+    "meaning": "상황들",
+    "pos": "명사"
+  },
+  {
+    "word": "renew",
+    "meaning": "갱신하다",
+    "pos": "동사"
+  },
+  {
+    "word": "typical",
+    "meaning": "전형적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "contrary",
+    "meaning": "정반대되는",
+    "pos": "형용사"
+  },
+  {
+    "word": "vulnerable",
+    "meaning": "연약한, 취약한",
+    "pos": "형용사"
+  },
+  {
+    "word": "tribes",
+    "meaning": "부족들",
+    "pos": "명사"
+  },
+  {
+    "word": "booking",
+    "meaning": "예약",
+    "pos": "명사"
+  },
+  {
+    "word": "merchandise",
+    "meaning": "상품",
+    "pos": "명사"
+  },
+  {
+    "word": "duties",
+    "meaning": "의무, 임무",
+    "pos": "명사"
+  },
+  {
+    "word": "preserve",
+    "meaning": "보존하다, 지키다",
+    "pos": "동사"
+  },
+  {
+    "word": "detrimental",
+    "meaning": "해로운",
+    "pos": "형용사"
+  },
+  {
+    "word": "renaissance",
+    "meaning": "부흥, 르네상스 시대",
+    "pos": "명사"
+  },
+  {
+    "word": "destruction",
+    "meaning": "파멸, 말살",
+    "pos": "명사"
+  },
+  {
+    "word": "dispute",
+    "meaning": "분쟁",
+    "pos": "명사"
+  },
+  {
+    "word": "indicate",
+    "meaning": "나타내다",
+    "pos": "동사"
+  },
+  {
+    "word": "encounter",
+    "meaning": "맞닥뜨리다",
+    "pos": "동사"
+  },
+  {
+    "word": "legislation",
+    "meaning": "법률 제정",
+    "pos": "명사"
+  },
+  {
+    "word": "abstract",
+    "meaning": "추상적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "penalty",
+    "meaning": "처벌, 불이익",
+    "pos": "명사"
+  },
+  {
+    "word": "resolve",
+    "meaning": "해결하다",
+    "pos": "동사"
+  },
+  {
+    "word": "investigation",
+    "meaning": "조사, 수사",
+    "pos": "명사"
+  },
+  {
+    "word": "intake",
+    "meaning": "섭취, 신규 인원",
+    "pos": "명사"
+  },
+  {
+    "word": "extent",
+    "meaning": "규모, 정도",
+    "pos": "명사"
+  },
+  {
+    "word": "mainstream",
+    "meaning": "주류",
+    "pos": "명사"
+  },
+  {
+    "word": "landscape",
+    "meaning": "풍경",
+    "pos": "명사"
+  },
+  {
+    "word": "addiction",
+    "meaning": "중독",
+    "pos": "명사"
+  },
+  {
+    "word": "specialty",
+    "meaning": "전문, 특산물",
+    "pos": "명사"
+  },
+  {
+    "word": "engage",
+    "meaning": "관여하다, 사로잡다",
+    "pos": "동사"
+  },
+  {
+    "word": "faculty",
+    "meaning": "능력",
+    "pos": "명사"
+  },
+  {
+    "word": "shame",
+    "meaning": "수치심",
+    "pos": "명사"
+  },
+  {
+    "word": "linguistic",
+    "meaning": "언어적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "census",
+    "meaning": "인구 조사",
+    "pos": "명사"
+  },
+  {
+    "word": "burden",
+    "meaning": "부담",
+    "pos": "명사"
+  },
+  {
+    "word": "charity",
+    "meaning": "자선, 관용",
+    "pos": "명사"
+  },
+  {
+    "word": "downturn",
+    "meaning": "부진, 침체",
+    "pos": "명사"
+  },
+  {
+    "word": "branch",
+    "meaning": "나뭇가지, 지점",
+    "pos": "명사"
+  },
+  {
+    "word": "extinct",
+    "meaning": "멸종된",
+    "pos": "형용사"
+  },
+  {
+    "word": "foundation",
+    "meaning": "토대",
+    "pos": "명사"
+  },
+  {
+    "word": "deserve",
+    "meaning": "~할 자격이 있다",
+    "pos": "동사"
+  },
+  {
+    "word": "unprecedented",
+    "meaning": "전례 없는",
+    "pos": "형용사"
+  },
+  {
+    "word": "notion",
+    "meaning": "개념",
+    "pos": "명사"
+  },
+  {
+    "word": "automobile",
+    "meaning": "자동차",
+    "pos": "명사"
+  },
+  {
+    "word": "reasonable",
+    "meaning": "합리적인, 타당한",
+    "pos": "형용사"
+  },
+  {
+    "word": "substitute",
+    "meaning": "대체품",
+    "pos": "명사"
+  },
+  {
+    "word": "tragedy",
+    "meaning": "비극",
+    "pos": "명사"
+  },
+  {
+    "word": "modest",
+    "meaning": "겸손한, 보통의",
+    "pos": "형용사"
+  },
+  {
+    "word": "adhere",
+    "meaning": "들러붙다, 고수하다",
+    "pos": "동사"
+  },
+  {
+    "word": "traits",
+    "meaning": "특성들",
+    "pos": "명사"
+  },
+  {
+    "word": "profound",
+    "meaning": "엄청난, 깊은",
+    "pos": "형용사"
+  },
+  {
+    "word": "leisure",
+    "meaning": "여가",
+    "pos": "명사"
+  },
+  {
+    "word": "censorship",
+    "meaning": "검열",
+    "pos": "명사"
+  },
+  {
+    "word": "theft",
+    "meaning": "절도",
+    "pos": "명사"
+  },
+  {
+    "word": "adequate",
+    "meaning": "충분한, 적절한",
+    "pos": "형용사"
+  },
+  {
+    "word": "acquaintances",
+    "meaning": "지인들",
+    "pos": "명사"
+  },
+  {
+    "word": "conscious",
+    "meaning": "의식하는",
+    "pos": "형용사"
+  },
+  {
+    "word": "cooperation",
+    "meaning": "협력",
+    "pos": "명사"
+  },
+  {
+    "word": "portable",
+    "meaning": "휴대용의",
+    "pos": "형용사"
+  },
+  {
+    "word": "absence",
+    "meaning": "결석, 결핍",
+    "pos": "명사"
+  },
+  {
+    "word": "monetary",
+    "meaning": "통화(화폐)의",
+    "pos": "형용사"
+  },
+  {
+    "word": "insomnia",
+    "meaning": "불면증",
+    "pos": "명사"
+  },
+  {
+    "word": "satellite",
+    "meaning": "위성",
+    "pos": "명사"
+  },
+  {
+    "word": "advocates",
+    "meaning": "지지자들",
+    "pos": "명사"
+  },
+  {
+    "word": "justify",
+    "meaning": "정당화시키다",
+    "pos": "동사"
+  },
+  {
+    "word": "sculpture",
+    "meaning": "조각품",
+    "pos": "명사"
+  },
+  {
+    "word": "restore",
+    "meaning": "회복시키다",
+    "pos": "동사"
+  },
+  {
+    "word": "contaminated",
+    "meaning": "오염된",
+    "pos": "형용사"
+  },
+  {
+    "word": "ordinary",
+    "meaning": "일상적인, 평범한",
+    "pos": "형용사"
+  },
+  {
+    "word": "foster",
+    "meaning": "조성하다, 증진시키다",
+    "pos": "동사"
+  },
+  {
+    "word": "complimentary",
+    "meaning": "무료의, 칭찬하는",
+    "pos": "형용사"
+  },
+  {
+    "word": "linear",
+    "meaning": "직선적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "substantial",
+    "meaning": "상당한",
+    "pos": "형용사"
+  },
+  {
+    "word": "indigenous",
+    "meaning": "토착의",
+    "pos": "형용사"
+  },
+  {
+    "word": "intelligence",
+    "meaning": "지능, 지성",
+    "pos": "명사"
+  },
+  {
+    "word": "bond",
+    "meaning": "유대",
+    "pos": "명사"
+  },
+  {
+    "word": "vary",
+    "meaning": "서로 다르다",
+    "pos": "동사"
+  },
+  {
+    "word": "derived",
+    "meaning": "유래된",
+    "pos": "형용사"
+  },
+  {
+    "word": "heritage",
+    "meaning": "유산",
+    "pos": "명사"
+  },
+  {
+    "word": "polar",
+    "meaning": "극지의, 양극의",
+    "pos": "형용사"
+  },
+  {
+    "word": "reception",
+    "meaning": "접수처, 환영 연회",
+    "pos": "명사"
+  },
+  {
+    "word": "efficacy",
+    "meaning": "효험",
+    "pos": "명사"
+  },
+  {
+    "word": "ritual",
+    "meaning": "의식, 의례",
+    "pos": "명사"
+  },
+  {
+    "word": "reductions",
+    "meaning": "삭감, 할인",
+    "pos": "명사"
+  },
+  {
+    "word": "obese",
+    "meaning": "비만인",
+    "pos": "형용사"
+  },
+  {
+    "word": "mutual",
+    "meaning": "상호간의",
+    "pos": "형용사"
+  },
+  {
+    "word": "ongoing",
+    "meaning": "계속 진행 중인",
+    "pos": "형용사"
+  },
+  {
+    "word": "viable",
+    "meaning": "실행 가능한",
+    "pos": "형용사"
+  },
+  {
+    "word": "arena",
+    "meaning": "경기장, 무대",
+    "pos": "명사"
+  },
+  {
+    "word": "primitive",
+    "meaning": "원시 사회의, 초기의",
+    "pos": "형용사"
+  },
+  {
+    "word": "predominantly",
+    "meaning": "대부분, 주로",
+    "pos": "부사"
+  },
+  {
+    "word": "neural",
+    "meaning": "신경의",
+    "pos": "형용사"
+  },
+  {
+    "word": "medication",
+    "meaning": "약, 약물 치료",
+    "pos": "명사"
+  },
+  {
+    "word": "maintenance",
+    "meaning": "유지",
+    "pos": "명사"
+  },
+  {
+    "word": "prime",
+    "meaning": "주요한, 최고의",
+    "pos": "형용사"
+  },
+  {
+    "word": "sake",
+    "meaning": "동기, 목적",
+    "pos": "명사"
+  },
+  {
+    "word": "passionate",
+    "meaning": "열정적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "rite",
+    "meaning": "의례",
+    "pos": "명사"
+  },
+  {
+    "word": "anthropology",
+    "meaning": "인류학",
+    "pos": "명사"
+  },
+  {
+    "word": "autism",
+    "meaning": "자폐증",
+    "pos": "명사"
+  },
+  {
+    "word": "plagiarism",
+    "meaning": "표절",
+    "pos": "명사"
+  },
+  {
+    "word": "combat",
+    "meaning": "전투, 방지하다",
+    "pos": "명사"
+  },
+  {
+    "word": "petition",
+    "meaning": "탄원서",
+    "pos": "명사"
+  },
+  {
+    "word": "rear",
+    "meaning": "뒤쪽",
+    "pos": "명사"
+  },
+  {
+    "word": "reversed",
+    "meaning": "거꾸로 된, 뒤집힌",
+    "pos": "형용사"
+  },
+  {
+    "word": "outstanding",
+    "meaning": "뛰어난, 두드러진",
+    "pos": "형용사"
+  },
+  {
+    "word": "criteria",
+    "meaning": "기준, 표준",
+    "pos": "명사"
+  },
+  {
+    "word": "liberty",
+    "meaning": "자유",
+    "pos": "명사"
+  },
+  {
+    "word": "discipline",
+    "meaning": "훈육",
+    "pos": "명사"
+  },
+  {
+    "word": "fraud",
+    "meaning": "사기꾼, 가짜",
+    "pos": "명사"
+  },
+  {
+    "word": "boulevard",
+    "meaning": "도로",
+    "pos": "명사"
+  },
+  {
+    "word": "worn",
+    "meaning": "닳은, 몹시 지쳐 보이는",
+    "pos": "형용사"
+  },
+  {
+    "word": "spare",
+    "meaning": "남는, 할애하다",
+    "pos": "형용사"
+  },
+  {
+    "word": "sparingly",
+    "meaning": "절약하여",
+    "pos": "부사"
+  },
+  {
+    "word": "remote",
+    "meaning": "외진, 먼",
+    "pos": "형용사"
+  },
+  {
+    "word": "enhance",
+    "meaning": "높이다, 향상시키다",
+    "pos": "동사"
+  },
+  {
+    "word": "facilitate",
+    "meaning": "가능하게 하다",
+    "pos": "동사"
+  },
+  {
+    "word": "shift",
+    "meaning": "옮기다",
+    "pos": "동사"
+  },
+  {
+    "word": "psychiatric",
+    "meaning": "정신 의학의",
+    "pos": "형용사"
+  },
+  {
+    "word": "aboriginal",
+    "meaning": "원주민의",
+    "pos": "형용사"
+  },
+  {
+    "word": "hikes",
+    "meaning": "급등",
+    "pos": "명사"
+  },
+  {
+    "word": "scheme",
+    "meaning": "책략",
+    "pos": "명사"
+  },
+  {
+    "word": "hazard",
+    "meaning": "위험 요소",
+    "pos": "명사"
+  },
+  {
+    "word": "desertification",
+    "meaning": "사막화",
+    "pos": "명사"
+  },
+  {
+    "word": "lease",
+    "meaning": "임대차 계약",
+    "pos": "명사"
+  },
+  {
+    "word": "syllabus",
+    "meaning": "커리큘럼",
+    "pos": "명사"
+  },
+  {
+    "word": "transit",
+    "meaning": "수송, 환승",
+    "pos": "명사"
+  },
+  {
+    "word": "genuine",
+    "meaning": "진짜의, 진실한",
+    "pos": "형용사"
+  },
+  {
+    "word": "considerable",
+    "meaning": "상당한, 많은",
+    "pos": "형용사"
+  },
+  {
+    "word": "elementary",
+    "meaning": "초보의, 근본적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "antibiotics",
+    "meaning": "항생물질",
+    "pos": "명사"
+  },
+  {
+    "word": "demonstrate",
+    "meaning": "입증하다, 보여주다",
+    "pos": "동사"
+  },
+  {
+    "word": "transactions",
+    "meaning": "거래, 매매",
+    "pos": "명사"
+  },
+  {
+    "word": "entrepreneurs",
+    "meaning": "기업가들",
+    "pos": "명사"
+  },
+  {
+    "word": "reign",
+    "meaning": "통치 기간",
+    "pos": "명사"
+  },
+  {
+    "word": "merit",
+    "meaning": "가치, 장점",
+    "pos": "명사"
+  },
+  {
+    "word": "wilderness",
+    "meaning": "황무지",
+    "pos": "명사"
+  },
+  {
+    "word": "adhesive",
+    "meaning": "들러붙는, 접착제",
+    "pos": "형용사"
+  },
+  {
+    "word": "dean",
+    "meaning": "학과장",
+    "pos": "명사"
+  },
+  {
+    "word": "acids",
+    "meaning": "산",
+    "pos": "명사"
+  },
+  {
+    "word": "cardiovascular",
+    "meaning": "심혈관의",
+    "pos": "형용사"
+  },
+  {
+    "word": "resurrection",
+    "meaning": "부활",
+    "pos": "명사"
+  },
+  {
+    "word": "comet",
+    "meaning": "혜성",
+    "pos": "명사"
+  },
+  {
+    "word": "surpass",
+    "meaning": "능가하다, 뛰어넘다",
+    "pos": "동사"
+  },
+  {
+    "word": "assert",
+    "meaning": "주장하다, 확고히 하다",
+    "pos": "동사"
+  },
+  {
+    "word": "procure",
+    "meaning": "구하다, 확보하다",
+    "pos": "동사"
+  },
+  {
+    "word": "lawn",
+    "meaning": "잔디",
+    "pos": "명사"
+  },
+  {
+    "word": "consensus",
+    "meaning": "합의",
+    "pos": "명사"
+  },
+  {
+    "word": "comply",
+    "meaning": "따르다, 준수하다",
+    "pos": "동사"
+  },
+  {
+    "word": "compulsory",
+    "meaning": "강제적인, 의무적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "liability",
+    "meaning": "부채",
+    "pos": "명사"
+  },
+  {
+    "word": "demolition",
+    "meaning": "파괴, 폭파",
+    "pos": "명사"
+  },
+  {
+    "word": "withstand",
+    "meaning": "견뎌 내다",
+    "pos": "동사"
+  },
+  {
+    "word": "exclusion",
+    "meaning": "제외, 배제",
+    "pos": "명사"
+  },
+  {
+    "word": "magnitude",
+    "meaning": "중요도, 지진 규모",
+    "pos": "명사"
+  },
+  {
+    "word": "instant",
+    "meaning": "즉각적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "initiative",
+    "meaning": "계획, 주도권",
+    "pos": "명사"
+  },
+  {
+    "word": "presidential",
+    "meaning": "대통령의",
+    "pos": "형용사"
+  },
+  {
+    "word": "novice",
+    "meaning": "초보자",
+    "pos": "명사"
+  },
+  {
+    "word": "debris",
+    "meaning": "잔해",
+    "pos": "명사"
+  },
+  {
+    "word": "deficit",
+    "meaning": "적자",
+    "pos": "명사"
+  },
+  {
+    "word": "acclaim",
+    "meaning": "칭송하다, 칭찬",
+    "pos": "동사"
+  },
+  {
+    "word": "gear",
+    "meaning": "기어",
+    "pos": "명사"
+  },
+  {
+    "word": "advisory",
+    "meaning": "자문의",
+    "pos": "형용사"
+  },
+  {
+    "word": "venue",
+    "meaning": "장소",
+    "pos": "명사"
+  },
+  {
+    "word": "abuse",
+    "meaning": "남용, 학대",
+    "pos": "명사"
+  },
+  {
+    "word": "feasible",
+    "meaning": "실현 가능한",
+    "pos": "형용사"
+  },
+  {
+    "word": "divine",
+    "meaning": "신성한",
+    "pos": "형용사"
+  },
+  {
+    "word": "norms",
+    "meaning": "규준, 규범",
+    "pos": "명사"
+  },
+  {
+    "word": "predicament",
+    "meaning": "곤경, 궁지",
+    "pos": "명사"
+  },
+  {
+    "word": "reptiles",
+    "meaning": "파충류",
+    "pos": "명사"
+  },
+  {
+    "word": "affiliation",
+    "meaning": "소속, 가입",
+    "pos": "명사"
+  },
+  {
+    "word": "morale",
+    "meaning": "의욕, 사기",
+    "pos": "명사"
+  },
+  {
+    "word": "pedestrian",
+    "meaning": "보행자",
+    "pos": "명사"
+  },
+  {
+    "word": "retention",
+    "meaning": "보유, 잔류",
+    "pos": "명사"
+  },
+  {
+    "word": "disciplinary",
+    "meaning": "징계의",
+    "pos": "형용사"
+  },
+  {
+    "word": "cope",
+    "meaning": "대처하다",
+    "pos": "동사"
+  },
+  {
+    "word": "solicit",
+    "meaning": "간청하다",
+    "pos": "동사"
+  },
+  {
+    "word": "municipal",
+    "meaning": "지방 자치제의",
+    "pos": "형용사"
+  },
+  {
+    "word": "discrepancy",
+    "meaning": "차이",
+    "pos": "명사"
+  },
+  {
+    "word": "attorney",
+    "meaning": "변호사, 대리인",
+    "pos": "명사"
+  },
+  {
+    "word": "rogue",
+    "meaning": "사기꾼, 악당",
+    "pos": "명사"
+  },
+  {
+    "word": "grid",
+    "meaning": "격자판",
+    "pos": "명사"
+  },
+  {
+    "word": "assign",
+    "meaning": "맡기다, 선임하다",
+    "pos": "동사"
+  },
+  {
+    "word": "tenants",
+    "meaning": "세입자들",
+    "pos": "명사"
+  },
+  {
+    "word": "detergent",
+    "meaning": "세제",
+    "pos": "명사"
+  },
+  {
+    "word": "resurgence",
+    "meaning": "재기",
+    "pos": "명사"
+  },
+  {
+    "word": "strive",
+    "meaning": "분투하다",
+    "pos": "동사"
+  },
+  {
+    "word": "paramount",
+    "meaning": "가장 중요한, 최고의",
+    "pos": "형용사"
+  },
+  {
+    "word": "colossal",
+    "meaning": "거대한, 엄청난",
+    "pos": "형용사"
+  },
+  {
+    "word": "tremendous",
+    "meaning": "엄청난, 굉장한",
+    "pos": "형용사"
+  },
+  {
+    "word": "enormous",
+    "meaning": "거대한, 막대한",
+    "pos": "형용사"
+  },
+  {
+    "word": "authentic",
+    "meaning": "진짜 같은",
+    "pos": "형용사"
+  },
+  {
+    "word": "dementia",
+    "meaning": "치매",
+    "pos": "명사"
+  },
+  {
+    "word": "deter",
+    "meaning": "단념시키다",
+    "pos": "동사"
+  },
+  {
+    "word": "susceptible",
+    "meaning": "예민한, 민감한",
+    "pos": "형용사"
+  },
+  {
+    "word": "undergo",
+    "meaning": "겪다",
+    "pos": "동사"
+  },
+  {
+    "word": "corporations",
+    "meaning": "기업들",
+    "pos": "명사"
+  },
+  {
+    "word": "onset",
+    "meaning": "시작",
+    "pos": "명사"
+  },
+  {
+    "word": "imposing",
+    "meaning": "눈길을 끄는, 인상적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "turnover",
+    "meaning": "매출량, 이직률",
+    "pos": "명사"
+  },
+  {
+    "word": "occupancy",
+    "meaning": "사용",
+    "pos": "명사"
+  },
+  {
+    "word": "applicable",
+    "meaning": "해당되는",
+    "pos": "형용사"
+  },
+  {
+    "word": "plague",
+    "meaning": "전염병",
+    "pos": "명사"
+  },
+  {
+    "word": "intricate",
+    "meaning": "복잡한",
+    "pos": "형용사"
+  },
+  {
+    "word": "clan",
+    "meaning": "씨족, 집단",
+    "pos": "명사"
+  },
+  {
+    "word": "comprise",
+    "meaning": "구성하다",
+    "pos": "동사"
+  },
+  {
+    "word": "conserve",
+    "meaning": "아끼다, 보존하다",
+    "pos": "동사"
+  },
+  {
+    "word": "sheer",
+    "meaning": "순전한",
+    "pos": "형용사"
+  },
+  {
+    "word": "hatch",
+    "meaning": "부화하다, 기획하다",
+    "pos": "동사"
+  },
+  {
+    "word": "severity",
+    "meaning": "격렬, 엄격",
+    "pos": "명사"
+  },
+  {
+    "word": "extravagant",
+    "meaning": "사치스러운, 화려한",
+    "pos": "형용사"
+  },
+  {
+    "word": "speculate",
+    "meaning": "추측하다, 투기하다",
+    "pos": "동사"
+  },
+  {
+    "word": "speculation",
+    "meaning": "추측, 투기",
+    "pos": "명사"
+  },
+  {
+    "word": "rigorous",
+    "meaning": "엄격한",
+    "pos": "형용사"
+  },
+  {
+    "word": "alter",
+    "meaning": "바꾸다",
+    "pos": "동사"
+  },
+  {
+    "word": "inclusion",
+    "meaning": "포함",
+    "pos": "명사"
+  },
+  {
+    "word": "gross",
+    "meaning": "중대한",
+    "pos": "형용사"
+  },
+  {
+    "word": "hinder",
+    "meaning": "방해하다",
+    "pos": "동사"
+  },
+  {
+    "word": "mediocre",
+    "meaning": "보통의, 평범한",
+    "pos": "형용사"
+  },
+  {
+    "word": "tenure",
+    "meaning": "재임, 종신 재직권",
+    "pos": "명사"
+  },
+  {
+    "word": "overdue",
+    "meaning": "기한이 지난",
+    "pos": "형용사"
+  },
+  {
+    "word": "wary",
+    "meaning": "조심하는",
+    "pos": "형용사"
+  },
+  {
+    "word": "prestigious",
+    "meaning": "명망 있는",
+    "pos": "형용사"
+  },
+  {
+    "word": "prevalent",
+    "meaning": "일반적인, 널리 퍼져 있는",
+    "pos": "형용사"
+  },
+  {
+    "word": "lethal",
+    "meaning": "치명적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "vessel",
+    "meaning": "선박, 혈관",
+    "pos": "명사"
+  },
+  {
+    "word": "alternate",
+    "meaning": "번갈아 생기는",
+    "pos": "형용사"
+  },
+  {
+    "word": "alliance",
+    "meaning": "연합, 동맹",
+    "pos": "명사"
+  },
+  {
+    "word": "intent",
+    "meaning": "목적",
+    "pos": "명사"
+  },
+  {
+    "word": "turmoil",
+    "meaning": "소란, 혼란",
+    "pos": "명사"
+  },
+  {
+    "word": "proponents",
+    "meaning": "지지자들",
+    "pos": "명사"
+  },
+  {
+    "word": "synthetic",
+    "meaning": "합성한, 종합적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "commodity",
+    "meaning": "상품, 물품",
+    "pos": "명사"
+  },
+  {
+    "word": "accommodation",
+    "meaning": "숙소, 시설",
+    "pos": "명사"
+  },
+  {
+    "word": "magnificent",
+    "meaning": "장엄한",
+    "pos": "형용사"
+  },
+  {
+    "word": "eradication",
+    "meaning": "근절, 박멸",
+    "pos": "명사"
+  },
+  {
+    "word": "avid",
+    "meaning": "열렬한, 열망하는",
+    "pos": "형용사"
+  },
+  {
+    "word": "keen",
+    "meaning": "예민한, 열렬한",
+    "pos": "형용사"
+  },
+  {
+    "word": "accumulate",
+    "meaning": "축적하다",
+    "pos": "동사"
+  },
+  {
+    "word": "precipitation",
+    "meaning": "강수량",
+    "pos": "명사"
+  },
+  {
+    "word": "strain",
+    "meaning": "부담",
+    "pos": "명사"
+  },
+  {
+    "word": "prone",
+    "meaning": "하기 쉬운",
+    "pos": "형용사"
+  },
+  {
+    "word": "specimen",
+    "meaning": "표본",
+    "pos": "명사"
+  },
+  {
+    "word": "yield",
+    "meaning": "생산하다, 항복하다",
+    "pos": "동사"
+  },
+  {
+    "word": "dismiss",
+    "meaning": "묵살하다, 해고하다",
+    "pos": "동사"
+  },
+  {
+    "word": "unison",
+    "meaning": "화합",
+    "pos": "명사"
+  },
+  {
+    "word": "surge",
+    "meaning": "밀려들다, 휩싸다",
+    "pos": "동사"
+  },
+  {
+    "word": "replicate",
+    "meaning": "복제하다",
+    "pos": "동사"
+  },
+  {
+    "word": "erosion",
+    "meaning": "부식",
+    "pos": "명사"
+  },
+  {
+    "word": "prosperous",
+    "meaning": "번창한",
+    "pos": "형용사"
+  },
+  {
+    "word": "prosper",
+    "meaning": "번영하다",
+    "pos": "동사"
+  },
+  {
+    "word": "demise",
+    "meaning": "종말, 죽음",
+    "pos": "명사"
+  },
+  {
+    "word": "vertebrates",
+    "meaning": "척추동물",
+    "pos": "명사"
+  },
+  {
+    "word": "console",
+    "meaning": "위로하다",
+    "pos": "동사"
+  },
+  {
+    "word": "invasion",
+    "meaning": "침략, 침해",
+    "pos": "명사"
+  },
+  {
+    "word": "conform",
+    "meaning": "따르다",
+    "pos": "동사"
+  },
+  {
+    "word": "refined",
+    "meaning": "세련된",
+    "pos": "형용사"
+  },
+  {
+    "word": "repercussions",
+    "meaning": "영향들",
+    "pos": "명사"
+  },
+  {
+    "word": "reminiscent",
+    "meaning": "연상시키는",
+    "pos": "형용사"
+  },
+  {
+    "word": "boon",
+    "meaning": "요긴한 것",
+    "pos": "명사"
+  },
+  {
+    "word": "realm",
+    "meaning": "왕국, 영역",
+    "pos": "명사"
+  },
+  {
+    "word": "heed",
+    "meaning": "주의를 기울이다",
+    "pos": "동사"
+  },
+  {
+    "word": "maternity",
+    "meaning": "어머니인 상태",
+    "pos": "명사"
+  },
+  {
+    "word": "culinary",
+    "meaning": "요리의",
+    "pos": "형용사"
+  },
+  {
+    "word": "tariffs",
+    "meaning": "관세",
+    "pos": "명사"
+  },
+  {
+    "word": "stranded",
+    "meaning": "발이 묶인",
+    "pos": "형용사"
+  },
+  {
+    "word": "surveillance",
+    "meaning": "감시",
+    "pos": "명사"
+  },
+  {
+    "word": "hectic",
+    "meaning": "정신없이 바쁜, 빡빡한",
+    "pos": "형용사"
+  },
+  {
+    "word": "inmates",
+    "meaning": "수감자들",
+    "pos": "명사"
+  },
+  {
+    "word": "rehabilitation",
+    "meaning": "갱생",
+    "pos": "명사"
+  },
+  {
+    "word": "pension",
+    "meaning": "연금",
+    "pos": "명사"
+  },
+  {
+    "word": "confidential",
+    "meaning": "비밀의",
+    "pos": "형용사"
+  },
+  {
+    "word": "lag",
+    "meaning": "뒤에 처지다",
+    "pos": "동사"
+  },
+  {
+    "word": "outreach",
+    "meaning": "봉사활동",
+    "pos": "명사"
+  },
+  {
+    "word": "devoid",
+    "meaning": "~이 전혀 없는",
+    "pos": "형용사"
+  },
+  {
+    "word": "consent",
+    "meaning": "동의",
+    "pos": "명사"
+  },
+  {
+    "word": "garments",
+    "meaning": "의복",
+    "pos": "명사"
+  },
+  {
+    "word": "siege",
+    "meaning": "포위",
+    "pos": "명사"
+  },
+  {
+    "word": "therapeutic",
+    "meaning": "치료상의",
+    "pos": "형용사"
+  },
+  {
+    "word": "incur",
+    "meaning": "발생시키다",
+    "pos": "동사"
+  },
+  {
+    "word": "ventilation",
+    "meaning": "환기, 통풍",
+    "pos": "명사"
+  },
+  {
+    "word": "heroic",
+    "meaning": "영웅적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "substantive",
+    "meaning": "실질적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "implications",
+    "meaning": "결과, 영향",
+    "pos": "명사"
+  },
+  {
+    "word": "commence",
+    "meaning": "시작되다",
+    "pos": "동사"
+  },
+  {
+    "word": "intact",
+    "meaning": "온전한",
+    "pos": "형용사"
+  },
+  {
+    "word": "undertaking",
+    "meaning": "약속, 일",
+    "pos": "명사"
+  },
+  {
+    "word": "phenomenal",
+    "meaning": "경이적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "forge",
+    "meaning": "위조하다",
+    "pos": "동사"
+  },
+  {
+    "word": "furnishing",
+    "meaning": "비품, 가구",
+    "pos": "명사"
+  },
+  {
+    "word": "doomed",
+    "meaning": "불운한",
+    "pos": "형용사"
+  },
+  {
+    "word": "payroll",
+    "meaning": "임금",
+    "pos": "명사"
+  },
+  {
+    "word": "sediment",
+    "meaning": "퇴적물",
+    "pos": "명사"
+  },
+  {
+    "word": "heir",
+    "meaning": "상속인",
+    "pos": "명사"
+  },
+  {
+    "word": "contradict",
+    "meaning": "반박하다, 모순되다",
+    "pos": "동사"
+  },
+  {
+    "word": "downfall",
+    "meaning": "몰락의 원인",
+    "pos": "명사"
+  },
+  {
+    "word": "behalf",
+    "meaning": "이익, 대리",
+    "pos": "명사"
+  },
+  {
+    "word": "inferior",
+    "meaning": "열등한",
+    "pos": "형용사"
+  },
+  {
+    "word": "reimburse",
+    "meaning": "환급하다",
+    "pos": "동사"
+  },
+  {
+    "word": "equivalent",
+    "meaning": "동등한",
+    "pos": "형용사"
+  },
+  {
+    "word": "induce",
+    "meaning": "유도하다",
+    "pos": "동사"
+  },
+  {
+    "word": "virulent",
+    "meaning": "맹렬한, 독성의",
+    "pos": "형용사"
+  },
+  {
+    "word": "asylum",
+    "meaning": "망명, 보호시설",
+    "pos": "명사"
+  },
+  {
+    "word": "inception",
+    "meaning": "시작, 발단",
+    "pos": "명사"
+  },
+  {
+    "word": "outlaw",
+    "meaning": "불법화하다",
+    "pos": "동사"
+  },
+  {
+    "word": "convoy",
+    "meaning": "호송대",
+    "pos": "명사"
+  },
+  {
+    "word": "decree",
+    "meaning": "법령, 칙령",
+    "pos": "명사"
+  },
+  {
+    "word": "ballot",
+    "meaning": "투표",
+    "pos": "명사"
+  },
+  {
+    "word": "crater",
+    "meaning": "분화구",
+    "pos": "명사"
+  },
+  {
+    "word": "expatriate",
+    "meaning": "해외 거주자",
+    "pos": "명사"
+  },
+  {
+    "word": "sewage",
+    "meaning": "하수, 오수",
+    "pos": "명사"
+  },
+  {
+    "word": "detachment",
+    "meaning": "분리, 초연함",
+    "pos": "명사"
+  },
+  {
+    "word": "concussions",
+    "meaning": "뇌진탕",
+    "pos": "명사"
+  },
+  {
+    "word": "chivalry",
+    "meaning": "기사도",
+    "pos": "명사"
+  },
+  {
+    "word": "barred",
+    "meaning": "금지된",
+    "pos": "형용사"
+  },
+  {
+    "word": "fleet",
+    "meaning": "함대",
+    "pos": "명사"
+  },
+  {
+    "word": "aristocracy",
+    "meaning": "귀족 정치",
+    "pos": "명사"
+  },
+  {
+    "word": "conscientious",
+    "meaning": "양심적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "infertile",
+    "meaning": "불임의, 불모의",
+    "pos": "형용사"
+  },
+  {
+    "word": "stabilize",
+    "meaning": "안정시키다",
+    "pos": "동사"
+  },
+  {
+    "word": "futile",
+    "meaning": "헛된",
+    "pos": "형용사"
+  },
+  {
+    "word": "astronomical",
+    "meaning": "천문학적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "awe",
+    "meaning": "경외심을 갖게 하다",
+    "pos": "동사"
+  },
+  {
+    "word": "sovereign",
+    "meaning": "군주",
+    "pos": "명사"
+  },
+  {
+    "word": "fragile",
+    "meaning": "깨지기 쉬운",
+    "pos": "형용사"
+  },
+  {
+    "word": "dismissive",
+    "meaning": "무시하는",
+    "pos": "형용사"
+  },
+  {
+    "word": "ponder",
+    "meaning": "곰곰이 생각하다",
+    "pos": "동사"
+  },
+  {
+    "word": "undue",
+    "meaning": "과도한",
+    "pos": "형용사"
+  },
+  {
+    "word": "endorse",
+    "meaning": "지지하다",
+    "pos": "동사"
+  },
+  {
+    "word": "refute",
+    "meaning": "반박하다",
+    "pos": "동사"
+  },
+  {
+    "word": "patronage",
+    "meaning": "후원",
+    "pos": "명사"
+  },
+  {
+    "word": "flesh",
+    "meaning": "살, 육체",
+    "pos": "명사"
+  },
+  {
+    "word": "trail",
+    "meaning": "흔적, 오솔길",
+    "pos": "명사"
+  },
+  {
+    "word": "longstanding",
+    "meaning": "오랜, 오래된",
+    "pos": "형용사"
+  },
+  {
+    "word": "calculus",
+    "meaning": "미적분학",
+    "pos": "명사"
+  },
+  {
+    "word": "brutal",
+    "meaning": "잔인한",
+    "pos": "형용사"
+  },
+  {
+    "word": "superintendent",
+    "meaning": "감독관",
+    "pos": "명사"
+  },
+  {
+    "word": "impending",
+    "meaning": "임박한",
+    "pos": "형용사"
+  },
+  {
+    "word": "hype",
+    "meaning": "과대광고",
+    "pos": "명사"
+  },
+  {
+    "word": "envision",
+    "meaning": "상상하다",
+    "pos": "동사"
+  },
+  {
+    "word": "patriotism",
+    "meaning": "애국심",
+    "pos": "명사"
+  },
+  {
+    "word": "inflated",
+    "meaning": "부풀려진",
+    "pos": "형용사"
+  },
+  {
+    "word": "referendum",
+    "meaning": "국민투표",
+    "pos": "명사"
+  },
+  {
+    "word": "breach",
+    "meaning": "위반, 균열",
+    "pos": "명사"
+  },
+  {
+    "word": "eventual",
+    "meaning": "최종적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "assembly",
+    "meaning": "집회, 조립",
+    "pos": "명사"
+  },
+  {
+    "word": "evacuate",
+    "meaning": "대피시키다",
+    "pos": "동사"
+  },
+  {
+    "word": "punctual",
+    "meaning": "시간을 엄수하는",
+    "pos": "형용사"
+  },
+  {
+    "word": "rhetoric",
+    "meaning": "수사학, 미사여구",
+    "pos": "명사"
+  },
+  {
+    "word": "subversive",
+    "meaning": "전복적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "vandalism",
+    "meaning": "공공기물 파손",
+    "pos": "명사"
+  },
+  {
+    "word": "swear",
+    "meaning": "맹세하다",
+    "pos": "동사"
+  },
+  {
+    "word": "exorbitant",
+    "meaning": "터무니없이 비싼",
+    "pos": "형용사"
+  },
+  {
+    "word": "plunge",
+    "meaning": "급락하다",
+    "pos": "동사"
+  },
+  {
+    "word": "stringent",
+    "meaning": "엄격한",
+    "pos": "형용사"
+  },
+  {
+    "word": "dire",
+    "meaning": "극심한",
+    "pos": "형용사"
+  },
+  {
+    "word": "scrutiny",
+    "meaning": "면밀한 조사",
+    "pos": "명사"
+  },
+  {
+    "word": "precursor",
+    "meaning": "선구자, 전조",
+    "pos": "명사"
+  },
+  {
+    "word": "influx",
+    "meaning": "유입",
+    "pos": "명사"
+  },
+  {
+    "word": "hue",
+    "meaning": "색조",
+    "pos": "명사"
+  },
+  {
+    "word": "spite",
+    "meaning": "악의",
+    "pos": "명사"
+  },
+  {
+    "word": "impurities",
+    "meaning": "불순물",
+    "pos": "명사"
+  },
+  {
+    "word": "provincial",
+    "meaning": "지방의",
+    "pos": "형용사"
+  },
+  {
+    "word": "skewed",
+    "meaning": "왜곡된",
+    "pos": "형용사"
+  },
+  {
+    "word": "detour",
+    "meaning": "우회로",
+    "pos": "명사"
+  },
+  {
+    "word": "anarchy",
+    "meaning": "무정부 상태",
+    "pos": "명사"
+  },
+  {
+    "word": "rally",
+    "meaning": "집결하다",
+    "pos": "동사"
+  },
+  {
+    "word": "cavalry",
+    "meaning": "기병대",
+    "pos": "명사"
+  },
+  {
+    "word": "initiate",
+    "meaning": "시작하다",
+    "pos": "동사"
+  },
+  {
+    "word": "arid",
+    "meaning": "건조한",
+    "pos": "형용사"
+  },
+  {
+    "word": "perishable",
+    "meaning": "부패하기 쉬운",
+    "pos": "형용사"
+  },
+  {
+    "word": "irrigation",
+    "meaning": "관개",
+    "pos": "명사"
+  },
+  {
+    "word": "circuit",
+    "meaning": "회로, 순환",
+    "pos": "명사"
+  },
+  {
+    "word": "alleged",
+    "meaning": "혐의가 있는",
+    "pos": "형용사"
+  },
+  {
+    "word": "unravel",
+    "meaning": "풀다, 밝히다",
+    "pos": "동사"
+  },
+  {
+    "word": "upscale",
+    "meaning": "고급의",
+    "pos": "형용사"
+  },
+  {
+    "word": "proliferate",
+    "meaning": "급증하다",
+    "pos": "동사"
+  },
+  {
+    "word": "revamp",
+    "meaning": "개조하다",
+    "pos": "동사"
+  },
+  {
+    "word": "archaic",
+    "meaning": "고풍의, 구식의",
+    "pos": "형용사"
+  },
+  {
+    "word": "thesis",
+    "meaning": "논문, 논지",
+    "pos": "명사"
+  },
+  {
+    "word": "resilient",
+    "meaning": "회복력 있는",
+    "pos": "형용사"
+  },
+  {
+    "word": "condescending",
+    "meaning": "거드름 피우는",
+    "pos": "형용사"
+  },
+  {
+    "word": "vicinity",
+    "meaning": "근처, 인근",
+    "pos": "명사"
+  },
+  {
+    "word": "heinous",
+    "meaning": "극악무도한",
+    "pos": "형용사"
+  },
+  {
+    "word": "vigilance",
+    "meaning": "경계",
+    "pos": "명사"
+  },
+  {
+    "word": "glimpse",
+    "meaning": "잠깐 봄",
+    "pos": "명사"
+  },
+  {
+    "word": "antidepressants",
+    "meaning": "항우울제",
+    "pos": "명사"
+  },
+  {
+    "word": "versatile",
+    "meaning": "다재다능한",
+    "pos": "형용사"
+  },
+  {
+    "word": "trepidation",
+    "meaning": "두려움, 전율",
+    "pos": "명사"
+  },
+  {
+    "word": "customary",
+    "meaning": "관습적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "philanthropic",
+    "meaning": "박애주의적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "rectify",
+    "meaning": "수정하다",
+    "pos": "동사"
+  },
+  {
+    "word": "overrated",
+    "meaning": "과대평가된",
+    "pos": "형용사"
+  },
+  {
+    "word": "fad",
+    "meaning": "일시적 유행",
+    "pos": "명사"
+  },
+  {
+    "word": "conducive",
+    "meaning": "도움이 되는",
+    "pos": "형용사"
+  },
+  {
+    "word": "aspirations",
+    "meaning": "열망",
+    "pos": "명사"
+  },
+  {
+    "word": "intimidating",
+    "meaning": "위협적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "ingrained",
+    "meaning": "뿌리 깊은",
+    "pos": "형용사"
+  },
+  {
+    "word": "imminent",
+    "meaning": "임박한",
+    "pos": "형용사"
+  },
+  {
+    "word": "rudimentary",
+    "meaning": "기초적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "empirical",
+    "meaning": "경험적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "jeopardize",
+    "meaning": "위태롭게 하다",
+    "pos": "동사"
+  },
+  {
+    "word": "enticing",
+    "meaning": "매혹적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "peasants",
+    "meaning": "농민",
+    "pos": "명사"
+  },
+  {
+    "word": "conversion",
+    "meaning": "전환, 개종",
+    "pos": "명사"
+  },
+  {
+    "word": "marginalized",
+    "meaning": "소외된",
+    "pos": "형용사"
+  },
+  {
+    "word": "extant",
+    "meaning": "현존하는",
+    "pos": "형용사"
+  },
+  {
+    "word": "offset",
+    "meaning": "상쇄하다",
+    "pos": "동사"
+  },
+  {
+    "word": "lure",
+    "meaning": "유혹하다",
+    "pos": "동사"
+  },
+  {
+    "word": "pedagogy",
+    "meaning": "교육학",
+    "pos": "명사"
+  },
+  {
+    "word": "primates",
+    "meaning": "영장류",
+    "pos": "명사"
+  },
+  {
+    "word": "daunting",
+    "meaning": "버거운, 위압적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "paralyzed",
+    "meaning": "마비된",
+    "pos": "형용사"
+  },
+  {
+    "word": "secular",
+    "meaning": "세속적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "fringe",
+    "meaning": "변두리, 가장자리",
+    "pos": "명사"
+  },
+  {
+    "word": "denote",
+    "meaning": "나타내다",
+    "pos": "동사"
+  },
+  {
+    "word": "horrific",
+    "meaning": "끔찍한",
+    "pos": "형용사"
+  },
+  {
+    "word": "juveniles",
+    "meaning": "청소년",
+    "pos": "명사"
+  },
+  {
+    "word": "plethora",
+    "meaning": "과잉, 넘침",
+    "pos": "명사"
+  },
+  {
+    "word": "correspondence",
+    "meaning": "서신, 일치",
+    "pos": "명사"
+  },
+  {
+    "word": "dissertation",
+    "meaning": "논문",
+    "pos": "명사"
+  },
+  {
+    "word": "provocative",
+    "meaning": "도발적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "altruism",
+    "meaning": "이타주의",
+    "pos": "명사"
+  },
+  {
+    "word": "sturdy",
+    "meaning": "튼튼한",
+    "pos": "형용사"
+  },
+  {
+    "word": "crude",
+    "meaning": "미정제의, 조잡한",
+    "pos": "형용사"
+  },
+  {
+    "word": "benign",
+    "meaning": "양성의, 온화한",
+    "pos": "형용사"
+  },
+  {
+    "word": "stark",
+    "meaning": "황량한, 완전한",
+    "pos": "형용사"
+  },
+  {
+    "word": "assassination",
+    "meaning": "암살",
+    "pos": "명사"
+  },
+  {
+    "word": "deceitful",
+    "meaning": "기만적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "deceptive",
+    "meaning": "속이는",
+    "pos": "형용사"
+  },
+  {
+    "word": "woes",
+    "meaning": "고통, 불행",
+    "pos": "명사"
+  },
+  {
+    "word": "appellation",
+    "meaning": "명칭",
+    "pos": "명사"
+  },
+  {
+    "word": "delinquent",
+    "meaning": "비행의",
+    "pos": "형용사"
+  },
+  {
+    "word": "maneuver",
+    "meaning": "작전, 책략",
+    "pos": "명사"
+  },
+  {
+    "word": "frivolous",
+    "meaning": "경솔한",
+    "pos": "형용사"
+  },
+  {
+    "word": "exile",
+    "meaning": "추방",
+    "pos": "명사"
+  },
+  {
+    "word": "vigorous",
+    "meaning": "활기찬",
+    "pos": "형용사"
+  },
+  {
+    "word": "dignitaries",
+    "meaning": "고위인사",
+    "pos": "명사"
+  },
+  {
+    "word": "fiscal",
+    "meaning": "재정의",
+    "pos": "형용사"
+  },
+  {
+    "word": "allied",
+    "meaning": "동맹의",
+    "pos": "형용사"
+  },
+  {
+    "word": "vice",
+    "meaning": "악덕, 부도덕",
+    "pos": "명사"
+  },
+  {
+    "word": "vicious",
+    "meaning": "잔인한, 악의적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "uproar",
+    "meaning": "소란, 논란",
+    "pos": "명사"
+  },
+  {
+    "word": "potent",
+    "meaning": "강력한",
+    "pos": "형용사"
+  },
+  {
+    "word": "discretion",
+    "meaning": "재량, 신중함",
+    "pos": "명사"
+  },
+  {
+    "word": "astonishing",
+    "meaning": "놀라운",
+    "pos": "형용사"
+  },
+  {
+    "word": "astounding",
+    "meaning": "경이로운",
+    "pos": "형용사"
+  },
+  {
+    "word": "terrain",
+    "meaning": "지형",
+    "pos": "명사"
+  },
+  {
+    "word": "hilarious",
+    "meaning": "매우 우스운",
+    "pos": "형용사"
+  },
+  {
+    "word": "famine",
+    "meaning": "기근",
+    "pos": "명사"
+  },
+  {
+    "word": "procrastination",
+    "meaning": "미루기",
+    "pos": "명사"
+  },
+  {
+    "word": "mergers",
+    "meaning": "합병",
+    "pos": "명사"
+  },
+  {
+    "word": "rebellion",
+    "meaning": "반란",
+    "pos": "명사"
+  },
+  {
+    "word": "counterfeiting",
+    "meaning": "위조",
+    "pos": "명사"
+  },
+  {
+    "word": "domain",
+    "meaning": "영역, 분야",
+    "pos": "명사"
+  },
+  {
+    "word": "hierarchy",
+    "meaning": "계층 구조",
+    "pos": "명사"
+  },
+  {
+    "word": "patriarchy",
+    "meaning": "가부장제",
+    "pos": "명사"
+  },
+  {
+    "word": "scarcity",
+    "meaning": "부족, 희소성",
+    "pos": "명사"
+  },
+  {
+    "word": "debilitating",
+    "meaning": "쇠약하게 하는",
+    "pos": "형용사"
+  },
+  {
+    "word": "aesthetic",
+    "meaning": "미적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "empathy",
+    "meaning": "공감",
+    "pos": "명사"
+  },
+  {
+    "word": "wholly",
+    "meaning": "완전히",
+    "pos": "부사"
+  },
+  {
+    "word": "turbulence",
+    "meaning": "난기류, 혼란",
+    "pos": "명사"
+  },
+  {
+    "word": "affirmative",
+    "meaning": "긍정적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "avian",
+    "meaning": "조류의",
+    "pos": "형용사"
+  },
+  {
+    "word": "impoverished",
+    "meaning": "빈곤한",
+    "pos": "형용사"
+  },
+  {
+    "word": "paranormal",
+    "meaning": "초자연적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "pathological",
+    "meaning": "병적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "vapor",
+    "meaning": "증기",
+    "pos": "명사"
+  },
+  {
+    "word": "trajectory",
+    "meaning": "궤도, 경로",
+    "pos": "명사"
+  },
+  {
+    "word": "erroneous",
+    "meaning": "잘못된",
+    "pos": "형용사"
+  },
+  {
+    "word": "fertility",
+    "meaning": "비옥함, 생식력",
+    "pos": "명사"
+  },
+  {
+    "word": "acculturation",
+    "meaning": "문화 동화",
+    "pos": "명사"
+  },
+  {
+    "word": "distraught",
+    "meaning": "매우 혼란스러운",
+    "pos": "형용사"
+  },
+  {
+    "word": "strained",
+    "meaning": "긴장된",
+    "pos": "형용사"
+  },
+  {
+    "word": "naval",
+    "meaning": "해군의",
+    "pos": "형용사"
+  },
+  {
+    "word": "expenditure",
+    "meaning": "지출",
+    "pos": "명사"
+  },
+  {
+    "word": "pundits",
+    "meaning": "전문가",
+    "pos": "명사"
+  },
+  {
+    "word": "anthem",
+    "meaning": "국가, 찬가",
+    "pos": "명사"
+  },
+  {
+    "word": "transparent",
+    "meaning": "투명한",
+    "pos": "형용사"
+  },
+  {
+    "word": "immorality",
+    "meaning": "부도덕",
+    "pos": "명사"
+  },
+  {
+    "word": "communism",
+    "meaning": "공산주의",
+    "pos": "명사"
+  },
+  {
+    "word": "senator",
+    "meaning": "상원의원",
+    "pos": "명사"
+  },
+  {
+    "word": "contrived",
+    "meaning": "인위적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "repressive",
+    "meaning": "억압적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "oppressive",
+    "meaning": "압제적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "carnivore",
+    "meaning": "육식동물",
+    "pos": "명사"
+  },
+  {
+    "word": "inauguration",
+    "meaning": "취임식",
+    "pos": "명사"
+  },
+  {
+    "word": "overarching",
+    "meaning": "전반적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "obscurity",
+    "meaning": "무명, 불분명함",
+    "pos": "명사"
+  },
+  {
+    "word": "exquisite",
+    "meaning": "정교한, 절묘한",
+    "pos": "형용사"
+  },
+  {
+    "word": "tame",
+    "meaning": "길든, 순한",
+    "pos": "형용사"
+  },
+  {
+    "word": "regime",
+    "meaning": "정권, 체제",
+    "pos": "명사"
+  },
+  {
+    "word": "regimen",
+    "meaning": "규칙적인 생활방식",
+    "pos": "명사"
+  },
+  {
+    "word": "alteration",
+    "meaning": "변경",
+    "pos": "명사"
+  },
+  {
+    "word": "dubious",
+    "meaning": "의심스러운",
+    "pos": "형용사"
+  },
+  {
+    "word": "biannual",
+    "meaning": "연 2회의",
+    "pos": "형용사"
+  },
+  {
+    "word": "finite",
+    "meaning": "유한한",
+    "pos": "형용사"
+  },
+  {
+    "word": "custody",
+    "meaning": "구금, 보호",
+    "pos": "명사"
+  },
+  {
+    "word": "pivotal",
+    "meaning": "중추적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "transmit",
+    "meaning": "전송하다",
+    "pos": "동사"
+  },
+  {
+    "word": "viral",
+    "meaning": "바이러스성의",
+    "pos": "형용사"
+  },
+  {
+    "word": "mundane",
+    "meaning": "평범한",
+    "pos": "형용사"
+  },
+  {
+    "word": "surplus",
+    "meaning": "잉여",
+    "pos": "명사"
+  },
+  {
+    "word": "interim",
+    "meaning": "임시의",
+    "pos": "형용사"
+  },
+  {
+    "word": "deferred",
+    "meaning": "연기된",
+    "pos": "형용사"
+  },
+  {
+    "word": "render",
+    "meaning": "만들다, 제공하다",
+    "pos": "동사"
+  },
+  {
+    "word": "basin",
+    "meaning": "분지, 대야",
+    "pos": "명사"
+  },
+  {
+    "word": "logistical",
+    "meaning": "물류의",
+    "pos": "형용사"
+  },
+  {
+    "word": "tentative",
+    "meaning": "잠정적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "volatile",
+    "meaning": "변덕스러운, 휘발성의",
+    "pos": "형용사"
+  },
+  {
+    "word": "excavations",
+    "meaning": "발굴",
+    "pos": "명사"
+  },
+  {
+    "word": "embroiled",
+    "meaning": "분쟁에 휘말린",
+    "pos": "형용사"
+  },
+  {
+    "word": "regression",
+    "meaning": "퇴행",
+    "pos": "명사"
+  },
+  {
+    "word": "abysmal",
+    "meaning": "형편없는",
+    "pos": "형용사"
+  },
+  {
+    "word": "ancestry",
+    "meaning": "조상",
+    "pos": "명사"
+  },
+  {
+    "word": "recollect",
+    "meaning": "회상하다",
+    "pos": "동사"
+  },
+  {
+    "word": "conviction",
+    "meaning": "유죄 판결, 신념",
+    "pos": "명사"
+  },
+  {
+    "word": "reflection",
+    "meaning": "반성, 반영",
+    "pos": "명사"
+  },
+  {
+    "word": "whimsical",
+    "meaning": "변덕스러운",
+    "pos": "형용사"
+  },
+  {
+    "word": "plummet",
+    "meaning": "급락하다",
+    "pos": "동사"
+  },
+  {
+    "word": "unequivocal",
+    "meaning": "명백한",
+    "pos": "형용사"
+  },
+  {
+    "word": "grim",
+    "meaning": "암울한",
+    "pos": "형용사"
+  },
+  {
+    "word": "prototypical",
+    "meaning": "전형적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "engrossed",
+    "meaning": "몰두한",
+    "pos": "형용사"
+  },
+  {
+    "word": "splendid",
+    "meaning": "훌륭한",
+    "pos": "형용사"
+  },
+  {
+    "word": "unwind",
+    "meaning": "긴장을 풀다",
+    "pos": "동사"
+  },
+  {
+    "word": "tedious",
+    "meaning": "지루한",
+    "pos": "형용사"
+  },
+  {
+    "word": "esoteric",
+    "meaning": "난해한",
+    "pos": "형용사"
+  },
+  {
+    "word": "renounce",
+    "meaning": "포기하다",
+    "pos": "동사"
+  },
+  {
+    "word": "abstain",
+    "meaning": "삼가다",
+    "pos": "동사"
+  },
+  {
+    "word": "apprehensive",
+    "meaning": "걱정하는",
+    "pos": "형용사"
+  },
+  {
+    "word": "insincere",
+    "meaning": "불성실한",
+    "pos": "형용사"
+  },
+  {
+    "word": "rampant",
+    "meaning": "만연한",
+    "pos": "형용사"
+  },
+  {
+    "word": "repudiate",
+    "meaning": "부인하다",
+    "pos": "동사"
+  },
+  {
+    "word": "lenient",
+    "meaning": "관대한",
+    "pos": "형용사"
+  },
+  {
+    "word": "emancipated",
+    "meaning": "해방된",
+    "pos": "형용사"
+  },
+  {
+    "word": "havoc",
+    "meaning": "혼란, 대혼란",
+    "pos": "명사"
+  },
+  {
+    "word": "parasite",
+    "meaning": "기생충",
+    "pos": "명사"
+  },
+  {
+    "word": "ulterior",
+    "meaning": "숨겨진",
+    "pos": "형용사"
+  },
+  {
+    "word": "retribution",
+    "meaning": "응보, 보복",
+    "pos": "명사"
+  },
+  {
+    "word": "surreptitiously",
+    "meaning": "몰래",
+    "pos": "부사"
+  },
+  {
+    "word": "withdraw",
+    "meaning": "철수하다",
+    "pos": "동사"
+  },
+  {
+    "word": "nominees",
+    "meaning": "후보자",
+    "pos": "명사"
+  },
+  {
+    "word": "testimonials",
+    "meaning": "추천서",
+    "pos": "명사"
+  },
+  {
+    "word": "stunned",
+    "meaning": "충격받은",
+    "pos": "형용사"
+  },
+  {
+    "word": "coup",
+    "meaning": "쿠데타",
+    "pos": "명사"
+  },
+  {
+    "word": "impede",
+    "meaning": "방해하다",
+    "pos": "동사"
+  },
+  {
+    "word": "masculine",
+    "meaning": "남성적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "confer",
+    "meaning": "수여하다, 협의하다",
+    "pos": "동사"
+  },
+  {
+    "word": "prophecy",
+    "meaning": "예언",
+    "pos": "명사"
+  },
+  {
+    "word": "replenish",
+    "meaning": "보충하다",
+    "pos": "동사"
+  },
+  {
+    "word": "intrigue",
+    "meaning": "흥미를 끌다",
+    "pos": "동사"
+  },
+  {
+    "word": "tepid",
+    "meaning": "미지근한",
+    "pos": "형용사"
+  },
+  {
+    "word": "bereavement",
+    "meaning": "사별",
+    "pos": "명사"
+  },
+  {
+    "word": "frigid",
+    "meaning": "매우 추운",
+    "pos": "형용사"
+  },
+  {
+    "word": "scant",
+    "meaning": "불충분한",
+    "pos": "형용사"
+  },
+  {
+    "word": "preliminary",
+    "meaning": "예비의",
+    "pos": "형용사"
+  },
+  {
+    "word": "anatomical",
+    "meaning": "해부학적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "sanctuary",
+    "meaning": "성역, 피난처",
+    "pos": "명사"
+  },
+  {
+    "word": "infancy",
+    "meaning": "유아기",
+    "pos": "명사"
+  },
+  {
+    "word": "discharge",
+    "meaning": "방출하다",
+    "pos": "동사"
+  },
+  {
+    "word": "decency",
+    "meaning": "품위",
+    "pos": "명사"
+  },
+  {
+    "word": "scattered",
+    "meaning": "흩어진",
+    "pos": "형용사"
+  },
+  {
+    "word": "outcry",
+    "meaning": "강한 항의",
+    "pos": "명사"
+  },
+  {
+    "word": "convict",
+    "meaning": "유죄 판결을 내리다",
+    "pos": "동사"
+  },
+  {
+    "word": "prudent",
+    "meaning": "신중한",
+    "pos": "형용사"
+  },
+  {
+    "word": "subtlety",
+    "meaning": "미묘함",
+    "pos": "명사"
+  },
+  {
+    "word": "sweeping",
+    "meaning": "광범위한",
+    "pos": "형용사"
+  },
+  {
+    "word": "anomalous",
+    "meaning": "변칙적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "transient",
+    "meaning": "일시적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "callous",
+    "meaning": "냉담한",
+    "pos": "형용사"
+  },
+  {
+    "word": "suffice",
+    "meaning": "충분하다",
+    "pos": "동사"
+  },
+  {
+    "word": "extraterrestrial",
+    "meaning": "외계의",
+    "pos": "명사"
+  },
+  {
+    "word": "snobbish",
+    "meaning": "속물적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "inhibit",
+    "meaning": "억제하다",
+    "pos": "동사"
+  },
+  {
+    "word": "superb",
+    "meaning": "훌륭한",
+    "pos": "형용사"
+  },
+  {
+    "word": "archive",
+    "meaning": "기록 보관소",
+    "pos": "명사"
+  },
+  {
+    "word": "layover",
+    "meaning": "경유, 단기 체류",
+    "pos": "명사"
+  },
+  {
+    "word": "validate",
+    "meaning": "검증하다",
+    "pos": "동사"
+  },
+  {
+    "word": "wretched",
+    "meaning": "비참한",
+    "pos": "형용사"
+  },
+  {
+    "word": "barbaric",
+    "meaning": "야만적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "inhumane",
+    "meaning": "비인도적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "dissent",
+    "meaning": "이의, 반대",
+    "pos": "명사"
+  },
+  {
+    "word": "candor",
+    "meaning": "솔직함",
+    "pos": "명사"
+  },
+  {
+    "word": "rife",
+    "meaning": "만연한",
+    "pos": "형용사"
+  },
+  {
+    "word": "savvy",
+    "meaning": "요령, 지식",
+    "pos": "명사"
+  },
+  {
+    "word": "prenatal",
+    "meaning": "출산 전의",
+    "pos": "형용사"
+  },
+  {
+    "word": "seizures",
+    "meaning": "발작",
+    "pos": "명사"
+  },
+  {
+    "word": "daring",
+    "meaning": "대담한",
+    "pos": "형용사"
+  },
+  {
+    "word": "disincentive",
+    "meaning": "억제 요인",
+    "pos": "명사"
+  },
+  {
+    "word": "resuscitate",
+    "meaning": "소생시키다",
+    "pos": "동사"
+  },
+  {
+    "word": "retaliation",
+    "meaning": "보복",
+    "pos": "명사"
+  },
+  {
+    "word": "imperative",
+    "meaning": "필수적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "veracity",
+    "meaning": "진실성",
+    "pos": "명사"
+  },
+  {
+    "word": "fertile",
+    "meaning": "비옥한",
+    "pos": "형용사"
+  },
+  {
+    "word": "bleak",
+    "meaning": "황량한, 암울한",
+    "pos": "형용사"
+  },
+  {
+    "word": "abusive",
+    "meaning": "학대하는",
+    "pos": "형용사"
+  },
+  {
+    "word": "dismal",
+    "meaning": "음울한",
+    "pos": "형용사"
+  },
+  {
+    "word": "reconciliation",
+    "meaning": "화해",
+    "pos": "명사"
+  },
+  {
+    "word": "thermal",
+    "meaning": "열의",
+    "pos": "형용사"
+  },
+  {
+    "word": "affluent",
+    "meaning": "부유한",
+    "pos": "형용사"
+  },
+  {
+    "word": "eternal",
+    "meaning": "영원한",
+    "pos": "형용사"
+  },
+  {
+    "word": "override",
+    "meaning": "우선시하다",
+    "pos": "동사"
+  },
+  {
+    "word": "wield",
+    "meaning": "행사하다",
+    "pos": "동사"
+  },
+  {
+    "word": "omission",
+    "meaning": "누락",
+    "pos": "명사"
+  },
+  {
+    "word": "conjure",
+    "meaning": "떠올리다",
+    "pos": "동사"
+  },
+  {
+    "word": "yearning",
+    "meaning": "갈망",
+    "pos": "명사"
+  },
+  {
+    "word": "enforce",
+    "meaning": "시행하다",
+    "pos": "동사"
+  },
+  {
+    "word": "reckless",
+    "meaning": "무모한",
+    "pos": "형용사"
+  },
+  {
+    "word": "plausible",
+    "meaning": "그럴듯한",
+    "pos": "형용사"
+  },
+  {
+    "word": "culpable",
+    "meaning": "책임이 있는",
+    "pos": "형용사"
+  },
+  {
+    "word": "ramifications",
+    "meaning": "결과, 파급 효과",
+    "pos": "명사"
+  },
+  {
+    "word": "probation",
+    "meaning": "보호 관찰",
+    "pos": "명사"
+  },
+  {
+    "word": "probes",
+    "meaning": "탐사선, 조사",
+    "pos": "명사"
+  },
+  {
+    "word": "anguish",
+    "meaning": "고통",
+    "pos": "명사"
+  },
+  {
+    "word": "indicative",
+    "meaning": "나타내는",
+    "pos": "형용사"
+  },
+  {
+    "word": "tenet",
+    "meaning": "원칙, 신조",
+    "pos": "명사"
+  },
+  {
+    "word": "subterranean",
+    "meaning": "지하의",
+    "pos": "형용사"
+  },
+  {
+    "word": "obsolete",
+    "meaning": "구식의",
+    "pos": "형용사"
+  },
+  {
+    "word": "oblivious",
+    "meaning": "의식하지 못하는",
+    "pos": "형용사"
+  },
+  {
+    "word": "devout",
+    "meaning": "독실한",
+    "pos": "형용사"
+  },
+  {
+    "word": "delicacy",
+    "meaning": "섬세함, 진미",
+    "pos": "명사"
+  },
+  {
+    "word": "evasion",
+    "meaning": "회피",
+    "pos": "명사"
+  },
+  {
+    "word": "ostensibly",
+    "meaning": "표면상으로",
+    "pos": "부사"
+  },
+  {
+    "word": "omens",
+    "meaning": "징조",
+    "pos": "명사"
+  },
+  {
+    "word": "disobedience",
+    "meaning": "불복종",
+    "pos": "명사"
+  },
+  {
+    "word": "reinstate",
+    "meaning": "복직시키다",
+    "pos": "동사"
+  },
+  {
+    "word": "grandiose",
+    "meaning": "웅장한",
+    "pos": "형용사"
+  },
+  {
+    "word": "predatory",
+    "meaning": "약탈적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "acuity",
+    "meaning": "예리함",
+    "pos": "명사"
+  },
+  {
+    "word": "authoritative",
+    "meaning": "권위 있는",
+    "pos": "형용사"
+  },
+  {
+    "word": "villain",
+    "meaning": "악당",
+    "pos": "명사"
+  },
+  {
+    "word": "incarceration",
+    "meaning": "투옥",
+    "pos": "명사"
+  },
+  {
+    "word": "insulate",
+    "meaning": "절연하다",
+    "pos": "동사"
+  },
+  {
+    "word": "insulator",
+    "meaning": "절연체",
+    "pos": "명사"
+  },
+  {
+    "word": "preclude",
+    "meaning": "배제하다",
+    "pos": "동사"
+  },
+  {
+    "word": "inverse",
+    "meaning": "역의",
+    "pos": "형용사"
+  },
+  {
+    "word": "tribute",
+    "meaning": "공물, 경의",
+    "pos": "명사"
+  },
+  {
+    "word": "sterilization",
+    "meaning": "살균, 불임 수술",
+    "pos": "명사"
+  },
+  {
+    "word": "foundational",
+    "meaning": "기초적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "fervor",
+    "meaning": "열정",
+    "pos": "명사"
+  },
+  {
+    "word": "spherical",
+    "meaning": "구형의",
+    "pos": "형용사"
+  },
+  {
+    "word": "avert",
+    "meaning": "피하다",
+    "pos": "동사"
+  },
+  {
+    "word": "resonance",
+    "meaning": "공명, 울림",
+    "pos": "명사"
+  },
+  {
+    "word": "exacerbated",
+    "meaning": "악화된",
+    "pos": "형용사"
+  },
+  {
+    "word": "allay",
+    "meaning": "완화하다",
+    "pos": "동사"
+  },
+  {
+    "word": "entails",
+    "meaning": "수반하다",
+    "pos": "동사"
+  },
+  {
+    "word": "encompass",
+    "meaning": "포함하다",
+    "pos": "동사"
+  },
+  {
+    "word": "arrogance",
+    "meaning": "오만",
+    "pos": "명사"
+  },
+  {
+    "word": "bereft",
+    "meaning": "빼앗긴",
+    "pos": "형용사"
+  },
+  {
+    "word": "repeal",
+    "meaning": "폐지하다",
+    "pos": "동사"
+  },
+  {
+    "word": "congested",
+    "meaning": "혼잡한",
+    "pos": "형용사"
+  },
+  {
+    "word": "sumptuous",
+    "meaning": "호화로운",
+    "pos": "형용사"
+  },
+  {
+    "word": "collide",
+    "meaning": "충돌하다",
+    "pos": "동사"
+  },
+  {
+    "word": "prerequisite",
+    "meaning": "전제 조건",
+    "pos": "명사"
+  },
+  {
+    "word": "aristocratic",
+    "meaning": "귀족적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "ordinances",
+    "meaning": "조례",
+    "pos": "명사"
+  },
+  {
+    "word": "ardent",
+    "meaning": "열렬한",
+    "pos": "형용사"
+  },
+  {
+    "word": "burial",
+    "meaning": "장례",
+    "pos": "명사"
+  },
+  {
+    "word": "cerebral",
+    "meaning": "지적인, 대뇌의",
+    "pos": "형용사"
+  },
+  {
+    "word": "meddle",
+    "meaning": "참견하다",
+    "pos": "동사"
+  },
+  {
+    "word": "imprecise",
+    "meaning": "부정확한",
+    "pos": "형용사"
+  },
+  {
+    "word": "alleviate",
+    "meaning": "완화하다",
+    "pos": "동사"
+  },
+  {
+    "word": "caustic",
+    "meaning": "신랄한",
+    "pos": "형용사"
+  },
+  {
+    "word": "precarious",
+    "meaning": "불안정한",
+    "pos": "형용사"
+  },
+  {
+    "word": "seduction",
+    "meaning": "유혹",
+    "pos": "명사"
+  },
+  {
+    "word": "equilibrium",
+    "meaning": "균형",
+    "pos": "명사"
+  },
+  {
+    "word": "incompatible",
+    "meaning": "양립할 수 없는",
+    "pos": "형용사"
+  },
+  {
+    "word": "sequel",
+    "meaning": "속편",
+    "pos": "명사"
+  },
+  {
+    "word": "raid",
+    "meaning": "급습",
+    "pos": "명사"
+  },
+  {
+    "word": "compartment",
+    "meaning": "칸, 구획",
+    "pos": "명사"
+  },
+  {
+    "word": "manifestation",
+    "meaning": "표현, 징후",
+    "pos": "명사"
+  },
+  {
+    "word": "perturbed",
+    "meaning": "당황한",
+    "pos": "형용사"
+  },
+  {
+    "word": "circumvent",
+    "meaning": "우회하다",
+    "pos": "동사"
+  },
+  {
+    "word": "outraged",
+    "meaning": "격분한",
+    "pos": "형용사"
+  },
+  {
+    "word": "intermission",
+    "meaning": "휴식 시간",
+    "pos": "명사"
+  },
+  {
+    "word": "crusade",
+    "meaning": "십자군, 운동",
+    "pos": "명사"
+  },
+  {
+    "word": "relish",
+    "meaning": "즐기다",
+    "pos": "동사"
+  },
+  {
+    "word": "ameliorate",
+    "meaning": "개선하다",
+    "pos": "동사"
+  },
+  {
+    "word": "inequitable",
+    "meaning": "불공평한",
+    "pos": "형용사"
+  },
+  {
+    "word": "malicious",
+    "meaning": "악의적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "lofty",
+    "meaning": "높은, 고상한",
+    "pos": "형용사"
+  },
+  {
+    "word": "replete",
+    "meaning": "가득 찬",
+    "pos": "형용사"
+  },
+  {
+    "word": "credentials",
+    "meaning": "자격증",
+    "pos": "명사"
+  },
+  {
+    "word": "demolish",
+    "meaning": "철거하다",
+    "pos": "동사"
+  },
+  {
+    "word": "timely",
+    "meaning": "시기적절한",
+    "pos": "형용사"
+  },
+  {
+    "word": "ambiance",
+    "meaning": "분위기",
+    "pos": "명사"
+  },
+  {
+    "word": "impeachment",
+    "meaning": "탄핵",
+    "pos": "명사"
+  },
+  {
+    "word": "stride",
+    "meaning": "큰 걸음",
+    "pos": "명사"
+  },
+  {
+    "word": "vanguard",
+    "meaning": "선봉",
+    "pos": "명사"
+  },
+  {
+    "word": "antiseptic",
+    "meaning": "방부제",
+    "pos": "명사"
+  },
+  {
+    "word": "egalitarian",
+    "meaning": "평등주의적인",
+    "pos": "형용사"
+  },
+  {
+    "word": "candidacy",
+    "meaning": "후보 지명",
+    "pos": "명사"
+  },
+  {
+    "word": "fortified",
+    "meaning": "강화된",
+    "pos": "형용사"
+  },
+  {
+    "word": "chronicle",
+    "meaning": "연대기",
+    "pos": "명사"
+  }
+]
