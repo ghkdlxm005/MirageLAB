@@ -11,7 +11,7 @@ _data/vocab_etymology.json 으로 저장합니다.
 import ast, re, json, os, sys, time
 from groq import Groq
 
-BATCH = 25  # 한 번에 처리할 단어 수
+BATCH = 15  # 한 번에 처리할 단어 수
 
 def load_vocab():
     with open("teps_generator.py", "r", encoding="utf-8") as f:
@@ -21,10 +21,12 @@ def load_vocab():
 
 def fetch_etymologies(client: Groq, words: list) -> dict:
     """words: [(word, meaning, pos), ...] → {word: etymology_str}"""
-    word_list = "\n".join(f"{i+1}. {w}" for i, (w, m, p) in enumerate(words))
-    prompt = f"""For each English word below, write a single short Korean sentence (max 40 chars) explaining its Latin/Greek/Old English origin.
-Return ONLY valid JSON in this format: {{"word": "어원 설명"}}
-No extra text, no markdown, just the JSON object.
+    word_list = "\n".join(w for w, m, p in words)
+    prompt = f"""For each English word below, write a 1-sentence Korean etymology (max 35 Korean characters).
+Output format — one line per word, exactly like this:
+word: 어원 설명
+
+No JSON, no markdown, no numbering. Just plain lines.
 
 Words:
 {word_list}"""
@@ -32,18 +34,25 @@ Words:
     resp = client.chat.completions.create(
         model="llama-3.1-8b-instant",
         messages=[
-            {"role": "system", "content": "You output only valid JSON. No markdown, no explanation."},
+            {"role": "system", "content": "Output only plain text lines in the format 'word: etymology'. No JSON, no markdown, no extra text."},
             {"role": "user", "content": prompt},
         ],
         temperature=0.3,
-        max_tokens=1200,
+        max_tokens=1000,
     )
     raw = resp.choices[0].message.content.strip()
-    # JSON만 추출
-    match = re.search(r"\{.*\}", raw, re.DOTALL)
-    if not match:
-        return {}
-    return json.loads(match.group())
+
+    # "word: 어원" 형식으로 파싱
+    result = {}
+    for line in raw.splitlines():
+        line = line.strip()
+        if ": " in line:
+            word, etym = line.split(": ", 1)
+            word = word.strip().strip('"').strip("*").strip()
+            etym = etym.strip()
+            if word and etym:
+                result[word] = etym
+    return result
 
 def main():
     api_key = os.environ.get("GROQ_API_KEY")
