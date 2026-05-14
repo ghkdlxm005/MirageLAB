@@ -1396,23 +1396,24 @@ SYSTEM_WORD_QUIZ = """You are a TEPS vocabulary instructor writing daily study c
 RULES (no exceptions):
 - Use ONLY English and Korean (Hangul). No Chinese characters, no other scripts.
 - No emojis.
-- Korean translations must use ONLY Korean words — never Chinese characters.
-- For 어원 (etymology): write 1 short Korean sentence about the Latin/Greek/Old English root. Example: "라틴어 virulentus(독이 있는)에서 유래, virus(독)가 어근." Keep it under 30 Korean characters."""
+- Korean text must use ONLY Korean words — never Chinese characters.
+- The 어원 field is MANDATORY for every word. Never skip it.
+  Format: 언어명 + 원형단어(뜻) + 어근/접사 설명
+  Good example: "라틴어 diversus(여러 방향의)에서 유래. di-(분리) + vertere(돌리다)의 합성어."
+  Good example: "그리스어 autonomia에서 유래. autos(자신) + nomos(법칙)의 합성어."
+  Good example: "고대 영어 strang(강한)에서 유래. 게르만어 어근 strang-이 기원."
+  Always include: the source language, the original root word with its meaning in parentheses, and what roots/affixes make it up."""
 
 # word_block은 Python이 직접 채운 단어 헤더 (단어/뜻/품사는 LLM이 바꾸지 못함)
-WORD_QUIZ_TEMPLATE = """Below are today's 5 TEPS words. The word, meaning, and part of speech are already filled in.
-You must write ONLY:
-  (a) a Korean pronunciation hint
-  (b) one natural English example sentence
-  (c) Korean translation of that sentence
+WORD_QUIZ_TEMPLATE = """Below are today's 5 TEPS words. Word, meaning, and part of speech are pre-filled.
+Fill in ONLY the bracketed parts: pronunciation, 어원, example sentence, Korean translation.
 
-Then write a 3-question fill-in-the-blank quiz using ONLY these 5 words.
-
+Reference list:
 {word_block}
 
 ---
 
-Output format (copy exactly, fill in the [...] parts only):
+Output format (copy the structure exactly):
 
 ## 오늘의 TEPS 단어 (5개)
 
@@ -1548,11 +1549,11 @@ def _build_word_block(words: list) -> tuple[str, str]:
     for i, (word, meaning, pos) in enumerate(words, 1):
         ref_lines.append(f"{i}. {word} ({pos}) — {meaning}")
         entry_lines.append(
-            f"**{i}. {word}** ([Korean pronunciation]) _{pos}_\n"
+            f"**{i}. {word}** ([Korean pronunciation hint]) _{pos}_\n"
             f"- 뜻: {meaning}\n"
-            f"- 어원: [brief etymology in Korean, e.g. 라틴어/그리스어 어근 설명 1문장]\n"
+            f"- 어원: [source language + original root(meaning) + affix breakdown. e.g. 라틴어 diversus(여러 방향의)에서 유래. di-(분리) + vertere(돌리다)의 합성어.]\n"
             f"- 예문: [English example sentence]\n"
-            f"- 해석: [Korean translation]\n"
+            f"- 해석: [Korean translation of the example]\n"
         )
     return "\n".join(ref_lines), "\n".join(entry_lines)
 
