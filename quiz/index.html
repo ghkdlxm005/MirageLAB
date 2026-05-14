@@ -140,6 +140,39 @@ title: TEPS 단어 퀴즈
 }
 .btn-other:hover { border-color: var(--blue); color: var(--blue); }
 
+/* ── Weak word panel ── */
+.weak-panel {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 12px; padding: 16px 20px; margin-top: 16px;
+}
+.weak-panel-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 10px;
+}
+.weak-panel-header h4 { font-size: 0.88rem; font-weight: 700; color: var(--text); }
+.weak-panel-header span { font-size: 0.75rem; color: var(--text-muted); }
+.weak-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.weak-tag {
+  background: #fef2f2; color: #dc2626; border: 1px solid #fecaca;
+  border-radius: 20px; font-size: 0.75rem; font-weight: 600;
+  padding: 3px 10px;
+}
+.btn-clear-weak {
+  background: none; border: 1px solid var(--border); border-radius: 8px;
+  padding: 5px 12px; font-size: 0.75rem; color: var(--text-muted);
+  cursor: pointer; font-family: inherit; margin-top: 10px;
+  transition: all 0.15s;
+}
+.btn-clear-weak:hover { border-color: #dc2626; color: #dc2626; }
+
+/* ── Review badge ── */
+.review-badge {
+  display: inline-block; background: #fef3c7; color: #b45309;
+  border: 1px solid #fde68a; font-size: 0.68rem; font-weight: 700;
+  padding: 2px 8px; border-radius: 20px; margin-left: 6px;
+  vertical-align: middle;
+}
+
 @media (max-width: 640px) {
   .quiz-hero { padding: 26px 20px; }
   .quiz-hero h1 { font-size: 1.45rem; }
@@ -162,6 +195,10 @@ title: TEPS 단어 퀴즈
         <h3>🔀 혼합 모드</h3>
         <p>단어→뜻 · 뜻→단어 · 문장 속 단어 무작위 출제</p>
       </div>
+      <div class="mode-card" data-mode="weak" onclick="selectMode(this)">
+        <h3>🎯 약점 집중 모드</h3>
+        <p>틀렸던 단어 위주로 출제 — 약점 없으면 혼합으로 진행</p>
+      </div>
       <div class="mode-card" data-mode="word2meaning" onclick="selectMode(this)">
         <h3>🔤 단어 → 뜻</h3>
         <p>영단어를 보고 한국어 뜻 고르기</p>
@@ -176,7 +213,17 @@ title: TEPS 단어 퀴즈
       </div>
     </div>
 
-    <button class="btn-primary" onclick="startQuiz()">시작하기 →</button>
+    <!-- 약점 단어 패널 -->
+    <div class="weak-panel" id="weak-panel" style="display:none">
+      <div class="weak-panel-header">
+        <h4>내 약점 단어</h4>
+        <span id="weak-count"></span>
+      </div>
+      <div class="weak-tags" id="weak-tags"></div>
+      <button class="btn-clear-weak" onclick="clearWeakWords()">기록 초기화</button>
+    </div>
+
+    <button class="btn-primary" onclick="startQuiz()" style="margin-top:16px">시작하기 →</button>
   </div>
 
   <!-- ── QUESTION ── -->
@@ -268,6 +315,65 @@ let currentQ = 0;
 let score = 0;
 let answered = false;
 
+// ── 약점 단어 (localStorage) ─────────────────────────────────────────────────
+const WEAK_KEY = 'teps_weak_words';
+
+function getWeakMap() {
+  try { return JSON.parse(localStorage.getItem(WEAK_KEY) || '{}'); }
+  catch { return {}; }
+}
+
+function saveWeakMap(map) {
+  localStorage.setItem(WEAK_KEY, JSON.stringify(map));
+}
+
+function recordWrong(word) {
+  const map = getWeakMap();
+  map[word] = (map[word] || 0) + 1;
+  saveWeakMap(map);
+}
+
+function recordCorrect(word) {
+  const map = getWeakMap();
+  if (map[word]) {
+    map[word] = Math.max(0, map[word] - 1);
+    if (map[word] === 0) delete map[word];
+    saveWeakMap(map);
+  }
+}
+
+function clearWeakWords() {
+  localStorage.removeItem(WEAK_KEY);
+  renderWeakPanel();
+}
+
+function getWeakVocab() {
+  const map = getWeakMap();
+  return Object.entries(map)
+    .filter(([,cnt]) => cnt > 0)
+    .sort((a, b) => b[1] - a[1])
+    .map(([word]) => VOCAB.find(v => v.word === word))
+    .filter(Boolean);
+}
+
+function renderWeakPanel() {
+  const weakVocab = getWeakVocab();
+  const panel = document.getElementById('weak-panel');
+  const tags = document.getElementById('weak-tags');
+  const count = document.getElementById('weak-count');
+  if (weakVocab.length === 0) {
+    panel.style.display = 'none';
+    return;
+  }
+  panel.style.display = 'block';
+  count.textContent = `${weakVocab.length}개`;
+  tags.innerHTML = weakVocab.slice(0, 15).map(v => {
+    const map = getWeakMap();
+    const cnt = map[v.word] || 0;
+    return `<span class="weak-tag">${v.word} ×${cnt}</span>`;
+  }).join('');
+}
+
 // ── 유틸 ────────────────────────────────────────────────────────────────────
 function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5); }
 function getRandom(arr, n) { return shuffle(arr).slice(0, n); }
@@ -278,41 +384,65 @@ function makeSentence(word, pos) {
 }
 
 // ── 문제 생성 ────────────────────────────────────────────────────────────────
-function buildQ(vocab, mode) {
-  const others = getRandom(VOCAB.filter(v => v !== vocab), 3);
+function buildQ(vocab, mode, isReview = false) {
+  const others = getRandom(VOCAB.filter(v => v.word !== vocab.word), 3);
+  const reviewBadge = isReview ? `<span class="review-badge">복습</span>` : '';
 
   if (mode === 'word2meaning') {
     const choices = shuffle([vocab.meaning, ...others.map(v => v.meaning)]);
     return {
-      type: '단어 → 뜻', targetWord: vocab.word,
-      body: `<div class="question-text">${vocab.word}</div><div class="question-sub">${vocab.pos}</div>`,
+      type: '단어 → 뜻', targetWord: vocab.word, isReview,
+      body: `<div class="question-text">${vocab.word}${reviewBadge}</div><div class="question-sub">${vocab.pos}</div>`,
       choices, answer: vocab.meaning
     };
   }
   if (mode === 'meaning2word') {
     const choices = shuffle([vocab.word, ...others.map(v => v.word)]);
     return {
-      type: '뜻 → 단어', targetWord: vocab.word,
-      body: `<div class="question-text">${vocab.meaning}</div><div class="question-sub">${vocab.pos}</div>`,
+      type: '뜻 → 단어', targetWord: vocab.word, isReview,
+      body: `<div class="question-text">${vocab.meaning}${reviewBadge}</div><div class="question-sub">${vocab.pos}</div>`,
       choices, answer: vocab.word
     };
   }
-  // sentence
   const choices = shuffle([vocab.meaning, ...others.map(v => v.meaning)]);
   return {
-    type: '문장 속 단어', targetWord: vocab.word,
-    body: `<div class="sentence-box">${makeSentence(vocab.word, vocab.pos)}</div>`,
+    type: '문장 속 단어', targetWord: vocab.word, isReview,
+    body: `<div class="sentence-box">${makeSentence(vocab.word, vocab.pos)}</div>${reviewBadge ? `<div style="margin-top:8px">${reviewBadge}</div>` : ''}`,
     choices, answer: vocab.meaning
   };
 }
 
 function generateQuestions(mode, n = 10) {
-  const pool = getRandom(VOCAB, n);
-  const modes = mode === 'mix'
-    ? shuffle(['word2meaning', 'meaning2word', 'sentence', 'word2meaning', 'meaning2word',
-               'sentence', 'word2meaning', 'meaning2word', 'sentence', 'word2meaning'])
-    : Array(n).fill(mode);
-  return pool.map((v, i) => buildQ(v, modes[i]));
+  const weakVocab = getWeakVocab();
+  const innerMode = (mode === 'weak' && weakVocab.length === 0) ? 'mix' : mode;
+
+  let questions = [];
+
+  if (innerMode === 'weak') {
+    // 약점 단어 최대 6개 + 나머지 랜덤
+    const weakSlot = Math.min(weakVocab.length, 6);
+    const weakPick = getRandom(weakVocab, weakSlot);
+    const normalPick = getRandom(VOCAB.filter(v => !weakPick.find(w => w.word === v.word)), n - weakSlot);
+    const allModes = shuffle(['word2meaning','meaning2word','sentence','word2meaning','meaning2word','sentence','word2meaning','meaning2word','sentence','word2meaning']);
+    weakPick.forEach((v, i) => questions.push(buildQ(v, allModes[i], true)));
+    normalPick.forEach((v, i) => questions.push(buildQ(v, allModes[weakSlot + i] || 'mix')));
+    return shuffle(questions);
+  }
+
+  // 혼합 모드: 약점 단어 2개 자동 포함 (있을 때)
+  let weakIncluded = [];
+  if (innerMode === 'mix' && weakVocab.length > 0) {
+    weakIncluded = getRandom(weakVocab, Math.min(2, weakVocab.length));
+  }
+  const normalCount = n - weakIncluded.length;
+  const normalPool = getRandom(VOCAB.filter(v => !weakIncluded.find(w => w.word === v.word)), normalCount);
+  const modes = innerMode === 'mix'
+    ? shuffle(['word2meaning','meaning2word','sentence','word2meaning','meaning2word','sentence','word2meaning','meaning2word','sentence','word2meaning'])
+    : Array(n).fill(innerMode);
+
+  weakIncluded.forEach((v, i) => questions.push(buildQ(v, modes[i], true)));
+  normalPool.forEach((v, i) => questions.push(buildQ(v, modes[weakIncluded.length + i])));
+  return shuffle(questions);
 }
 
 // ── 화면 전환 ────────────────────────────────────────────────────────────────
@@ -320,6 +450,7 @@ function show(id) {
   ['screen-start','screen-question','screen-result'].forEach(s =>
     document.getElementById(s).style.display = s === id ? 'block' : 'none'
   );
+  if (id === 'screen-start') renderWeakPanel();
 }
 
 function selectMode(el) {
@@ -386,6 +517,7 @@ function selectAnswer(btn, chosen, correct) {
     fb.className = 'feedback correct';
     fb.textContent = '✓ 정답!';
     score++;
+    recordCorrect(q.targetWord);  // 맞히면 약점 카운트 감소
   } else {
     btn.classList.add('wrong');
     fb.className = 'feedback wrong';
@@ -393,6 +525,7 @@ function selectAnswer(btn, chosen, correct) {
     document.querySelectorAll('.choice-btn').forEach(b => {
       if (b.dataset.choice === correct) b.classList.add('correct');
     });
+    recordWrong(q.targetWord);  // 틀리면 약점으로 기록
   }
   fb.style.display = 'block';
 
@@ -422,13 +555,17 @@ function showResult() {
   document.getElementById('score-num').textContent = score;
 
   const pct = (score / questions.length) * 100;
+  const weakNow = getWeakVocab().length;
   const [msg, sub] =
     pct === 100 ? ['완벽해요! 🎉', '모든 문제를 맞혔습니다.'] :
-    pct >= 80   ? ['잘했어요! 👍', `${questions.length - score}개 틀렸습니다. 조금만 더!`] :
-    pct >= 60   ? ['나쁘지 않아요 😊', '복습하고 다시 도전해보세요.'] :
-                  ['더 열심히 해봐요 💪', '단어 포스트를 다시 읽어보세요.'];
+    pct >= 80   ? ['잘했어요! 👍', `약점 단어 ${weakNow}개 남았어요. 계속 도전!`] :
+    pct >= 60   ? ['나쁘지 않아요 😊', `약점 단어 ${weakNow}개 — 약점 집중 모드로 다시 도전해보세요.`] :
+                  ['더 열심히 해봐요 💪', '약점 집중 모드로 틀린 단어를 반복 학습하세요.'];
 
   document.getElementById('result-msg').textContent = msg;
   document.getElementById('result-sub').textContent = sub;
 }
+
+// ── 초기화 ───────────────────────────────────────────────────────────────────
+renderWeakPanel();
 </script>

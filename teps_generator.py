@@ -1524,6 +1524,23 @@ def pick_daily_words(date: datetime) -> list:
     return rng.sample(TEPS_VOCABULARY, 5)
 
 
+def pick_review_words(date: datetime, days_ago: int = 7) -> list:
+    """N일 전 날짜 시드로 복습 단어 선택 (오늘 단어와 겹치지 않도록)."""
+    review_date = date - timedelta(days=days_ago)
+    seed = int(review_date.strftime("%Y%m%d"))
+    rng = random.Random(seed)
+    return rng.sample(TEPS_VOCABULARY, 5)
+
+
+def build_review_section(review_words: list, days_ago: int = 7) -> str:
+    """API 호출 없이 Python이 직접 생성하는 복습 섹션."""
+    lines = [f"## 복습 체크 — {days_ago}일 전 단어\n"]
+    lines.append("> 아래 단어들, 기억나시나요? 퀴즈에서 다시 출제됩니다.\n")
+    for word, meaning, pos in review_words:
+        lines.append(f"- **{word}** ({pos}) : {meaning}")
+    return "\n".join(lines)
+
+
 def _call(client: Groq, system: str, user: str, max_tokens: int = 1500) -> str:
     """공통 Groq 호출 헬퍼."""
     completion = client.chat.completions.create(
@@ -1584,6 +1601,13 @@ def generate_content(client: Groq, date_str: str, words: list) -> str:
     return "\n\n".join([part1, part2, part3])
 
 
+def generate_content_with_review(client: Groq, date_str: str, words: list, review_words: list) -> str:
+    """오늘의 학습 + 7일 전 복습 섹션 포함."""
+    main_content = generate_content(client, date_str, words)
+    review_section = build_review_section(review_words, days_ago=7)
+    return main_content + "\n\n---\n\n" + review_section
+
+
 def build_front_matter(date: datetime, words: list) -> str:
     date_str = date.strftime("%Y-%m-%d")
     time_str = date.strftime("%Y-%m-%d %H:%M:%S +0900")
@@ -1626,12 +1650,15 @@ def main():
     date_str = today.strftime("%Y년 %m월 %d일")
 
     words = pick_daily_words(today)
+    review_words = pick_review_words(today, days_ago=7)
     word_names = ", ".join(w[0] for w in words)
+    review_names = ", ".join(w[0] for w in review_words)
     print(f"[{date_str}] 오늘의 단어: {word_names}")
+    print(f"[{date_str}] 복습 단어 (7일 전): {review_names}")
     print("TEPS 포스트 생성 중...")
 
     try:
-        content = generate_content(client, date_str, words)
+        content = generate_content_with_review(client, date_str, words, review_words)
         filepath = save_post(content, today, words)
         print(f"포스트 저장 완료: {filepath}")
     except Exception as e:
