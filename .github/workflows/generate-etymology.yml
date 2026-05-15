@@ -1,4 +1,4 @@
-name: Generate Etymology Data
+name: Generate Verified Vocab Data (IPA + Etymology)
 
 on:
   workflow_dispatch:  # Actions 탭에서 수동으로만 실행
@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: pip install groq
 
-      - name: Generate etymology data
+      - name: Generate IPA + etymology data
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: python generate_etymology.py
@@ -32,6 +32,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add _data/vocab_etymology.json
-          git diff --cached --quiet || git commit -m "chore: generate etymology data for $(python -c 'import ast,re; f=open(\"teps_generator.py\"); c=f.read(); v=ast.literal_eval(re.search(r\"TEPS_VOCABULARY\s*=\s*(\[.*?\])\", c, re.DOTALL).group(1)); print(len(v))')+  words"
+          git add _data/vocab_verified.json _data/vocab_etymology.json
+          git diff --cached --quiet || git commit -m "chore: update verified vocab data (IPA + etymology)"
           git push

@@ -100,6 +100,14 @@ title: TEPS 단어 퀴즈
   font-size: 0.82rem; color: var(--blue-dark); display: none;
 }
 .etymology-box strong { font-size: 0.72rem; letter-spacing: 0.5px; text-transform: uppercase; }
+.ipa-line { margin-bottom: 4px; }
+.ipa-label {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+  background: var(--blue); color: white; border-radius: 4px; padding: 1px 5px;
+  margin-right: 6px;
+}
+.ipa-sym { font-family: 'Inter', monospace; font-size: 0.92rem; font-weight: 600; letter-spacing: 0.5px; }
+.etym-line { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; }
 
 .btn-next {
   width: 100%; background: var(--blue); color: white; border: none;
@@ -241,7 +249,7 @@ title: TEPS 단어 퀴즈
     <div class="choices" id="choices"></div>
     <div class="feedback" id="feedback"></div>
     <div class="etymology-box" id="etymology-box">
-      <strong>어원</strong> — <span id="etymology-text"></span>
+      <div id="etymology-text"></div>
     </div>
     <button class="btn-next" id="btn-next" onclick="nextQuestion()">다음 →</button>
   </div>
@@ -271,12 +279,18 @@ const VOCAB = [
   {% endfor %}
 ];
 
-// ── 어원 데이터 (generate_etymology.py 실행 후 생성) ───────────────────────────
-{% if site.data.vocab_etymology %}
-const ETYMOLOGY = {{ site.data.vocab_etymology | jsonify }};
+// ── 검증 데이터 (IPA + 어원) ────────────────────────────────────────────────
+{% if site.data.vocab_verified %}
+const VERIFIED = {{ site.data.vocab_verified | jsonify }};
+{% elsif site.data.vocab_etymology %}
+// 하위 호환: 구형 어원 전용 파일
+const _etym = {{ site.data.vocab_etymology | jsonify }};
+const VERIFIED = Object.fromEntries(Object.entries(_etym).map(([k,v]) => [k, {etymology: v}]));
 {% else %}
-const ETYMOLOGY = {};
+const VERIFIED = {};
 {% endif %}
+// 하위 호환 alias
+const ETYMOLOGY = Object.fromEntries(Object.entries(VERIFIED).map(([k,v]) => [k, v.etymology || null]));
 
 // ── 문장 템플릿 (품사별) ─────────────────────────────────────────────────────
 const TMPL = {
@@ -529,11 +543,14 @@ function selectAnswer(btn, chosen, correct) {
   }
   fb.style.display = 'block';
 
-  // 어원 표시
-  const etym = ETYMOLOGY[q.targetWord];
+  // IPA + 어원 표시
+  const vData = VERIFIED[q.targetWord] || {};
   const etymBox = document.getElementById('etymology-box');
-  if (etym) {
-    document.getElementById('etymology-text').textContent = etym;
+  if (vData.ipa || vData.etymology) {
+    let html = '';
+    if (vData.ipa) html += `<div class="ipa-line"><span class="ipa-label">발음</span> <span class="ipa-sym">${vData.ipa}</span></div>`;
+    if (vData.etymology) html += `<div class="etym-line">${vData.etymology}</div>`;
+    document.getElementById('etymology-text').innerHTML = html;
     etymBox.style.display = 'block';
   } else {
     etymBox.style.display = 'none';

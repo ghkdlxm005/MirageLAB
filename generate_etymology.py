@@ -1,12 +1,15 @@
 """
 generate_etymology.py
 ---------------------
-TEPS 어휘 어원(etymology) 생성기
+TEPS 어휘 IPA 발음 + 어원(etymology) 검증 생성기
 
 1차: Wiktionary API (검증된 어원학 DB, 무료, API 키 불필요)
+     - IPA 발음기호 추출
+     - 어원(etymology) 추출
 2차: Groq LLM fallback (Wiktionary에 없는 단어)
 
-결과: _data/vocab_etymology.json → 퀴즈·포스트에서 사용
+결과: _data/vocab_verified.json → {word: {ipa, etymology}}
+     _data/vocab_etymology.json → {word: etymology} (하위 호환)
 
 실행: python generate_etymology.py
 환경변수: GROQ_API_KEY
@@ -36,6 +39,16 @@ LANG_MAP = {
     'xno': '앵글로-노르만어',
     'ML':  '중세 라틴어',
     'NL':  '신 라틴어',
+    'nl':  '네덜란드어',
+    'pt':  '포르투갈어',
+    'ru':  '러시아어',
+    'ja':  '일본어',
+    'zh':  '중국어',
+    'he':  '히브리어',
+    'af':  '아프리칸스어',
+    'sv':  '스웨덴어',
+    'da':  '덴마크어',
+    'no':  '노르웨이어',
 }
 
 
@@ -48,7 +61,10 @@ def _wikt_raw(word: str) -> str | None:
         f"?action=query&titles={urllib.request.quote(word)}"
         "&prop=revisions&rvprop=content&rvslots=main&format=json&formatversion=2"
     )
-    req = urllib.request.Request(url, headers={"User-Agent": "MirageLAB-TEPS-Bot/1.0 (https://github.com/ghkdlxm005/MirageLAB)"})
+    req = urllib.request.Request(
+        url,
+        headers={"User-Agent": "MirageLAB-TEPS-Bot/1.0 (https://github.com/ghkdlxm005/MirageLAB)"}
+    )
     try:
         with urllib.request.urlopen(req, timeout=10) as r:
             data = json.loads(r.read())
@@ -58,6 +74,42 @@ def _wikt_raw(word: str) -> str | None:
         return pages[0]["revisions"][0]["slots"]["main"]["content"]
     except Exception:
         return None
+
+
+def _parse_ipa(wikitext: str) -> str | None:
+    """위키텍스트에서 IPA 발음기호 추출.
+
+    예: {{IPA|en|/ˈpʌb.lɪk/}} → /ˈpʌb.lɪk/
+    미국식(GenAm) 우선, 없으면 영국식(RP)
+    """
+    # {{a|GA}} ... {{IPA|en|/ipa/}} 패턴 — GenAm 우선
+    # 먼저 General American 섹션에서 시도
+    ga_section = re.search(r'\{\{a\|G[Aa][^}]*\}\}.*?(?=\n\n|\n==|\{\{a\|)', wikitext, re.DOTALL)
+    if ga_section:
+        m = re.search(r'\{\{IPA\|en\|[^}]*?(/[^/|}{]+/)[^}]*?\}\}', ga_section.group(0))
+        if m:
+            return m.group(1)
+
+    # 모든 IPA 템플릿에서 첫 번째
+    m = re.search(r'\{\{IPA\|en\|[^}]*?(/[^/|}{]+/)[^}]*?\}\}', wikitext)
+    if m:
+        return m.group(1)
+
+    # {{IPA|/ipa/}} 형식 (lang 없는 경우)
+    m = re.search(r'\{\{IPA\|(/[^/|}{]+/)', wikitext)
+    if m:
+        return m.group(1)
+
+    # {{IPAc-en|...}} 형식 파싱
+    m = re.search(r'\{\{IPAc-en\|([^}]+)\}\}', wikitext)
+    if m:
+        parts = m.group(1).split('|')
+        # 발음기호 조각들을 합침 (숫자·따옴표 등 필터링)
+        symbols = [p.strip() for p in parts if p.strip() and not p.strip().startswith("'")]
+        if symbols:
+            return '/' + ''.join(s for s in symbols if s not in ('audio', 'lang')) + '/'
+
+    return None
 
 
 def _parse_etym(wikitext: str) -> str | None:
@@ -71,7 +123,6 @@ def _parse_etym(wikitext: str) -> str | None:
     etym = m.group(1)[:800]
 
     # inh/der/bor 템플릿: 언어 + 원형단어 + (뜻) 추출
-    # 예: {{der|en|la|vīrulentus|t=poisonous}} → 라틴어 vīrulentus(poisonous)
     sources = []
     for tm in re.finditer(
         r'\{\{(?:inh|der|bor)\|en\|(\w+)\|([^|{}\n]+)(?:\|(?:t|gloss)=([^|{}\n}]+))?',
@@ -88,7 +139,7 @@ def _parse_etym(wikitext: str) -> str | None:
             sources.append(f"{lang} {term}")
 
     if len(sources) >= 2:
-        return f"{sources[0]}에서 유래, {sources[1]}에서 유래."
+        return f"{sources[0]}에서 유래, {sources[1]}을 거쳐 발전."
     if len(sources) == 1:
         return f"{sources[0]}에서 유래."
 
@@ -101,45 +152,56 @@ def _parse_etym(wikitext: str) -> str | None:
     return text[:180] if len(text) > 15 else None
 
 
-def get_wiktionary(word: str) -> str | None:
+def get_wiktionary(word: str) -> dict:
+    """Wiktionary에서 IPA + 어원 동시 추출. 반환: {ipa, etymology} (없으면 None 값)"""
     raw = _wikt_raw(word)
     if not raw:
-        return None
-    return _parse_etym(raw)
+        return {"ipa": None, "etymology": None}
+    return {
+        "ipa": _parse_ipa(raw),
+        "etymology": _parse_etym(raw),
+    }
 
 
 # ── LLM fallback ─────────────────────────────────────────────────────────────
 
 def fetch_llm_batch(client: Groq, words: list) -> dict:
-    """words: [(word, meaning, pos), ...] → {word: etymology_str}"""
-    word_list = "\n".join(w for w, m, p in words)
+    """words: [(word, meaning, pos), ...] → {word: {ipa, etymology}}"""
+    word_list = "\n".join(f"{w} ({p}) — {m}" for w, m, p in words)
     resp = client.chat.completions.create(
         model="llama-3.1-8b-instant",
         messages=[
             {
                 "role": "system",
                 "content": (
-                    "Output only plain text lines: 'word: etymology'\n"
-                    "No JSON, no markdown, no numbering.\n"
-                    "Etymology must be in Korean. Include: source language name, "
-                    "original root word with meaning in parentheses, affix breakdown if applicable.\n"
-                    "Example: sovereignty: 중세 라틴어 superanus(최상위의)에서 유래. super(위) + -anus(형용사 접미사)."
+                    "Output only plain text lines in this exact format:\n"
+                    "word|/IPA/|etymology\n\n"
+                    "Rules:\n"
+                    "- IPA: standard American English IPA notation (e.g. /ˈpʌb.lɪk/)\n"
+                    "- etymology: Korean text. Include source language, original root with meaning in parentheses.\n"
+                    "- Example: public|/ˈpʌb.lɪk/|라틴어 publicus(공공의)에서 유래. pub-(성인) + -licus(형용사 접미사).\n"
+                    "- No JSON, no markdown, no extra lines.\n"
+                    "- No Chinese characters. Korean only."
                 ),
             },
-            {"role": "user", "content": f"Write etymology for each:\n{word_list}"},
+            {"role": "user", "content": f"Provide IPA and Korean etymology for each word:\n{word_list}"},
         ],
         temperature=0.2,
-        max_tokens=800,
+        max_tokens=1200,
     )
     raw = resp.choices[0].message.content.strip()
     result = {}
     for line in raw.splitlines():
-        if ': ' in line:
-            word, etym = line.split(': ', 1)
-            word = word.strip().strip('"').strip('*').strip()
-            etym = etym.strip()
-            if word and etym:
-                result[word] = etym
+        parts = line.split('|', 2)
+        if len(parts) == 3:
+            word = parts[0].strip().strip('"').strip('*').strip()
+            ipa = parts[1].strip()
+            etym = parts[2].strip()
+            if word and ipa:
+                result[word] = {
+                    "ipa": ipa if ipa.startswith('/') else f'/{ipa}/',
+                    "etymology": etym if etym else None,
+                }
     return result
 
 
@@ -160,34 +222,44 @@ def main():
 
     client = Groq(api_key=api_key)
     vocab = load_vocab()
-    print(f"총 {len(vocab)}개 단어 처리 시작 (Wiktionary 우선, LLM fallback)")
+    print(f"총 {len(vocab)}개 단어 처리 시작 (Wiktionary IPA+어원 우선, LLM fallback)")
 
-    out_path = "_data/vocab_etymology.json"
-    # 기존 파일 초기화 (LLM 생성 데이터 폐기, Wiktionary로 새로 생성)
-    result = {}
+    verified_path = "_data/vocab_verified.json"
+    etym_path = "_data/vocab_etymology.json"   # 하위 호환용
 
-    llm_queue = []  # Wiktionary 없는 단어 → LLM 배치 처리
+    os.makedirs("_data", exist_ok=True)
+
+    verified = {}   # {word: {ipa, etymology}}
+    llm_queue = []  # IPA 또는 어원이 없는 단어 → LLM 보완
 
     # ── Step 1: Wiktionary ──────────────────────────────────────────────────
-    print("\n[1/2] Wiktionary 조회 중...")
-    for i, (word, meaning, pos) in enumerate(vocab):
-        etym = get_wiktionary(word)
-        if etym:
-            result[word] = etym
-            status = "✓"
-        else:
-            llm_queue.append((word, meaning, pos))
-            status = "–"
+    print("\n[1/2] Wiktionary 조회 중 (IPA + 어원)...")
+    ipa_count = 0
+    etym_count = 0
 
+    for i, (word, meaning, pos) in enumerate(vocab):
+        data = get_wiktionary(word)
+        verified[word] = data
+
+        if data["ipa"]:
+            ipa_count += 1
+        if data["etymology"]:
+            etym_count += 1
+
+        # IPA도 없고 어원도 없으면 LLM 큐
+        if not data["ipa"] and not data["etymology"]:
+            llm_queue.append((word, meaning, pos))
+
+        status = f"IPA={'✓' if data['ipa'] else '–'} 어원={'✓' if data['etymology'] else '–'}"
         if (i + 1) % 50 == 0:
-            print(f"  {i+1}/{len(vocab)} 완료 (Wiktionary {len(result)}개, LLM 대기 {len(llm_queue)}개)")
+            print(f"  {i+1}/{len(vocab)} 완료 | IPA {ipa_count}개 | 어원 {etym_count}개 | LLM 대기 {len(llm_queue)}개")
             # 중간 저장
-            with open(out_path, "w", encoding="utf-8") as f:
-                json.dump(result, f, ensure_ascii=False, indent=2)
+            with open(verified_path, "w", encoding="utf-8") as f:
+                json.dump(verified, f, ensure_ascii=False, indent=2)
 
         time.sleep(WIKT_DELAY)
 
-    print(f"\nWiktionary: {len(result)}개 / LLM 필요: {len(llm_queue)}개")
+    print(f"\nWiktionary 완료 → IPA: {ipa_count}개 / 어원: {etym_count}개 / LLM 필요: {len(llm_queue)}개")
 
     # ── Step 2: LLM fallback ────────────────────────────────────────────────
     if llm_queue:
@@ -199,24 +271,39 @@ def main():
             preview = [w for w, _, _ in batch[:3]]
             print(f"  배치 {batch_num}/{total_batches}: {preview}... ", end="", flush=True)
             try:
-                etyms = fetch_llm_batch(client, batch)
-                result.update(etyms)
-                print(f"{len(etyms)}개 완료")
+                batch_result = fetch_llm_batch(client, batch)
+                for word, data in batch_result.items():
+                    # LLM이 준 것으로 보완 (Wiktionary에서 일부만 있을 수도 있음)
+                    if word in verified:
+                        if not verified[word]["ipa"] and data.get("ipa"):
+                            verified[word]["ipa"] = data["ipa"]
+                        if not verified[word]["etymology"] and data.get("etymology"):
+                            verified[word]["etymology"] = data["etymology"]
+                    else:
+                        verified[word] = data
+                print(f"{len(batch_result)}개 완료")
             except Exception as e:
                 print(f"실패: {e}")
 
-            with open(out_path, "w", encoding="utf-8") as f:
-                json.dump(result, f, ensure_ascii=False, indent=2)
+            with open(verified_path, "w", encoding="utf-8") as f:
+                json.dump(verified, f, ensure_ascii=False, indent=2)
             time.sleep(0.5)
 
     # ── 최종 저장 ────────────────────────────────────────────────────────────
-    with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(result, f, ensure_ascii=False, indent=2)
+    with open(verified_path, "w", encoding="utf-8") as f:
+        json.dump(verified, f, ensure_ascii=False, indent=2)
 
-    wikt_count = sum(1 for w, _, _ in vocab if result.get(w) and (w, _, _) not in llm_queue)
-    print(f"\n완료! 총 {len(result)}개 저장 → {out_path}")
-    print(f"  Wiktionary: {len(result) - len(llm_queue) + (len(llm_queue) - sum(1 for w,_,_ in llm_queue if w not in result))}개")
-    print(f"  LLM fallback: {sum(1 for w,_,_ in llm_queue if w in result)}개")
+    # 하위 호환: vocab_etymology.json도 업데이트
+    etym_only = {w: d["etymology"] for w, d in verified.items() if d.get("etymology")}
+    with open(etym_path, "w", encoding="utf-8") as f:
+        json.dump(etym_only, f, ensure_ascii=False, indent=2)
+
+    final_ipa = sum(1 for d in verified.values() if d.get("ipa"))
+    final_etym = sum(1 for d in verified.values() if d.get("etymology"))
+    print(f"\n완료! 총 {len(verified)}개 저장 → {verified_path}")
+    print(f"  IPA 확보: {final_ipa}개 ({final_ipa/len(vocab)*100:.1f}%)")
+    print(f"  어원 확보: {final_etym}개 ({final_etym/len(vocab)*100:.1f}%)")
+    print(f"  하위 호환 파일: {etym_path}")
 
 
 if __name__ == "__main__":

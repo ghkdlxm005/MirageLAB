@@ -11,6 +11,7 @@ _posts/ 폴더에 Jekyll 마크다운 파일로 저장합니다.
 
 import os
 import sys
+import json
 import random
 from datetime import datetime, timezone, timedelta
 from groq import Groq
@@ -1397,6 +1398,8 @@ RULES (no exceptions):
 - Use ONLY English and Korean (Hangul). No Chinese characters, no other scripts.
 - No emojis.
 - Korean text must use ONLY Korean words — never Chinese characters.
+- The IPA field is PRE-FILLED by the system. Do NOT change or omit it.
+  If the IPA is marked as [IPA 없음], leave it as is — do not guess.
 - The 어원 field is MANDATORY for every word. Never skip it.
   Format: 언어명 + 원형단어(뜻) + 어근/접사 설명
   Good example: "라틴어 diversus(여러 방향의)에서 유래. di-(분리) + vertere(돌리다)의 합성어."
@@ -1406,9 +1409,9 @@ RULES (no exceptions):
   2. 오답 분석: 각 오답 보기가 왜 문맥에 맞지 않는지 구체적으로 설명
   절대 "문장에서 ~라고 했다"처럼 문장을 그냥 번역하지 말 것."""
 
-# word_block은 Python이 직접 채운 단어 헤더 (단어/뜻/품사는 LLM이 바꾸지 못함)
-WORD_QUIZ_TEMPLATE = """Below are today's 5 TEPS words. Word, meaning, and part of speech are pre-filled.
-Fill in ONLY the bracketed parts: pronunciation, 어원, example sentence, Korean translation.
+# word_block은 Python이 직접 채운 단어 헤더 (단어/뜻/품사/IPA는 LLM이 바꾸지 못함)
+WORD_QUIZ_TEMPLATE = """Below are today's 10 TEPS words. Word, meaning, part of speech, and IPA are pre-filled by the system.
+Fill in ONLY the bracketed parts: 어원, example sentence, Korean translation. Do NOT change IPA.
 
 Reference list:
 {word_block}
@@ -1580,18 +1583,39 @@ def _call(client: Groq, system: str, user: str, max_tokens: int = 1500) -> str:
     return completion.choices[0].message.content.strip()
 
 
-def _build_word_block(words: list) -> tuple[str, str]:
+def _load_verified_data() -> dict:
+    """vocab_verified.json 로드. 없으면 빈 dict 반환."""
+    path = "_data/vocab_verified.json"
+    if os.path.exists(path):
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return {}
+
+
+def _build_word_block(words: list, verified: dict | None = None) -> tuple[str, str]:
     """
-    Python이 단어/뜻/품사를 직접 채운 블록 2개를 반환:
-      word_block          — LLM에게 '이 단어들이야' 알리는 참조용 목록
-      word_entries_template — LLM이 발음·예문·해석만 채울 항목 뼈대
+    Python이 단어/뜻/품사/IPA를 직접 채운 블록 2개를 반환:
+      word_block            — LLM에게 '이 단어들이야' 알리는 참조용 목록
+      word_entries_template — LLM이 어원·예문·해석만 채울 항목 뼈대
+
+    IPA는 vocab_verified.json 에서 가져옴 (없으면 [IPA 없음] 표시).
     """
+    if verified is None:
+        verified = {}
+
     ref_lines = []
     entry_lines = []
     for i, (word, meaning, pos) in enumerate(words, 1):
-        ref_lines.append(f"{i}. {word} ({pos}) — {meaning}")
+        v = verified.get(word, {})
+        ipa = v.get("ipa") if v else None
+        ipa_str = ipa if ipa else "[IPA 없음]"
+
+        ref_lines.append(f"{i}. {word} ({pos}) — {meaning}  IPA: {ipa_str}")
         entry_lines.append(
-            f"**{i}. {word}** ([Korean pronunciation hint]) _{pos}_\n"
+            f"**{i}. {word}** {ipa_str} _{pos}_\n"
             f"- 뜻: {meaning}\n"
             f"- 어원: [source language + original root(meaning) + affix breakdown. e.g. 라틴어 diversus(여러 방향의)에서 유래. di-(분리) + vertere(돌리다)의 합성어.]\n"
             f"- 예문: [English example sentence]\n"
@@ -1603,7 +1627,8 @@ def _build_word_block(words: list) -> tuple[str, str]:
 def generate_content(client: Groq, date_str: str, words: list) -> str:
     """3단계 분리 호출로 포스트 본문 생성."""
     word_names = ", ".join(w[0] for w in words)
-    word_block, word_entries_template = _build_word_block(words)
+    verified = _load_verified_data()
+    word_block, word_entries_template = _build_word_block(words, verified)
 
     # ── Step 1: 단어 섹션 + 퀴즈 ─────────────────────────────────────────────
     print("  [1/3] 단어 + 퀴즈 생성 중...")
