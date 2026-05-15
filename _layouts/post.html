@@ -16,3 +16,61 @@ layout: default
     {{ content }}
   </div>
 </article>
+
+<script>
+// 퀴즈 정답 / 독해 해설 섹션을 클릭해서 여닫는 토글로 변환
+(function() {
+  const TOGGLE_TEXTS = ['퀴즈 정답 보기', '정답 및 해설 보기', '퀴즈 해설'];
+
+  function wrapCollapsible(triggerEl) {
+    // 이미 처리된 경우 skip
+    if (triggerEl.dataset.toggled) return;
+    triggerEl.dataset.toggled = '1';
+
+    // 뒤따르는 sibling 노드들을 수집 (다음 hr 또는 h2까지)
+    const wrapper = document.createElement('div');
+    wrapper.className = 'answer-body';
+    wrapper.style.display = 'none';
+
+    let node = triggerEl.nextElementSibling;
+    const collected = [];
+    while (node) {
+      const tag = node.tagName;
+      if (tag === 'HR' || (tag && tag.match(/^H[12]$/) && !node.textContent.includes('정답'))) break;
+      collected.push(node);
+      node = node.nextElementSibling;
+    }
+    if (collected.length === 0) return;
+
+    // 버튼 스타일 적용
+    triggerEl.style.cursor = 'pointer';
+    triggerEl.style.background = 'var(--blue-light)';
+    triggerEl.style.border = '1px solid var(--border)';
+    triggerEl.style.borderRadius = '8px';
+    triggerEl.style.padding = '10px 16px';
+    triggerEl.style.userSelect = 'none';
+
+    const arrow = document.createElement('span');
+    arrow.className = 'toggle-arrow';
+    arrow.textContent = ' ▸';
+    triggerEl.appendChild(arrow);
+
+    // wrapper 삽입
+    triggerEl.insertAdjacentElement('afterend', wrapper);
+    collected.forEach(el => wrapper.appendChild(el));
+
+    triggerEl.addEventListener('click', function() {
+      const open = wrapper.style.display !== 'none';
+      wrapper.style.display = open ? 'none' : 'block';
+      arrow.textContent = open ? ' ▸' : ' ▾';
+    });
+  }
+
+  document.querySelectorAll('.post-content strong, .post-content b').forEach(el => {
+    if (TOGGLE_TEXTS.some(t => el.textContent.trim().includes(t))) {
+      const parent = el.parentElement;
+      if (parent && parent !== el) wrapCollapsible(parent);
+    }
+  });
+})();
+</script>

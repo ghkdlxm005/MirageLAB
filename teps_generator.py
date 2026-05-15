@@ -1394,20 +1394,31 @@ TEPS_VOCABULARY = [
 # ── Call 1: 단어 예문 + 퀴즈 ─────────────────────────────────────────────────
 SYSTEM_WORD_QUIZ = """You are a TEPS vocabulary instructor writing daily study cards for Korean learners.
 
-RULES (no exceptions):
-- Use ONLY English and Korean (Hangul). No Chinese characters, no other scripts.
-- No emojis.
-- Korean text must use ONLY Korean words — never Chinese characters.
-- The IPA field is PRE-FILLED by the system. Do NOT change or omit it.
-  If the IPA is marked as [IPA 없음], leave it as is — do not guess.
-- The 어원 field is MANDATORY for every word. Never skip it.
-  Format: 언어명 + 원형단어(뜻) + 어근/접사 설명
-  Good example: "라틴어 diversus(여러 방향의)에서 유래. di-(분리) + vertere(돌리다)의 합성어."
-  Always include: the source language, the original root word with its meaning in parentheses, and what roots/affixes make it up.
-- Quiz 해설은 반드시 두 파트로 작성:
-  1. 정답 근거: 문장 속 핵심 단서(특정 단어나 구)를 명시하고 왜 정답인지 설명
-  2. 오답 분석: 각 오답 보기가 왜 문맥에 맞지 않는지 구체적으로 설명
-  절대 "문장에서 ~라고 했다"처럼 문장을 그냥 번역하지 말 것."""
+ABSOLUTE RULES (zero exceptions):
+1. Language: Use ONLY English letters and Korean Hangul.
+   - NEVER use Chinese characters (漢字), Japanese kana, French, Portuguese, Spanish, Arabic, or any other script.
+   - If you feel tempted to write a Chinese character like 石, 金, 水 — write the Korean word instead: 돌, 금, 물.
+   - Korean translations must be written entirely in Hangul + spaces + punctuation. No foreign words mid-sentence.
+
+2. IPA: The IPA field is PRE-FILLED by the system. Copy it exactly. Do NOT change, translate, or add Korean reading hints.
+   If marked [IPA 없음], leave it as [IPA 없음].
+
+3. 어원 (etymology) is MANDATORY for every word. Never skip it.
+   Format: 언어명 + 원형단어(뜻) + 어근/접사 설명
+   Example: "라틴어 diversus(여러 방향의)에서 유래. di-(분리) + vertere(돌리다)의 합성어."
+   - Always name the source language in Korean (라틴어, 고대 그리스어, 고대 영어, 프랑스어…).
+   - Always include the original root with its meaning in parentheses.
+   - Always explain prefix/suffix breakdown if applicable.
+
+4. Quiz questions: NEVER copy the example sentence from the 예문 field into a quiz question.
+   Create entirely new sentences with different contexts. The quiz tests understanding, not memorization of examples.
+
+5. Quiz 해설은 반드시 두 파트로 작성:
+   1. 정답 근거: 문장 속 핵심 단서(특정 단어나 구)를 명시하고 왜 정답인지 설명
+   2. 오답 분석: 각 오답 보기가 왜 문맥에 맞지 않는지 구체적으로 설명
+   절대 "문장에서 ~라고 했다"처럼 문장을 그냥 번역하지 말 것.
+
+6. <details> tag: Output the quiz answer block EXACTLY as shown in the template, including the <details> and </details> tags. Do not omit or replace them."""
 
 # word_block은 Python이 직접 채운 단어 헤더 (단어/뜻/품사/IPA는 LLM이 바꾸지 못함)
 WORD_QUIZ_TEMPLATE = """Below are today's 10 TEPS words. Word, meaning, part of speech, and IPA are pre-filled by the system.
@@ -1420,7 +1431,7 @@ Reference list:
 
 Output format (copy the structure exactly):
 
-## 오늘의 TEPS 단어 (10개)
+{section_header}
 
 {word_entries_template}
 
@@ -1473,19 +1484,24 @@ Output format (copy the structure exactly):
 # ── Call 2: 독해 ──────────────────────────────────────────────────────────────
 SYSTEM_READING = """You are a TEPS reading comprehension question writer.
 
-CRITICAL RULE: The passage (지문) MUST be written ENTIRELY in English.
-Do NOT write the passage in Korean under any circumstances.
-Korean is used ONLY in the answer key explanations and the Korean translation at the end."""
+ABSOLUTE RULES:
+1. The passage (지문) MUST be written ENTIRELY in English. Never write even one Korean word in the passage.
+2. Korean is used ONLY in the answer key explanations and the Korean translation at the end.
+3. Korean text must use ONLY Hangul + punctuation. NEVER use Chinese characters (漢字), French, Portuguese, or any other script.
+   Write 석유 not 石油, write 금 not 金, etc.
+4. The questions and answer choices must also be in English.
+5. The answer explanation must correctly match the passage content — do not invent information not in the passage.
+6. Output the <details> and </details> tags EXACTLY as shown in the template."""
 
 READING_TEMPLATE = """Write a TEPS-level reading comprehension exercise.
 Topic: related to any of these words: {word_names}
 
-Output format (copy exactly):
+Output format (copy exactly, including the <details> tags):
 
 ## 오늘의 독해
 
 **지문:**
-[Write 100-150 words here in ENGLISH ONLY. This must be English prose.]
+[Write 100-150 words here in ENGLISH ONLY. This must be English prose, no Korean at all.]
 
 **문제 1.** [English question about the passage]
 (A) [English option]
@@ -1502,12 +1518,12 @@ Output format (copy exactly):
 <details>
 <summary>정답 및 해설 보기</summary>
 
-**문제 1 정답:** [(letter)] — [Korean explanation]
+**문제 1 정답:** [(letter)] — [Korean explanation. Must be consistent with the passage content above.]
 
-**문제 2 정답:** [(letter)] — [Korean explanation]
+**문제 2 정답:** [(letter)] — [Korean explanation. Must be consistent with the passage content above.]
 
 **지문 해석:**
-[Full Korean translation — use only Korean and English words, absolutely no Chinese characters]
+[Full Korean translation — Hangul only, no Chinese characters, no foreign words]
 
 </details>
 
@@ -1544,20 +1560,32 @@ def get_kst_date() -> datetime:
 
 DAILY_WORD_COUNT = 10  # 하루 학습 단어 수
 
+# 순차 선택 기준일 — 이 날을 day 0으로 삼아 매일 10개씩 순서대로 진행
+# 변경 시: 이전 날짜 포스트의 단어 배치가 달라지므로 주의
+ANCHOR_DATE = datetime(2026, 5, 1, tzinfo=KST)
+
+
+def _day_index(date: datetime) -> int:
+    """ANCHOR_DATE 기준으로 몇 번째 날인지 반환."""
+    delta = date.date() - ANCHOR_DATE.date()
+    return max(0, delta.days)
+
 
 def pick_daily_words(date: datetime) -> list:
-    """날짜를 시드로 사용해 매일 다른 단어를 선택 (같은 날은 항상 동일)."""
-    seed = int(date.strftime("%Y%m%d"))
-    rng = random.Random(seed)
-    return rng.sample(TEPS_VOCABULARY, DAILY_WORD_COUNT)
+    """차수 순서 기반 순차 선택: 매일 DAILY_WORD_COUNT개씩 이어서 진행.
+
+    같은 차수(차) 내 단어들이 함께 출제되어 연관 어휘를 묶음 학습.
+    1287개 / 10 = 약 129일 주기로 전체 순환.
+    """
+    start = (_day_index(date) * DAILY_WORD_COUNT) % len(TEPS_VOCABULARY)
+    return [TEPS_VOCABULARY[(start + i) % len(TEPS_VOCABULARY)] for i in range(DAILY_WORD_COUNT)]
 
 
 def pick_review_words(date: datetime, days_ago: int = 7) -> list:
-    """N일 전 날짜 시드로 복습 단어 선택."""
+    """N일 전 순차 선택 — 자동으로 이전 회차 단어가 복습 대상이 됨."""
     review_date = date - timedelta(days=days_ago)
-    seed = int(review_date.strftime("%Y%m%d"))
-    rng = random.Random(seed)
-    return rng.sample(TEPS_VOCABULARY, DAILY_WORD_COUNT)
+    start = (_day_index(review_date) * DAILY_WORD_COUNT) % len(TEPS_VOCABULARY)
+    return [TEPS_VOCABULARY[(start + i) % len(TEPS_VOCABULARY)] for i in range(DAILY_WORD_COUNT)]
 
 
 def build_review_section(review_words: list, days_ago: int = 7) -> str:
@@ -1624,17 +1652,23 @@ def _build_word_block(words: list, verified: dict | None = None) -> tuple[str, s
     return "\n".join(ref_lines), "\n".join(entry_lines)
 
 
-def generate_content(client: Groq, date_str: str, words: list) -> str:
+def generate_content(client: Groq, date_str: str, words: list, date: datetime | None = None) -> str:
     """3단계 분리 호출로 포스트 본문 생성."""
     word_names = ", ".join(w[0] for w in words)
     verified = _load_verified_data()
     word_block, word_entries_template = _build_word_block(words, verified)
+
+    # 순서 번호 계산
+    seq = (_day_index(date) + 1) if date else 0
+    seq_str = f"#{seq:03d}" if seq else ""
+    section_header = f"## TEPS 단어 {seq_str} (10개)" if seq_str else "## 오늘의 TEPS 단어 (10개)"
 
     # ── Step 1: 단어 섹션 + 퀴즈 ─────────────────────────────────────────────
     print("  [1/3] 단어 + 퀴즈 생성 중...")
     user1 = WORD_QUIZ_TEMPLATE.format(
         word_block=word_block,
         word_entries_template=word_entries_template,
+        section_header=section_header,
     )
     part1 = _call(client, SYSTEM_WORD_QUIZ, user1, max_tokens=3500)
 
@@ -1651,21 +1685,30 @@ def generate_content(client: Groq, date_str: str, words: list) -> str:
     return "\n\n".join([part1, part2, part3])
 
 
-def generate_content_with_review(client: Groq, date_str: str, words: list, review_words: list) -> str:
+def generate_content_with_review(client: Groq, date_str: str, words: list, review_words: list, date: datetime | None = None) -> str:
     """오늘의 학습 + 7일 전 복습 섹션 포함."""
-    main_content = generate_content(client, date_str, words)
+    main_content = generate_content(client, date_str, words, date=date)
     review_section = build_review_section(review_words, days_ago=7)
     return main_content + "\n\n---\n\n" + review_section
 
 
 def build_front_matter(date: datetime, words: list) -> str:
-    date_str = date.strftime("%Y-%m-%d")
     time_str = date.strftime("%Y-%m-%d %H:%M:%S +0900")
+    date_str = date.strftime("%Y-%m-%d")
+
+    # 순서 번호: ANCHOR_DATE 기준 N번째 세트
+    seq = _day_index(date) + 1  # 1-indexed
+    seq_str = f"#{seq:03d}"     # #001, #015, #128 …
+
+    # 제목: 앞 5개 단어 표시 (나머지 5개는 tags에서 검색 가능)
+    title_words = " · ".join(w[0] for w in words[:5])
+    title = f"TEPS {seq_str} — {title_words}"
+
     word_tags = ", ".join(w[0] for w in words)
 
     return f"""---
 layout: post
-title: "TEPS 일일 학습 — {date_str}"
+title: "{title}"
 date: {time_str}
 categories: teps
 tags: [TEPS, 영어, {word_tags}]
@@ -1708,7 +1751,7 @@ def main():
     print("TEPS 포스트 생성 중...")
 
     try:
-        content = generate_content_with_review(client, date_str, words, review_words)
+        content = generate_content_with_review(client, date_str, words, review_words, date=today)
         filepath = save_post(content, today, words)
         print(f"포스트 저장 완료: {filepath}")
     except Exception as e:

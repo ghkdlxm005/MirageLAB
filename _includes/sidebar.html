@@ -14,8 +14,7 @@
             <a href="{{ '/' | relative_url }}"
                class="cat-link {% if page.categories contains 'teps' or page.url == '/' %}active{% endif %}">
               <span class="cat-dot"></span>
-              TEPS
-              <span class="cat-count">{{ site.categories.teps | size }}</span>
+              TEPS <span class="cat-count">{{ site.categories.teps | size }}</span>
             </a>
 
             <!-- 월별 아코디언 -->
@@ -68,7 +67,8 @@
     </ul>
   </div>
 
-  <!-- 최근 포스트 -->
+  <!-- 최근 포스트 (홈 제외) -->
+  {% unless page.layout == 'home' %}{% unless page.url == '/' %}
   <div class="sb-section">
     <div class="sb-title">최근 포스트</div>
     <ul class="recent-list">
@@ -76,12 +76,13 @@
       <li>
         <a href="{{ post.url | relative_url }}" class="recent-link {% if page.url == post.url %}active{% endif %}">
           <span class="recent-date">{{ post.date | date: "%m.%d" }}</span>
-          {{ post.title | remove: "TEPS 일일 학습 — " }}
+          {{ post.title }}
         </a>
       </li>
       {% endfor %}
     </ul>
   </div>
+  {% endunless %}{% endunless %}
 
 </aside>
 
