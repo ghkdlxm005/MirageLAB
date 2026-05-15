@@ -1400,9 +1400,11 @@ RULES (no exceptions):
 - The 어원 field is MANDATORY for every word. Never skip it.
   Format: 언어명 + 원형단어(뜻) + 어근/접사 설명
   Good example: "라틴어 diversus(여러 방향의)에서 유래. di-(분리) + vertere(돌리다)의 합성어."
-  Good example: "그리스어 autonomia에서 유래. autos(자신) + nomos(법칙)의 합성어."
-  Good example: "고대 영어 strang(강한)에서 유래. 게르만어 어근 strang-이 기원."
-  Always include: the source language, the original root word with its meaning in parentheses, and what roots/affixes make it up."""
+  Always include: the source language, the original root word with its meaning in parentheses, and what roots/affixes make it up.
+- Quiz 해설은 반드시 두 파트로 작성:
+  1. 정답 근거: 문장 속 핵심 단서(특정 단어나 구)를 명시하고 왜 정답인지 설명
+  2. 오답 분석: 각 오답 보기가 왜 문맥에 맞지 않는지 구체적으로 설명
+  절대 "문장에서 ~라고 했다"처럼 문장을 그냥 번역하지 말 것."""
 
 # word_block은 Python이 직접 채운 단어 헤더 (단어/뜻/품사는 LLM이 바꾸지 못함)
 WORD_QUIZ_TEMPLATE = """Below are today's 5 TEPS words. Word, meaning, and part of speech are pre-filled.
@@ -1441,15 +1443,25 @@ Output format (copy the structure exactly):
 <details>
 <summary>퀴즈 정답 보기</summary>
 
-Q1 정답: [(letter)] — [Korean explanation]
+**Q1 정답: [(letter)]**
+- 정답 근거: [문장에서 정답을 알 수 있는 핵심 단서와 그 이유를 한국어로 설명]
+- 오답 분석: (오답 보기들) — [각 오답이 왜 문맥에 맞지 않는지 한국어로 설명]
 
-Q2 정답: [(letter)] — [Korean explanation]
+**Q2 정답: [(letter)]**
+- 정답 근거: [문장에서 정답을 알 수 있는 핵심 단서와 그 이유를 한국어로 설명]
+- 오답 분석: (오답 보기들) — [각 오답이 왜 문맥에 맞지 않는지 한국어로 설명]
 
-Q3 정답: [(letter)] — [Korean explanation]
+**Q3 정답: [(letter)]**
+- 정답 근거: [문장에서 정답을 알 수 있는 핵심 단서와 그 이유를 한국어로 설명]
+- 오답 분석: (오답 보기들) — [각 오답이 왜 문맥에 맞지 않는지 한국어로 설명]
 
-Q4 정답: [(letter)] — [Korean explanation]
+**Q4 정답: [(letter)]**
+- 정답 근거: [문장에서 정답을 알 수 있는 핵심 단서와 그 이유를 한국어로 설명]
+- 오답 분석: (오답 보기들) — [각 오답이 왜 문맥에 맞지 않는지 한국어로 설명]
 
-Q5 정답: [(letter)] — [Korean explanation]
+**Q5 정답: [(letter)]**
+- 정답 근거: [문장에서 정답을 알 수 있는 핵심 단서와 그 이유를 한국어로 설명]
+- 오답 분석: (오답 보기들) — [각 오답이 왜 문맥에 맞지 않는지 한국어로 설명]
 
 </details>
 
